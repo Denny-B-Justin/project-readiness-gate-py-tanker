@@ -1,0 +1,398 @@
+{
+  "version": 1,
+  "locale": "en_US.UTF-8",
+  "metadata": {
+    "appmode": "python-fastapi",
+    "entrypoint": "pcn_clone.app.server:server"
+  },
+  "python": {
+    "version": "3.12.15",
+    "package_manager": {
+      "name": "pip",
+      "version": "26.2.2",
+      "package_file": "requirements.txt"
+    }
+  },
+  "environment": {
+    "python": {
+      "requires": "~=3.12.0"
+    }
+  },
+  "files": {
+    "requirements.txt": {
+      "checksum": "1d4f5f932ca432f3bc31c3b0deffcd00"
+    },
+    ".gitignore": {
+      "checksum": "ec71f4b00a1f39a4394bf62ccfecf555"
+    },
+    "LICENSE": {
+      "checksum": "bf72105a69d303b78352c6a39239bc69"
+    },
+    "README.md": {
+      "checksum": "e1cce35482cbd75f4a54a4cd93295dbf"
+    },
+    "pcn_clone/__init__.py": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "pcn_clone/ai/__init__.py": {
+      "checksum": "2bd776f3f73cd4520f0f62878f58fba4"
+    },
+    "pcn_clone/ai/assess.py": {
+      "checksum": "4a6f9dab8c051e97acd30127cf4aba5e"
+    },
+    "pcn_clone/ai/config.py": {
+      "checksum": "ae3ebd5b012c2bc575d3da1f2d549694"
+    },
+    "pcn_clone/ai/evaluate.py": {
+      "checksum": "e337731a98442e4a7e3544dbd1e8aa72"
+    },
+    "pcn_clone/ai/prompts.py": {
+      "checksum": "72dfbb3416ec91540ddc7d19af834b1d"
+    },
+    "pcn_clone/ai/provider.py": {
+      "checksum": "519da4bb53ef425d944c53e4cddf345b"
+    },
+    "pcn_clone/ai/schemas.py": {
+      "checksum": "3d444e8765502b923dcabae45348df53"
+    },
+    "pcn_clone/app/__init__.py": {
+      "checksum": "82a0550efb7683085ef9370b3697492c"
+    },
+    "pcn_clone/app/__main__.py": {
+      "checksum": "7c45c30af790ca8a52882c4a65dcb6e9"
+    },
+    "pcn_clone/app/a11y.py": {
+      "checksum": "7850354fc88f51f78884e9a1f690fd8f"
+    },
+    "pcn_clone/app/assets/assess.css": {
+      "checksum": "b3d3ce7db1742d41d28af3865e12325e"
+    },
+    "pcn_clone/app/assets/brand.css": {
+      "checksum": "6af764ec833d49569e7f57d6eedc2efd"
+    },
+    "pcn_clone/app/assets/favicon.ico": {
+      "checksum": "59983a0e2240f5a52f7e717e5c67d5ea"
+    },
+    "pcn_clone/app/assets/form.css": {
+      "checksum": "68ed7751689f8fc54175573d63e561bd"
+    },
+    "pcn_clone/app/assets/form.js": {
+      "checksum": "08e8b15171527ea5b19e8f50da8c4bcb"
+    },
+    "pcn_clone/app/assets/gate.js": {
+      "checksum": "61b158f5bb30c3050f57ad544d82857e"
+    },
+    "pcn_clone/app/assets/home.css": {
+      "checksum": "a4a06430897c305575f73859fc06f35c"
+    },
+    "pcn_clone/app/assets/home/masthead.svg": {
+      "checksum": "c4997e2658bc43431058d998d748ad75"
+    },
+    "pcn_clone/app/assets/icons.css": {
+      "checksum": "c1caf6fccc6447abee963ff7a928853a"
+    },
+    "pcn_clone/app/assets/logo/pimpam_logo.png": {
+      "checksum": "8194b2b9ab343278dd64467032f6503d"
+    },
+    "pcn_clone/app/assets/methodology/calibration_cycle_diagram.png": {
+      "checksum": "98d7593c0e94809e7602932479572812"
+    },
+    "pcn_clone/app/assets/methodology/readiness_gate_diagram.png": {
+      "checksum": "8e6978d809ea5349fd378de5628755b5"
+    },
+    "pcn_clone/app/assets/numbers.js": {
+      "checksum": "678119a08fc41304f97846a2eb110762"
+    },
+    "pcn_clone/app/assets/pages.css": {
+      "checksum": "7ca8627d121fae828611c57d66576413"
+    },
+    "pcn_clone/app/assets/projects.css": {
+      "checksum": "5a80b406113a931e9f48671abfd25902"
+    },
+    "pcn_clone/app/assets/projects.js": {
+      "checksum": "aaec359a1537f37d28c8c1f45a9ad3da"
+    },
+    "pcn_clone/app/assets/review-store.js": {
+      "checksum": "e541db2018a2dc4aee599f1f559b142f"
+    },
+    "pcn_clone/app/assets/review-ui.js": {
+      "checksum": "4b1c656a7691f75519612cb3f3e33d8d"
+    },
+    "pcn_clone/app/assets/review.css": {
+      "checksum": "16f9ca5d1ed035ef3a94762bf0b67d18"
+    },
+    "pcn_clone/app/assets/review.js": {
+      "checksum": "1202204fb2c4f9ae62f65569e7c512c7"
+    },
+    "pcn_clone/app/assets/store.js": {
+      "checksum": "1feb99847996205beb162478649459a6"
+    },
+    "pcn_clone/app/form/__init__.py": {
+      "checksum": "81bd4c777d3b52c646ee976b3f5d7b19"
+    },
+    "pcn_clone/app/form/callbacks.py": {
+      "checksum": "913efdd6d215e3f008752ba3f1ab972e"
+    },
+    "pcn_clone/app/form/config.py": {
+      "checksum": "0d6d4cc066e453a00919b2d97d8b73b5"
+    },
+    "pcn_clone/app/form/context_bar.py": {
+      "checksum": "51dd5e64441b95b0233db447008f2bd3"
+    },
+    "pcn_clone/app/form/dialogs.py": {
+      "checksum": "0522ded8cbca4a07c3cf92132e1a5423"
+    },
+    "pcn_clone/app/form/field_card.py": {
+      "checksum": "8a5a0009bd68d2ea55e2d3980f2679f8"
+    },
+    "pcn_clone/app/form/ids.py": {
+      "checksum": "d3c5db361349fb51cbde8f3dc4bbea36"
+    },
+    "pcn_clone/app/form/inputs/__init__.py": {
+      "checksum": "60b8856c75381888d2fcae746a7de238"
+    },
+    "pcn_clone/app/form/inputs/controls.py": {
+      "checksum": "8da1a499ac378f5007cf9b40ef300ebf"
+    },
+    "pcn_clone/app/form/inputs/group.py": {
+      "checksum": "d3cbf8153689d04f8c4debef0876de65"
+    },
+    "pcn_clone/app/form/inputs/list_table.py": {
+      "checksum": "1a061e77c7691a0b7f7f7401f7cc1e9e"
+    },
+    "pcn_clone/app/form/inputs/narratives.py": {
+      "checksum": "49aadb4ef944e0b615f69a69e6ed312b"
+    },
+    "pcn_clone/app/form/inputs/scenario.py": {
+      "checksum": "1a8dc7c7911c9e6f9dd6e1454d5937ea"
+    },
+    "pcn_clone/app/form/inputs/static_table.py": {
+      "checksum": "07d569f1f8ebdcb1a5d547462c43696d"
+    },
+    "pcn_clone/app/form/inputs/text.py": {
+      "checksum": "3da3f30822785d302cdfd6777c83c703"
+    },
+    "pcn_clone/app/form/inputs/textarea.py": {
+      "checksum": "69c317c37d048f8b6077e2ab71d2643c"
+    },
+    "pcn_clone/app/form/inputs/worksheet.py": {
+      "checksum": "3f86d319c97f0360f58c009eab379298"
+    },
+    "pcn_clone/app/form/layout.py": {
+      "checksum": "c31704a78fb4c0ca79a82647ab8578d4"
+    },
+    "pcn_clone/app/form/messages.py": {
+      "checksum": "410d3c5f8e8eddc8915a3bb57df021b6"
+    },
+    "pcn_clone/app/form/section.py": {
+      "checksum": "c515deb1f2fe8e6c3b96a54472be2996"
+    },
+    "pcn_clone/app/form/signature.py": {
+      "checksum": "d3c7b88b5b344932858d06af3280838d"
+    },
+    "pcn_clone/app/form/template.py": {
+      "checksum": "d78604f02fbcf2159b4ad88f893db13b"
+    },
+    "pcn_clone/app/form/verdicts.py": {
+      "checksum": "e9a6b7bd4ae0f09b9908f140826c3a0d"
+    },
+    "pcn_clone/app/gate.py": {
+      "checksum": "0cd442356bf335c3a8dbfce71a4616b4"
+    },
+    "pcn_clone/app/icons.py": {
+      "checksum": "38e59b5e19cb40b27a1f7689e5728549"
+    },
+    "pcn_clone/app/notify.py": {
+      "checksum": "de354dd217d2496a8e105c3afdc4021f"
+    },
+    "pcn_clone/app/pages/__init__.py": {
+      "checksum": "86fe1d9c5ce292f9b86da24bd4de5285"
+    },
+    "pcn_clone/app/pages/assess.py": {
+      "checksum": "6e621ed9be3fe1fd4bf4cf188c76fea9"
+    },
+    "pcn_clone/app/pages/home.py": {
+      "checksum": "3cdc12ca4b5292b42dc4c2ea9ae29503"
+    },
+    "pcn_clone/app/pages/methodology.py": {
+      "checksum": "3dfe2b2da1a4d1ce7fc2992a34f459f8"
+    },
+    "pcn_clone/app/pages/not_found_404.py": {
+      "checksum": "02adc8c996824e629e15a64264c91419"
+    },
+    "pcn_clone/app/pages/project.py": {
+      "checksum": "7563e1a680974d5f83ff7fb20eacd98a"
+    },
+    "pcn_clone/app/pages/projects.py": {
+      "checksum": "f178db4f4d7dcdcd5c66d53ce2f13bb2"
+    },
+    "pcn_clone/app/pages/release_notes.py": {
+      "checksum": "0fe65641f948ac7740598e8bb6d6eb32"
+    },
+    "pcn_clone/app/pages/review.py": {
+      "checksum": "9b5f495f983598aea9807f4fb3a9e89e"
+    },
+    "pcn_clone/app/projects_data.py": {
+      "checksum": "ce1b85c9cd05dac6636b1ee3ad3b5f2d"
+    },
+    "pcn_clone/app/review/__init__.py": {
+      "checksum": "2c78cfaa31fce5b4e480042edf80d41c"
+    },
+    "pcn_clone/app/review/callbacks.py": {
+      "checksum": "87a9c9abefca05b828979fdb62e83e38"
+    },
+    "pcn_clone/app/review/completion.py": {
+      "checksum": "d9bd638b7a76a27708d3e1faee654776"
+    },
+    "pcn_clone/app/review/config.py": {
+      "checksum": "fe9c23db8871556325fb57279613f590"
+    },
+    "pcn_clone/app/review/context_bar.py": {
+      "checksum": "b9226441d3e881293ac177c1d3ab97f2"
+    },
+    "pcn_clone/app/review/ids.py": {
+      "checksum": "3445caf547e94e4778f0bb48e3259741"
+    },
+    "pcn_clone/app/review/messages.py": {
+      "checksum": "10d40fe99f4bf5b18c82aa821c70abfc"
+    },
+    "pcn_clone/app/review/run.py": {
+      "checksum": "699c05be3c284ecbc77c8bda5c411c4c"
+    },
+    "pcn_clone/app/review/submit.py": {
+      "checksum": "ba053dbeeef21339145d44dec3fc7144"
+    },
+    "pcn_clone/app/review/view.py": {
+      "checksum": "c8adfc4d085f30374ff87a78d2292ca5"
+    },
+    "pcn_clone/app/review/workspace/__init__.py": {
+      "checksum": "d18ccda9e154baa2bff98f4922858bda"
+    },
+    "pcn_clone/app/review/workspace/callbacks.py": {
+      "checksum": "6ed4d168835538c2fadd1e4f2ea40406"
+    },
+    "pcn_clone/app/review/workspace/card.py": {
+      "checksum": "da509634b72218917d18aa1bf398c2cc"
+    },
+    "pcn_clone/app/review/workspace/config.py": {
+      "checksum": "f2b5f151fcb745422d1e5bac0bace294"
+    },
+    "pcn_clone/app/review/workspace/controls.py": {
+      "checksum": "a01d59b95b5d78d8ee87d26637ffe5f4"
+    },
+    "pcn_clone/app/review/workspace/endorsement.py": {
+      "checksum": "be42fd4c34f0f15ca1f7a876b1cc7c59"
+    },
+    "pcn_clone/app/review/workspace/evidence.py": {
+      "checksum": "dfbc95c343174374b9032beec766217d"
+    },
+    "pcn_clone/app/review/workspace/finding_card.py": {
+      "checksum": "72ca55636a3a5851e91e356519bf5746"
+    },
+    "pcn_clone/app/review/workspace/hub.py": {
+      "checksum": "e816b4f1f655c58c9768f6080453c277"
+    },
+    "pcn_clone/app/review/workspace/ids.py": {
+      "checksum": "fed51b97273ebc2a6e00cf6f2ec8628e"
+    },
+    "pcn_clone/app/review/workspace/layout.py": {
+      "checksum": "79e3e326c658b7ea8b9d28496434ab20"
+    },
+    "pcn_clone/app/review/workspace/mca_summary.py": {
+      "checksum": "14cba2bfe4a83fd2761587d1953e8f10"
+    },
+    "pcn_clone/app/review/workspace/memo_panel.py": {
+      "checksum": "1e5823ed107ada272ae15824e371970a"
+    },
+    "pcn_clone/app/review/workspace/messages.py": {
+      "checksum": "00254ef4ab446132094bdd9e3e8ee1e9"
+    },
+    "pcn_clone/app/review/workspace/pills.py": {
+      "checksum": "3c841ac57b203fa19b8e77d7adc2d806"
+    },
+    "pcn_clone/app/review/workspace/records.py": {
+      "checksum": "38ecf68a430dcbfd4c38a9e8306621e0"
+    },
+    "pcn_clone/app/review/workspace/render.py": {
+      "checksum": "c9938a5798a9029766adf2f7e76f6e9c"
+    },
+    "pcn_clone/app/review/workspace/score_card.py": {
+      "checksum": "c04ab8404cd71ec45a63f6f6cffd9eae"
+    },
+    "pcn_clone/app/review/workspace/summary_state.py": {
+      "checksum": "8453a9a6213cbcf2019f4b9cd93db1ca"
+    },
+    "pcn_clone/app/routing.py": {
+      "checksum": "3d380dbf8b8865704a435371ad1e503f"
+    },
+    "pcn_clone/app/server.py": {
+      "checksum": "d7fdc36c77645609dbea8d6a8a35d62a"
+    },
+    "pcn_clone/app/shell.py": {
+      "checksum": "a6fd4c1d109a476a141e60a2932b73e2"
+    },
+    "pcn_clone/app/theme.py": {
+      "checksum": "e72d9af9888181b0628de06c15cd66b4"
+    },
+    "pcn_clone/content/__init__.py": {
+      "checksum": "6d32a092be36d0143ea55cfeab4860b5"
+    },
+    "pcn_clone/content/assessment_pcn_global_reviewer_default.json": {
+      "checksum": "44e601f972fce6cde7f4776743470a21"
+    },
+    "pcn_clone/content/criteria_pcn_global_default.json": {
+      "checksum": "57c53f751b0909744327e01464b8dc99"
+    },
+    "pcn_clone/content/default_project_upper_valley_district_road.json": {
+      "checksum": "7ce3dc07beffe9290a9120e6fadf9928"
+    },
+    "pcn_clone/content/mca_pcn_global_mca_default.json": {
+      "checksum": "917c72b27234270a57aaac42e7df9ba5"
+    },
+    "pcn_clone/content/models.py": {
+      "checksum": "ce7f66f822720f2088faf877b351cce3"
+    },
+    "pcn_clone/content/template_pcn_global.json": {
+      "checksum": "a215475f780334fd4985a9d0d37e5935"
+    },
+    "pcn_clone/core/__init__.py": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "pcn_clone/core/evidence.py": {
+      "checksum": "f177649476792ca305f9c7112ab91ae2"
+    },
+    "pcn_clone/core/fields.py": {
+      "checksum": "9e986f1032734a964da772a8fc344552"
+    },
+    "pcn_clone/core/jsstr.py": {
+      "checksum": "e667e36cc32a9d6e6c15ee2690d11838"
+    },
+    "pcn_clone/core/mca.py": {
+      "checksum": "0dd3292f5848e1240c468624190606e6"
+    },
+    "pcn_clone/core/numbers.py": {
+      "checksum": "f462d868f2c2adb42ce0b0f383b30865"
+    },
+    "pcn_clone/core/prepare.py": {
+      "checksum": "3c72749f88c963f0bbde91c9991a0460"
+    },
+    "pcn_clone/core/scenario.py": {
+      "checksum": "3692159eae6c779018772a35f5787c24"
+    },
+    "pcn_clone/core/serialize.py": {
+      "checksum": "31cb834baef70ad8d400922be649f814"
+    },
+    "pcn_clone/core/static_table.py": {
+      "checksum": "5961805bc5eea15525dfd4b42d31482d"
+    },
+    "pcn_clone/core/worksheet.py": {
+      "checksum": "c23392d9f4d7fcf04c86138334666f34"
+    },
+    "pcn_clone/py.typed": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "pyproject.toml": {
+      "checksum": "ddd618f89b1df42fc757e4025df73735"
+    }
+  }
+}

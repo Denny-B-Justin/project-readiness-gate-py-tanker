@@ -1,0 +1,198 @@
+{
+  "id": "pcn_global_default",
+  "templateId": "pcn_global",
+  "version": "1.4.0",
+  "description": "Default quality and conformity criteria for the PCN v1 template, lifted from the source Project Proposal Form. Each field is graded Fail / Not Clear / Pass.",
+  "fields": [
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "project_title",
+      "label": "Provisional quality check",
+      "verdicts": {
+        "fail": "Project title is missing or too vague to identify the investment.",
+        "notClear": "Project title is provided but may be incomplete, abbreviated, or not specific enough to serve as the official project name.",
+        "pass": "Project title is complete, specific, and suitable to serve as the official project name."
+      }
+    },
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "project_location",
+      "label": "Provisional quality check",
+      "verdicts": {
+        "fail": "Project location is missing.",
+        "notClear": "Project location is provided but lacks enough detail to understand where the investment will take place.",
+        "pass": "Project location is clearly specified with sufficient place, address, or geospatial detail."
+      }
+    },
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "implementation_period",
+      "label": "Provisional quality check",
+      "verdicts": {
+        "fail": "Implementation period is missing, one or both required date fields are blank, or the completion date is earlier than the start date.",
+        "notClear": "Both expected start and completion dates are provided in chronological order, but the timeline appears unusually compressed or extended and requires clarification.",
+        "pass": "Implementation period clearly provides both expected start and completion dates in a plausible order."
+      }
+    },
+    {
+      "sectionId": "investment_rationale",
+      "fieldId": "issues_and_justification",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "Fails to describe the problem or described problem is not considered important",
+        "notClear": "There is inadequate numerical/ qualitative information about the scale of the problem",
+        "pass": "The problem and its causes are explained fully with some evidence of scale."
+      }
+    },
+    {
+      "sectionId": "investment_rationale",
+      "fieldId": "objectives",
+      "label": "Quality score",
+      "verdicts": {
+        "fail": "Objectives not described",
+        "notClear": "Objectives described but not clearly in accordance with Guidance",
+        "pass": "Objectives clearly described"
+      }
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "alternative_options_considered",
+      "label": "Quality score",
+      "verdicts": {
+        "fail": "No options considered or listed.",
+        "notClear": "Options listed but no reference to the reasons why they were rejected.",
+        "pass": "Options are provided, and the preferred option is justified relative to the specified alternatives."
+      }
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "scope_of_the_project",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "The project scope is unclear or undefined.",
+        "notClear": "The project scope is partially described, or it is unclear whether it enables successful implementation; further explanation is required.",
+        "pass": "The project scope is well described, complete, and adequate for successful project implementation."
+      }
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "project_beneficiaries",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "Fails to describe the intended beneficiaries of the project.",
+        "notClear": "Intended beneficiaries of the project are not clearly described or quantified.",
+        "pass": "Intended beneficiaries of the project are described clearly and quantified."
+      }
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "project_social_impact",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "The expected social impact is missing, or not relevant to the project.",
+        "notClear": "The expected social impact is partially described but vague or general.",
+        "pass": "The expected social impact is clearly described and well justified."
+      }
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "gender_equality",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "Fails to describe the project's impact on gender equality.",
+        "notClear": "The project's impact on gender equality is not clear.",
+        "pass": "The project's impact on gender equality is well presented."
+      }
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "environmental_and_climate_impacts",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "The required information is missing, or not relevant to the project.",
+        "notClear": "Information on positive and negative impacts is provided but not explained clearly.",
+        "pass": "Positive and negative impacts are explained clearly and appear acceptable."
+      }
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "climate_change_adaptation_and_mitigation",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "The required information is missing, or not relevant to the project.",
+        "notClear": "Information on both adaptation and mitigation is provided but lacks clarity, detail, or sufficient explanation.",
+        "pass": "Information on climate change adaptation and mitigation measures is clearly explained and appears adequate."
+      }
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "investment_cost_estimate",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "No cost estimation is provided, the estimation is unreliable, or the estimate does not cover the full project scope.",
+        "notClear": "The estimate is based on a possibly credible source and appears to cover the full project scope, but requires clarification.",
+        "pass": "The estimate is based on reliable information and covers the full project scope."
+      }
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "operating_costs",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "Estimation of operating costs not presented.",
+        "notClear": "Estimation of operating costs for both scenarios, where applicable, is presented but appears inadequate or requires clarification.",
+        "pass": "Estimation of operating costs for both scenarios, where applicable, is presented and properly explained."
+      }
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "revenues",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "Estimation of operating revenues not presented.",
+        "notClear": "Estimation is presented but requires clarification.",
+        "pass": "Estimation of operating revenues is presented and commented, or non-applicability is indicated."
+      }
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "fieldId": "project_risks",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "Risks appear incomplete, or no serious attempt at risk management was undertaken.",
+        "notClear": "Risks are listed but risk management measures appear incomplete or lack credibility.",
+        "pass": "Risks are listed and risk management measures appear credible."
+      }
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "fieldId": "management_arrangements",
+      "label": "Quality check",
+      "verdicts": {
+        "fail": "No resources identified for project implementation, and/or no indication of responsibilities in the operational phase.",
+        "notClear": "Resources for project implementation and responsibilities in the operational phase are indicated but appear insufficient or unclear.",
+        "pass": "Resources for project implementation and responsibilities in the operational phase are clearly described and sufficient."
+      }
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "fieldId": "documentation_and_permits",
+      "label": "Provisional quality check",
+      "verdicts": {
+        "fail": "Required documentation and permits are not identified, or their status is not provided.",
+        "notClear": "Documentation and permits are listed but their statuses or expected acquisition dates are incomplete or unclear.",
+        "pass": "Required documentation and permits are identified, each with a clear status and an expected acquisition date where it is not yet available."
+      }
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "fieldId": "land_and_property_status",
+      "label": "Provisional quality check",
+      "verdicts": {
+        "fail": "The land and property rights needed for the project are not addressed, or their status is not provided.",
+        "notClear": "Land and property status is indicated but incomplete or unclear (e.g. marked required without a status or expected date).",
+        "pass": "The status of the land and property rights needed for the project is clearly described, including the expected acquisition date where they are not yet secured."
+      }
+    }
+  ]
+}

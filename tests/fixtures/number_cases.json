@@ -1,0 +1,976 @@
+{
+  "parseAmount": [
+    {
+      "input": "",
+      "result": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    {
+      "input": " ",
+      "result": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    {
+      "input": "0",
+      "result": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    {
+      "input": "1000",
+      "result": {
+        "ok": true,
+        "value": 1000
+      }
+    },
+    {
+      "input": "1,000",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "1e3",
+      "result": {
+        "ok": true,
+        "value": 1000
+      }
+    },
+    {
+      "input": "0x10",
+      "result": {
+        "ok": true,
+        "value": 16
+      }
+    },
+    {
+      "input": "1_000",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "12.345",
+      "result": {
+        "ok": true,
+        "value": 12.345
+      }
+    },
+    {
+      "input": "12.355",
+      "result": {
+        "ok": true,
+        "value": 12.355
+      }
+    },
+    {
+      "input": "2.5",
+      "result": {
+        "ok": true,
+        "value": 2.5
+      }
+    },
+    {
+      "input": "0.125",
+      "result": {
+        "ok": true,
+        "value": 0.125
+      }
+    },
+    {
+      "input": "-5",
+      "result": {
+        "ok": false,
+        "reason": "negative"
+      }
+    },
+    {
+      "input": "abc",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "Infinity",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "NaN",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "  42  ",
+      "result": {
+        "ok": true,
+        "value": 42
+      }
+    },
+    {
+      "input": "1.005",
+      "result": {
+        "ok": true,
+        "value": 1.005
+      }
+    },
+    {
+      "input": "-0",
+      "result": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    {
+      "input": "+5",
+      "result": {
+        "ok": true,
+        "value": 5
+      }
+    },
+    {
+      "input": ".5",
+      "result": {
+        "ok": true,
+        "value": 0.5
+      }
+    },
+    {
+      "input": "5.",
+      "result": {
+        "ok": true,
+        "value": 5
+      }
+    },
+    {
+      "input": "1e400",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "-Infinity",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "0b101",
+      "result": {
+        "ok": true,
+        "value": 5
+      }
+    },
+    {
+      "input": "0o17",
+      "result": {
+        "ok": true,
+        "value": 15
+      }
+    },
+    {
+      "input": "-0x10",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "1 000",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "\t7\n",
+      "result": {
+        "ok": true,
+        "value": 7
+      }
+    },
+    {
+      "input": " 42 ",
+      "result": {
+        "ok": true,
+        "value": 42
+      }
+    },
+    {
+      "input": "﻿42",
+      "result": {
+        "ok": true,
+        "value": 42
+      }
+    },
+    {
+      "input": "1e-7",
+      "result": {
+        "ok": true,
+        "value": 1e-7
+      }
+    },
+    {
+      "input": "1e21",
+      "result": {
+        "ok": true,
+        "value": 1e+21
+      }
+    },
+    {
+      "input": "00012",
+      "result": {
+        "ok": true,
+        "value": 12
+      }
+    },
+    {
+      "input": "١٢",
+      "result": {
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": null,
+      "result": {
+        "ok": true,
+        "value": 0
+      }
+    },
+    {
+      "input": 1234567.891,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    },
+    {
+      "input": 0,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    },
+    {
+      "input": 1e+21,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    }
+  ],
+  "formatAmount": [
+    {
+      "input": 0,
+      "result": "0"
+    },
+    {
+      "input": 1,
+      "result": "1"
+    },
+    {
+      "input": 5,
+      "result": "5"
+    },
+    {
+      "input": 100,
+      "result": "100"
+    },
+    {
+      "input": 1000,
+      "result": "1,000"
+    },
+    {
+      "input": 1000000,
+      "result": "1,000,000"
+    },
+    {
+      "input": 1234567.891,
+      "result": "1,234,567.89"
+    },
+    {
+      "input": -1234567.891,
+      "result": "-1,234,567.89"
+    },
+    {
+      "input": 12.345,
+      "result": "12.35"
+    },
+    {
+      "input": 12.355,
+      "result": "12.36"
+    },
+    {
+      "input": 2.5,
+      "result": "2.50"
+    },
+    {
+      "input": 0.5,
+      "result": "0.50"
+    },
+    {
+      "input": 0.125,
+      "result": "0.13"
+    },
+    {
+      "input": -0.125,
+      "result": "-0.12"
+    },
+    {
+      "input": -2.5,
+      "result": "-2.50"
+    },
+    {
+      "input": 1.005,
+      "result": "1"
+    },
+    {
+      "input": 2.675,
+      "result": "2.68"
+    },
+    {
+      "input": 8.345,
+      "result": "8.35"
+    },
+    {
+      "input": 4.35,
+      "result": "4.35"
+    },
+    {
+      "input": 0.005,
+      "result": "0.01"
+    },
+    {
+      "input": -0.005,
+      "result": "0"
+    },
+    {
+      "input": 999.995,
+      "result": "1,000"
+    },
+    {
+      "input": 0.30000000000000004,
+      "result": "0.30"
+    },
+    {
+      "input": -5,
+      "result": "-5"
+    },
+    {
+      "input": 1e-7,
+      "result": "0"
+    },
+    {
+      "input": 123456789012.34,
+      "result": "123,456,789,012.34"
+    },
+    {
+      "input": 100000000000000000000,
+      "result": "100,000,000,000,000,000,000"
+    },
+    {
+      "input": 1e+21,
+      "result": "999,999,999,999,999,900,000"
+    },
+    {
+      "input": 6390000,
+      "result": "6,390,000"
+    }
+  ],
+  "parseScenarioAmount": [
+    {
+      "input": "",
+      "result": {
+        "present": false
+      }
+    },
+    {
+      "input": " ",
+      "result": {
+        "present": false
+      }
+    },
+    {
+      "input": "0",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 0
+      }
+    },
+    {
+      "input": "1000",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 1000
+      }
+    },
+    {
+      "input": "1,000",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "1e3",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 1000
+      }
+    },
+    {
+      "input": "0x10",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 16
+      }
+    },
+    {
+      "input": "1_000",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "12.345",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 12.345
+      }
+    },
+    {
+      "input": "12.355",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 12.355
+      }
+    },
+    {
+      "input": "2.5",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 2.5
+      }
+    },
+    {
+      "input": "0.125",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 0.125
+      }
+    },
+    {
+      "input": "-5",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "negative"
+      }
+    },
+    {
+      "input": "abc",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "Infinity",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "NaN",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "  42  ",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 42
+      }
+    },
+    {
+      "input": "1.005",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 1.005
+      }
+    },
+    {
+      "input": "-0",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 0
+      }
+    },
+    {
+      "input": "+5",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 5
+      }
+    },
+    {
+      "input": ".5",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 0.5
+      }
+    },
+    {
+      "input": "5.",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 5
+      }
+    },
+    {
+      "input": "1e400",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "-Infinity",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "0b101",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 5
+      }
+    },
+    {
+      "input": "0o17",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 15
+      }
+    },
+    {
+      "input": "-0x10",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "1 000",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": "\t7\n",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 7
+      }
+    },
+    {
+      "input": " 42 ",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 42
+      }
+    },
+    {
+      "input": "﻿42",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 42
+      }
+    },
+    {
+      "input": "1e-7",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 1e-7
+      }
+    },
+    {
+      "input": "1e21",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 1e+21
+      }
+    },
+    {
+      "input": "00012",
+      "result": {
+        "present": true,
+        "ok": true,
+        "value": 12
+      }
+    },
+    {
+      "input": "١٢",
+      "result": {
+        "present": true,
+        "ok": false,
+        "reason": "not_a_number"
+      }
+    },
+    {
+      "input": null,
+      "result": {
+        "present": false
+      }
+    },
+    {
+      "input": 1234567.891,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    },
+    {
+      "input": 0,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    },
+    {
+      "input": 1e+21,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    }
+  ],
+  "formatScenarioAmount": [
+    {
+      "input": 0,
+      "result": "0"
+    },
+    {
+      "input": 1,
+      "result": "1"
+    },
+    {
+      "input": 5,
+      "result": "5"
+    },
+    {
+      "input": 100,
+      "result": "100"
+    },
+    {
+      "input": 1000,
+      "result": "1,000"
+    },
+    {
+      "input": 1000000,
+      "result": "1,000,000"
+    },
+    {
+      "input": 1234567.891,
+      "result": "1,234,567.89"
+    },
+    {
+      "input": -1234567.891,
+      "result": "-1,234,567.89"
+    },
+    {
+      "input": 12.345,
+      "result": "12.35"
+    },
+    {
+      "input": 12.355,
+      "result": "12.36"
+    },
+    {
+      "input": 2.5,
+      "result": "2.50"
+    },
+    {
+      "input": 0.5,
+      "result": "0.50"
+    },
+    {
+      "input": 0.125,
+      "result": "0.13"
+    },
+    {
+      "input": -0.125,
+      "result": "-0.12"
+    },
+    {
+      "input": -2.5,
+      "result": "-2.50"
+    },
+    {
+      "input": 1.005,
+      "result": "1"
+    },
+    {
+      "input": 2.675,
+      "result": "2.68"
+    },
+    {
+      "input": 8.345,
+      "result": "8.35"
+    },
+    {
+      "input": 4.35,
+      "result": "4.35"
+    },
+    {
+      "input": 0.005,
+      "result": "0.01"
+    },
+    {
+      "input": -0.005,
+      "result": "0"
+    },
+    {
+      "input": 999.995,
+      "result": "1,000"
+    },
+    {
+      "input": 0.30000000000000004,
+      "result": "0.30"
+    },
+    {
+      "input": -5,
+      "result": "-5"
+    },
+    {
+      "input": 1e-7,
+      "result": "0"
+    },
+    {
+      "input": 123456789012.34,
+      "result": "123,456,789,012.34"
+    },
+    {
+      "input": 100000000000000000000,
+      "result": "100,000,000,000,000,000,000"
+    },
+    {
+      "input": 1e+21,
+      "result": "999,999,999,999,999,900,000"
+    },
+    {
+      "input": 6390000,
+      "result": "6,390,000"
+    }
+  ],
+  "toAmount": [
+    {
+      "input": "",
+      "result": 0
+    },
+    {
+      "input": " ",
+      "result": 0
+    },
+    {
+      "input": "0",
+      "result": 0
+    },
+    {
+      "input": "1000",
+      "result": 1000
+    },
+    {
+      "input": "1,000",
+      "result": 0
+    },
+    {
+      "input": "1e3",
+      "result": 1000
+    },
+    {
+      "input": "0x10",
+      "result": 16
+    },
+    {
+      "input": "1_000",
+      "result": 0
+    },
+    {
+      "input": "12.345",
+      "result": 12.345
+    },
+    {
+      "input": "12.355",
+      "result": 12.355
+    },
+    {
+      "input": "2.5",
+      "result": 2.5
+    },
+    {
+      "input": "0.125",
+      "result": 0.125
+    },
+    {
+      "input": "-5",
+      "result": 0
+    },
+    {
+      "input": "abc",
+      "result": 0
+    },
+    {
+      "input": "Infinity",
+      "result": 0
+    },
+    {
+      "input": "NaN",
+      "result": 0
+    },
+    {
+      "input": "  42  ",
+      "result": 42
+    },
+    {
+      "input": "1.005",
+      "result": 1.005
+    },
+    {
+      "input": "-0",
+      "result": 0
+    },
+    {
+      "input": "+5",
+      "result": 5
+    },
+    {
+      "input": ".5",
+      "result": 0.5
+    },
+    {
+      "input": "5.",
+      "result": 5
+    },
+    {
+      "input": "1e400",
+      "result": 0
+    },
+    {
+      "input": "-Infinity",
+      "result": 0
+    },
+    {
+      "input": "0b101",
+      "result": 5
+    },
+    {
+      "input": "0o17",
+      "result": 15
+    },
+    {
+      "input": "-0x10",
+      "result": 0
+    },
+    {
+      "input": "1 000",
+      "result": 0
+    },
+    {
+      "input": "\t7\n",
+      "result": 7
+    },
+    {
+      "input": " 42 ",
+      "result": 42
+    },
+    {
+      "input": "﻿42",
+      "result": 42
+    },
+    {
+      "input": "1e-7",
+      "result": 1e-7
+    },
+    {
+      "input": "1e21",
+      "result": 1e+21
+    },
+    {
+      "input": "00012",
+      "result": 12
+    },
+    {
+      "input": "١٢",
+      "result": 0
+    },
+    {
+      "input": null,
+      "result": 0
+    },
+    {
+      "input": 1234567.891,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    },
+    {
+      "input": 0,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    },
+    {
+      "input": 1e+21,
+      "result": {
+        "error": "(raw ?? \"\").trim is not a function"
+      }
+    }
+  ]
+}

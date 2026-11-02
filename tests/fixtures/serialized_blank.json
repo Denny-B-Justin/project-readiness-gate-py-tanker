@@ -1,0 +1,250 @@
+{
+  "templateId": "pcn_global",
+  "canonicalAnswers": [
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "project_title",
+      "answer": ""
+    },
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "project_location",
+      "answer": ""
+    },
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "implementation_period",
+      "answer": {}
+    },
+    {
+      "sectionId": "investment_rationale",
+      "fieldId": "issues_and_justification",
+      "answer": ""
+    },
+    {
+      "sectionId": "investment_rationale",
+      "fieldId": "objectives",
+      "answer": ""
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "alternative_options_considered",
+      "answer": ""
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "scope_of_the_project",
+      "answer": []
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "project_beneficiaries",
+      "answer": ""
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "project_social_impact",
+      "answer": ""
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "gender_equality",
+      "answer": ""
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "environmental_and_climate_impacts",
+      "answer": ""
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "climate_change_adaptation_and_mitigation",
+      "answer": ""
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "investment_cost_estimate",
+      "answer": {
+        "componentCosts": {},
+        "narratives": {}
+      }
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "operating_costs",
+      "answer": {
+        "rows": {},
+        "narratives": {}
+      }
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "revenues",
+      "answer": {
+        "rows": {},
+        "narratives": {}
+      }
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "fieldId": "project_risks",
+      "answer": []
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "fieldId": "management_arrangements",
+      "answer": ""
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "fieldId": "documentation_and_permits",
+      "answer": {
+        "rows": {}
+      }
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "fieldId": "land_and_property_status",
+      "answer": {
+        "rows": {}
+      }
+    }
+  ],
+  "fields": [
+    {
+      "sectionId": "investment_identification",
+      "sectionLabel": "1. Investment Identification",
+      "fieldId": "project_title",
+      "fieldLabel": "1.1 Project title",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "investment_identification",
+      "sectionLabel": "1. Investment Identification",
+      "fieldId": "project_location",
+      "fieldLabel": "1.2 Project location",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "investment_identification",
+      "sectionLabel": "1. Investment Identification",
+      "fieldId": "implementation_period",
+      "fieldLabel": "1.3 Implementation period",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "investment_rationale",
+      "sectionLabel": "2. Investment Rationale",
+      "fieldId": "issues_and_justification",
+      "fieldLabel": "2.1 Issues that need to be addressed. Justification of the need for investments",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "investment_rationale",
+      "sectionLabel": "2. Investment Rationale",
+      "fieldId": "objectives",
+      "fieldLabel": "2.2 Objectives of the project",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "sectionLabel": "3. Project description and impact",
+      "fieldId": "alternative_options_considered",
+      "fieldLabel": "3.1 Alternative options considered",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "sectionLabel": "3. Project description and impact",
+      "fieldId": "scope_of_the_project",
+      "fieldLabel": "3.2 Scope of the project",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "sectionLabel": "3. Project description and impact",
+      "fieldId": "project_beneficiaries",
+      "fieldLabel": "3.3 Project beneficiaries",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "sectionLabel": "3. Project description and impact",
+      "fieldId": "project_social_impact",
+      "fieldLabel": "3.4 Project social impact",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "sectionLabel": "3. Project description and impact",
+      "fieldId": "gender_equality",
+      "fieldLabel": "3.5 Gender equality",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "sectionLabel": "3. Project description and impact",
+      "fieldId": "environmental_and_climate_impacts",
+      "fieldLabel": "3.6 Environmental and climate impacts",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "sectionLabel": "3. Project description and impact",
+      "fieldId": "climate_change_adaptation_and_mitigation",
+      "fieldLabel": "3.7 Climate change adaptation and mitigation",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "sectionLabel": "4. Estimated investment costs and expected financing",
+      "fieldId": "investment_cost_estimate",
+      "fieldLabel": "4.1 Investment cost estimate",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "sectionLabel": "4. Estimated investment costs and expected financing",
+      "fieldId": "operating_costs",
+      "fieldLabel": "4.2 Operating costs",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "sectionLabel": "4. Estimated investment costs and expected financing",
+      "fieldId": "revenues",
+      "fieldLabel": "4.3 Revenues",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "sectionLabel": "5. Project management and risks",
+      "fieldId": "project_risks",
+      "fieldLabel": "5.1 Project risks",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "sectionLabel": "5. Project management and risks",
+      "fieldId": "management_arrangements",
+      "fieldLabel": "5.2 Summary of the arrangements and roles of the institutions that will manage the project",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "sectionLabel": "6. Project advancement and available documentation",
+      "fieldId": "documentation_and_permits",
+      "fieldLabel": "6.1 Documentation and permits",
+      "serializedText": "No answer provided."
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "sectionLabel": "6. Project advancement and available documentation",
+      "fieldId": "land_and_property_status",
+      "fieldLabel": "6.2 Land and property status",
+      "serializedText": "No answer provided."
+    }
+  ],
+  "document": null,
+  "digest": "aiv1-f5079cf390bdb3640101a83e29e69a49c880470cf31edf290c7ebba4f5c1a022"
+}

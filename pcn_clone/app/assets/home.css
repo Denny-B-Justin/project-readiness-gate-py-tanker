@@ -1,0 +1,317 @@
+/*
+ * Home page: the dark masthead with its video guides, the "How it works"
+ * steps and the "Get started" call to action. Every rule is scoped under
+ * `home-`.
+ */
+
+/* ── Masthead ──────────────────────────────────────────────────────────── */
+
+.home-masthead {
+  overflow: hidden;
+  padding: 58px 0 70px;
+  background: var(--azure);
+}
+.home-masthead-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.home-masthead-copy {
+  min-width: 280px;
+  max-width: 600px;
+}
+.home-kicker-row {
+  margin-bottom: 20px;
+}
+.home-kicker {
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.home-masthead .home-kicker {
+  color: var(--on-dark-kicker);
+}
+.home-title {
+  margin: 0 0 18px;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--on-dark-heading);
+}
+.home-lede {
+  max-width: 600px;
+  margin: 0;
+  font-size: 16.5px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--on-dark-lede);
+  text-wrap: pretty;
+}
+
+/* Video guides: a full-width row under a rule, one card per video, stacked
+   until 40rem. */
+.home-guides {
+  flex-basis: 100%;
+  margin-top: 8px;
+  padding-top: 34px;
+  border-top: 1px solid var(--on-dark-control-border);
+}
+.home-guides-title {
+  display: block;
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+.home-guides-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (width >= 40rem) {
+  .home-guides-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.home-guide {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--on-dark-control-border);
+  border-radius: 12px;
+  background: var(--on-dark-control-bg);
+  color: var(--on-dark-heading);
+  outline: none;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.home-guide:hover {
+  border-color: var(--on-dark-control-hover-border);
+  background: var(--on-dark-control-hover-bg);
+}
+.home-guide:focus-visible {
+  box-shadow: var(--focus-ring-on-dark);
+}
+.home-guide-play {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--azure);
+}
+.home-guide-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.home-guide-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.home-guide-time {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--on-dark-kicker);
+}
+
+/* The screening illustration shows from 64rem up, enlarged by a quarter. */
+.home-masthead-visual {
+  display: none;
+  flex-shrink: 0;
+}
+.home-masthead-visual img {
+  transform: scale(1.25);
+  transform-origin: center;
+}
+@media (width >= 64rem) {
+  .home-masthead-visual {
+    display: block;
+  }
+}
+
+/* ── Sections below the masthead ───────────────────────────────────────── */
+
+.home-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* How it works */
+.home-how {
+  padding-top: 56px;
+  padding-bottom: 24px;
+}
+.home-section-head {
+  margin-bottom: 26px;
+}
+.home-section-title {
+  max-width: 660px;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+}
+.home-steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+@media (width >= 40rem) {
+  .home-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.card.home-step {
+  padding: 22px 22px 24px;
+}
+.home-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.home-step-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--blue-tint);
+  color: var(--blue-600);
+}
+.home-step-number {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+.home-step-title {
+  margin: 0 0 7px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.home-step-body {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* Get started */
+.home-get-started {
+  padding-top: 20px;
+  padding-bottom: 90px;
+}
+.home-cta {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  overflow: hidden;
+  padding: 24px 28px 24px 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-dialog);
+  background: var(--surface);
+  box-shadow: var(--shadow-pop);
+}
+.home-cta-accent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--blue-500) 0%, var(--blue-700) 100%);
+}
+.home-cta-lead {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 240px;
+}
+.home-cta-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--blue-border);
+  border-radius: 13px;
+  background: var(--blue-tint);
+  color: var(--blue-600);
+}
+.home-cta-copy {
+  min-width: 0;
+}
+.home-cta-eyebrow {
+  margin-bottom: 7px;
+}
+.home-cta-title {
+  margin: 0 0 5px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+}
+.home-cta-text {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.home-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+/* The call-to-action pair is a size up from `.btn-md`. */
+.btn.home-cta-btn {
+  height: auto;
+  gap: 5px;
+  padding: 11px 15px;
+  border-radius: 10px;
+}
+.btn-secondary.home-cta-btn:hover:not(:disabled) {
+  border-color: var(--blue-border);
+  background: var(--surface);
+  color: var(--blue-600);
+}
+.btn-primary.home-cta-btn {
+  gap: 7px;
+  padding: 12px 18px;
+  box-shadow: 0 2px 8px rgba(55, 66, 145, 0.32);
+}
+.btn.home-cta-btn:focus-visible {
+  box-shadow: var(--focus-ring);
+}

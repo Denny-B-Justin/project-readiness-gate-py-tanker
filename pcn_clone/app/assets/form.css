@@ -1,0 +1,1302 @@
+/*
+ * Proposer workspace (`pf-`): the project context bar and jump menu, the
+ * sections and field cards, every answer input, the field dialogs, and the
+ * back-to-top button. Built on the brand tokens and primitives in brand.css
+ * (.card, .btn, .pill, .icon-btn, .spinner, .dash-textarea, the Mantine
+ * modal and menu skins); the rules here add only what the workspace's
+ * design specifies.
+ *
+ * State hooks set by form.js: `data-pf-empty` on lists and worksheets,
+ * `data-pf-start` on worksheet rows, `.is-visible` on the back-to-top
+ * button, `.is-failed` on the autosave line.
+ */
+
+/* --- Context bar ----------------------------------------------------------- */
+
+.pf-bar {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 30;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.pf-bar-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: var(--subbar-h);
+  padding: 0 24px;
+}
+
+.pf-bar-start {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+.pf-crumb-link {
+  flex-shrink: 0;
+  margin: -2px -8px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.pf-crumb-link:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.pf-crumb-link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.icon.pf-crumb-sep {
+  color: var(--faint);
+}
+
+.pf-crumb-title {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pf-bar-end {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.pf-autosave {
+  display: none;
+  color: var(--faint);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* The failure line shows at every width, wrapping beside the buttons. */
+.pf-autosave.is-failed {
+  display: block;
+  max-width: 34ch;
+  color: var(--fail-ink);
+  line-height: 1.375;
+  text-align: right;
+  white-space: normal;
+}
+
+.btn.pf-submit {
+  gap: 6px;
+}
+
+/* Busy while the review is being created: the spinner takes the glyph's
+   place. */
+.pf-submit-spinner {
+  --spinner-size: 13px;
+  display: none;
+  color: currentColor;
+}
+
+.pf-submit[aria-busy="true"] .pf-submit-spinner {
+  display: inline-block;
+}
+
+.pf-submit[aria-busy="true"] .icon {
+  display: none;
+}
+
+.pf-submit-label {
+  display: none;
+}
+
+@media (width >= 40rem) {
+  .pf-autosave,
+  .pf-submit-label {
+    display: inline;
+  }
+}
+
+/* The scroll-progress fill, just over the bar's bottom border. */
+.pf-progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2.5px;
+  pointer-events: none;
+}
+
+.pf-progress-fill {
+  width: var(--scroll-progress, 0%);
+  height: 100%;
+  border-radius: 0 2px 2px 0;
+  background: var(--dark-blue);
+  transition: width 0.1s;
+}
+
+/* --- Jump menu ------------------------------------------------------------- */
+
+/* The menu's target wrapper may shrink, so a long section title truncates
+   instead of widening the bar. */
+.pf-bar-start > div:has(> .pf-jump-trigger) {
+  display: flex;
+  min-width: 0;
+}
+
+.pf-jump-trigger {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 11px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.pf-jump-trigger:hover:not(:disabled),
+.pf-jump-trigger[aria-expanded="true"] {
+  background: var(--surface);
+}
+
+.pf-jump-trigger[aria-expanded="true"] {
+  box-shadow: var(--shadow-card);
+}
+
+.pf-jump-trigger:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.pf-jump-number {
+  flex-shrink: 0;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--blue-tint);
+  color: var(--blue-700);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pf-jump-title {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  font-family: var(--font-heading), "Trebuchet MS", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon.pf-jump-chevron {
+  color: var(--muted);
+  transition: transform 0.2s;
+}
+
+.pf-jump-trigger[aria-expanded="true"] .pf-jump-chevron {
+  transform: rotate(180deg);
+}
+
+:root .pf-jump-menu {
+  padding: 8px;
+}
+
+:root .pf-jump-menu .pf-jump-label {
+  padding: 4px 8px;
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+:root .pf-jump-menu .pf-jump-item {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+:root .pf-jump-menu .pf-jump-item + .pf-jump-item {
+  margin-top: 4px;
+}
+
+:root .pf-jump-menu .pf-jump-label + .pf-jump-item {
+  margin-top: 4px;
+}
+
+:root .pf-jump-menu .pf-jump-item.is-active {
+  background: var(--blue-tint);
+  color: var(--blue-700);
+}
+
+.pf-jump-item-number {
+  display: inline-block;
+  width: 16px;
+  color: var(--faint);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pf-jump-item.is-active .pf-jump-item-number,
+.pf-jump-item.is-active .icon {
+  color: var(--blue-700);
+}
+
+/* --- Page, sections and tally ---------------------------------------------- */
+
+.pf-main {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+@media (width >= 40rem) {
+  .pf-main {
+    padding: 32px 24px;
+  }
+}
+
+.pf-section {
+  margin-bottom: 56px;
+  scroll-margin-top: calc(var(--nav-h) + var(--subbar-h) + 18px);
+}
+
+.pf-section-head {
+  margin-bottom: 26px;
+}
+
+.pf-section-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 12px;
+}
+
+.pf-eyebrow {
+  color: var(--blue-700);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pf-section-title {
+  margin-bottom: 10px;
+  color: var(--azure);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.pf-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pf-tally {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+}
+
+.pf-tally-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pf-tally-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.pf-tally-item.is-pass .pf-tally-dot {
+  background: var(--pass-dot);
+}
+
+.pf-tally-item.is-nc .pf-tally-dot {
+  background: var(--nc-dot);
+}
+
+.pf-tally-item.is-fail .pf-tally-dot {
+  background: var(--fail-dot);
+}
+
+.pf-tally-item.is-evaluating {
+  color: var(--blue-700);
+}
+
+.pf-tally-item.is-failed {
+  color: var(--fail-ink);
+}
+
+.pf-tally-item.is-idle {
+  color: var(--faint);
+}
+
+.pf-tally-item.is-idle .pf-tally-dot {
+  background: var(--border-strong);
+}
+
+/* --- Field card ------------------------------------------------------------ */
+
+.pf-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px 16px;
+  margin-bottom: 14px;
+}
+
+.pf-card-name {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 13px;
+}
+
+.pf-card-number {
+  flex-shrink: 0;
+  margin-top: 2px;
+  padding: 2px 8px;
+  border: 1px solid var(--blue-border);
+  border-radius: 7px;
+  background: var(--blue-tint);
+  color: var(--blue-700);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pf-card-title {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.pf-card-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pf-card-input {
+  margin-bottom: 14px;
+}
+
+.pf-issues {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.pf-issues p {
+  margin-bottom: 4px;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.pf-issues ul {
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.625;
+  list-style: disc;
+}
+
+.pf-issues li + li {
+  margin-top: 4px;
+}
+
+.pf-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 14px;
+}
+
+.pf-status {
+  display: flex;
+  min-height: 34px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-evaluating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue-700);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pf-notes-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.pf-notes-button:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.pf-notes-button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.pf-notes-label {
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pf-notes-label.is-stale {
+  color: var(--nc-ink);
+}
+
+.pf-notes-chevron {
+  display: inline-flex;
+  color: var(--faint);
+}
+
+.pf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pf-badge.is-stale {
+  border-color: var(--nc-border);
+  background: var(--nc-bg);
+  color: var(--nc-ink);
+}
+
+.pf-badge.is-failed {
+  border-color: var(--fail-border);
+  background: var(--fail-bg);
+  color: var(--fail-ink);
+}
+
+/* Verdict pills keep the pill radius at the small size too. */
+.pill.pf-verdict {
+  border-radius: var(--radius-pill);
+}
+
+/* --- Inputs ---------------------------------------------------------------- */
+
+/* Month inputs: Chrome's date-time editor adds its own vertical padding;
+   without it a month input is exactly as tall as a text input. */
+.pf-root ::-webkit-date-and-time-value {
+  min-height: 1lh;
+  text-align: inherit;
+}
+
+.pf-root ::-webkit-datetime-edit {
+  display: inline-flex;
+}
+
+.pf-root ::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+.pf-root ::-webkit-datetime-edit,
+.pf-root ::-webkit-datetime-edit-year-field,
+.pf-root ::-webkit-datetime-edit-month-field {
+  padding-block: 0;
+}
+
+/* An input slot lays its input out as if the input stood in its place. */
+.pf-slot {
+  display: contents;
+}
+
+.pf-input,
+.pf-narrative-input {
+  width: 100%;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  font-size: 14px;
+  transition-property: border-color, background-color, box-shadow;
+  transition-duration: 0.15s;
+}
+
+.pf-input {
+  padding: 10px 13px;
+}
+
+/* A field's textarea sits inline, on the text baseline, as in the
+   reference design (the card keeps the line's descender space under it). */
+:root .pf-textarea {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.pf-input:focus,
+.pf-narrative-input:focus,
+:root .pf-textarea:focus {
+  border-color: var(--blue-500);
+  outline: none;
+  background: var(--surface);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--blue-500) 25%, transparent);
+}
+
+.pf-input::placeholder,
+.pf-narrative-input::placeholder,
+.pf-cell-textarea::placeholder {
+  color: var(--faint);
+}
+
+.pf-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+@media (width >= 40rem) {
+  .pf-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pf-control-label {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* --- Tables ---------------------------------------------------------------- */
+
+/* Positioned, so the visually hidden labels inside (absolutely positioned)
+   scroll with the table instead of widening the page. */
+.pf-table-wrap {
+  position: relative;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.pf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+/* Every cell is ruled on all sides in line-soft; the first header cell
+   of a row-headed table is ruled in line. */
+.pf-table th,
+.pf-table td {
+  padding: 0;
+  border: 1px solid var(--line-soft);
+  vertical-align: middle;
+}
+
+.pf-table thead th {
+  padding: 8px;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.pf-table:not(.pf-list-grid) thead th:first-child {
+  padding: 8px 12px;
+  border-color: var(--line);
+}
+
+.pf-table tbody td {
+  padding: 6px;
+}
+
+.pf-table tbody th {
+  padding: 8px 12px;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.pf-cell,
+.pf-cell-textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--ink-soft);
+  outline: none;
+  transition-property: border-color, background-color, box-shadow, opacity;
+  transition-duration: 0.15s;
+}
+
+.pf-cell {
+  padding: 6px 8px;
+  background: var(--surface);
+  font-size: 12.5px;
+}
+
+.pf-cell-select {
+  text-align: center;
+}
+
+.pf-cell-textarea {
+  min-height: 44px;
+  padding: 6px 8px;
+  background: var(--surface-2);
+  font-size: 13px;
+  line-height: 1.375;
+  resize: vertical;
+}
+
+.pf-cell:focus,
+.pf-cell-textarea:focus {
+  border-color: var(--blue-500);
+  background: var(--surface);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--blue-500) 25%, transparent);
+}
+
+.pf-cell:disabled {
+  background: var(--line-soft);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Numbers in cells: borderless, right-aligned, tinted on focus. */
+.pf-table td.pf-num-cell {
+  padding: 4px;
+  text-align: right;
+}
+
+.pf-num {
+  width: 100%;
+  min-width: 44px;
+  padding: 6px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 13px;
+  text-align: right;
+  outline: none;
+  transition: background-color 0.15s;
+}
+
+.pf-num:focus {
+  border: none;
+  background: var(--blue-tint);
+  box-shadow: none;
+}
+
+.pf-num:disabled {
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pf-num::placeholder {
+  color: var(--faint);
+}
+
+.pf-caption {
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.375;
+}
+
+.pf-caption strong {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+/* --- List ------------------------------------------------------------------ */
+
+.pf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pf-table.pf-list-grid {
+  min-width: 640px;
+}
+
+.pf-list-grid th:first-child,
+.pf-list-grid td:first-child {
+  border-left-width: 0;
+}
+
+.pf-list-empty {
+  margin-bottom: 2px;
+  color: var(--faint);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.pf-list:not([data-pf-empty="true"]) .pf-list-empty,
+.pf-list:not([data-pf-empty="false"]) .pf-list-table {
+  display: none;
+}
+
+.pf-table td.pf-cell-action {
+  text-align: center;
+}
+
+.icon-btn.pf-row-remove {
+  border: 0;
+}
+
+.pf-add-item {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px dashed var(--blue-border);
+  border-radius: 9px;
+  background: var(--blue-tint);
+  color: var(--blue-700);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.15s;
+}
+
+.pf-add-item:hover:not(:disabled) {
+  background: var(--blue-tint-2);
+}
+
+.pf-add-item:focus-visible,
+.icon-btn.pf-row-remove:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* --- Worksheet ------------------------------------------------------------- */
+
+.pf-ws-empty {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 16px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.pf-ws-empty strong {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.pf-ws-body {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pf-worksheet[data-pf-empty="true"] .pf-ws-empty,
+.pf-worksheet[data-pf-empty="false"] .pf-ws-body {
+  display: flex;
+}
+
+.pf-subhead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.pf-subhead-title {
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.pf-subhead-note {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pf-ws-table {
+  min-width: 760px;
+}
+
+.pf-ws-from {
+  margin-left: 6px;
+  color: var(--faint);
+  font-size: 9.5px;
+  font-weight: 600;
+}
+
+.pf-table thead th.pf-ws-cost-head {
+  width: 78px;
+  text-align: center;
+}
+
+.pf-table thead th.pf-ws-total-head {
+  width: 96px;
+  text-align: center;
+}
+
+.pf-table thead th.pf-ws-category-head {
+  width: 160px;
+}
+
+.pf-ws-row-label {
+  display: block;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.pf-ws-row-years {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--faint);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.pf-ws-row-warning {
+  display: none;
+  margin-top: 4px;
+  color: var(--nc-ink);
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+tr[data-pf-start="missing"] .pf-ws-row-years {
+  display: none;
+}
+
+tr[data-pf-start="missing"] .pf-ws-row-warning {
+  display: inline-block;
+}
+
+.pf-table td.pf-ws-row-total {
+  padding: 8px;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.pf-cell.pf-ws-category {
+  padding: 6px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.pf-ws-summary {
+  min-width: 680px;
+}
+
+.pf-ws-summary thead th:not(:first-child) {
+  width: 78px;
+  text-align: center;
+}
+
+.pf-ws-summary thead th:last-child {
+  width: 96px;
+}
+
+.pf-table.pf-ws-summary tbody td {
+  padding: 8px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  text-align: right;
+}
+
+.pf-table.pf-ws-summary tbody td.pf-ws-sum-total {
+  background: var(--surface-2);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.pf-table.pf-ws-summary tr.pf-ws-total-row > * {
+  border-top-width: 1.5px;
+  background: var(--blue-tint);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.pf-table.pf-ws-summary tr.pf-ws-total-row > td.pf-ws-sum-total {
+  color: var(--blue-700);
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+/* --- Narratives ------------------------------------------------------------ */
+
+.pf-narratives {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pf-narrative {
+  display: grid;
+  align-items: start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+@media (width >= 40rem) {
+  .pf-narrative {
+    grid-template-columns: 232px minmax(0, 1fr);
+  }
+}
+
+.pf-narrative-label {
+  margin: 0 0 4px;
+  padding-top: 6px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.375;
+}
+
+.pf-narrative-input {
+  min-height: 72px;
+  padding: 10px 12px;
+  line-height: 1.375;
+  resize: vertical;
+}
+
+/* --- Scenario comparison --------------------------------------------------- */
+
+.pf-scenario,
+.pf-static {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pf-gate {
+  display: flex;
+  max-width: 24rem;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pf-gate .pf-control-label {
+  margin: 0 0 4px;
+}
+
+.pf-input.pf-gate-select {
+  padding: 10px 12px;
+}
+
+.pf-scenario-table {
+  min-width: 480px;
+}
+
+.pf-scenario-table thead th:not(:first-child) {
+  text-align: center;
+}
+
+.pf-table tr.pf-computed-row > * {
+  padding: 10px 12px;
+  border-top-width: 1.5px;
+  background: var(--blue-tint);
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+/* A computed or total row is ruled above in blue-border at its heading. */
+.pf-table tr.pf-computed-row > th,
+.pf-table.pf-ws-summary tr.pf-ws-total-row > th {
+  border-color: var(--blue-border);
+}
+
+.pf-table tr.pf-computed-row > td {
+  padding: 10px 8px;
+  text-align: right;
+}
+
+/* --- Static table ---------------------------------------------------------- */
+
+.pf-static-table {
+  min-width: 740px;
+}
+
+.pf-table thead th.pf-th-center {
+  text-align: center;
+}
+
+.pf-cell-textarea.pf-cell-comment {
+  min-height: 34px;
+}
+
+/* --- Dialogs --------------------------------------------------------------- */
+
+:root .pf-dialog {
+  max-height: min(74vh, 620px);
+}
+
+:root .pf-dialog .pf-dialog-header {
+  padding-right: 48px;
+}
+
+:root .pf-notes-dialog .pf-dialog-header {
+  padding-right: 16px;
+}
+
+:root .pf-dialog .pf-dialog-heading {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+}
+
+.pf-dialog-icon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 9px;
+}
+
+.pf-dialog-icon.is-blue {
+  background: var(--blue-tint);
+  color: var(--blue-700);
+}
+
+.pf-dialog-icon.is-slate {
+  background: var(--bg);
+  color: var(--ink-soft);
+}
+
+.pf-dialog-names {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.pf-dialog-title {
+  color: var(--ink);
+  font-family: var(--font-heading), "Trebuchet MS", system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.pf-dialog-field {
+  overflow: hidden;
+  color: var(--muted);
+  font-family: var(--font-body), Roboto, Arial, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pf-dialog-number {
+  margin-right: 6px;
+  color: var(--faint);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+}
+
+.pf-dialog-prose {
+  color: var(--body);
+  font-size: 13.5px;
+  line-height: 1.625;
+  white-space: pre-wrap;
+}
+
+.pf-rubric {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: start;
+  gap: 16px 12px;
+}
+
+.pf-rubric dt .pill {
+  margin-top: 2px;
+}
+
+.pf-rubric dd {
+  color: var(--body);
+  font-size: 13.5px;
+  line-height: 1.625;
+}
+
+.pf-notes-stale {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--nc-border);
+  border-radius: 10px;
+  background: var(--nc-bg);
+  color: var(--nc-ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.625;
+}
+
+.pf-notes-stale .icon {
+  margin-top: 3px;
+}
+
+.pf-notes-section + .pf-notes-section,
+.pf-notes-section + .pf-notes-none {
+  margin-top: 16px;
+}
+
+.pf-notes-heading {
+  margin-bottom: 6px;
+  color: var(--faint);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pf-notes-suggestions {
+  padding-left: 20px;
+  color: var(--body);
+  font-size: 13.5px;
+  line-height: 1.625;
+  list-style: decimal;
+}
+
+.pf-notes-suggestions li + li {
+  margin-top: 6px;
+}
+
+.pf-notes-none {
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+/* --- Back to top ----------------------------------------------------------- */
+
+.pf-back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: var(--blue-600);
+  box-shadow: var(--shadow-pop);
+  color: var(--surface);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.2s,
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.pf-back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.pf-back-to-top:hover:not(:disabled) {
+  background: var(--blue-700);
+}
+
+.pf-back-to-top:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

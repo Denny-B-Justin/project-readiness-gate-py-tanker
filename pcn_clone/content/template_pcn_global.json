@@ -1,0 +1,661 @@
+{
+  "id": "pcn_global",
+  "version": "1.5.0",
+  "title": "Project Concept Note",
+  "label": "Global",
+  "region": "Global",
+  "description": "Standardised proposal form used at the earliest stage of the Public Investment Management (PIM) pipeline.",
+  "guidance": "Keep feedback concise and direct. Use plain, actionable language; avoid hedging.\nWhen something is missing or unclear, say so in one or two sentences, name the\nspecific field or figure at issue, and stop. Don't pad with praise or restate the\nproposer's answer back to them. When an answer is acceptable, say so briefly.",
+  "sections": [
+    {
+      "id": "investment_identification",
+      "number": "1",
+      "title": "Investment Identification",
+      "fields": [
+        {
+          "id": "project_title",
+          "number": "1.1",
+          "title": "Project title",
+          "guidance": "Make sure to use the correct title of the project in full. Once a project has been accepted, the title shown in this field will become its official name.",
+          "input": {
+            "type": "text"
+          }
+        },
+        {
+          "id": "project_location",
+          "number": "1.2",
+          "title": "Project location",
+          "guidance": "Please specify the project location by providing the town or city name and address, or provide geospatial data.",
+          "input": {
+            "type": "text"
+          }
+        },
+        {
+          "id": "implementation_period",
+          "number": "1.3",
+          "title": "Implementation period",
+          "guidance": "Please specify the expected project start date, understood as the start of works under the first component, and the estimated project completion date, understood as the period of handing over the infrastructure for operation.",
+          "input": {
+            "type": "group",
+            "fields": [
+              {
+                "id": "project_start_date",
+                "label": "Project Start Date",
+                "type": "month"
+              },
+              {
+                "id": "estimated_project_completion_date",
+                "label": "Estimated Project Completion Date",
+                "type": "month"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "investment_rationale",
+      "number": "2",
+      "title": "Investment Rationale",
+      "fields": [
+        {
+          "id": "issues_and_justification",
+          "number": "2.1",
+          "title": "Issues that need to be addressed. Justification of the need for investments",
+          "guidance": "Describe in detail the current situation and issues from the perspective of those who will benefit from the investment. Provide relevant facts and details about both present conditions and future needs. Explain the main problem, its causes, and effects. Justify why the project is needed and worth implementing with regard to the described problem."
+        },
+        {
+          "id": "objectives",
+          "number": "2.2",
+          "title": "Objectives of the project",
+          "guidance": "State the objectives that the proposing authority aims to meet with this proposal.\nThere should be one or a few primary objectives expressed in no more than two or three sentences.\nThe objectives should be specific to dealing with the problem/opportunity described in section 2.1; they should be measurable (to achieve what by when?). They should also be realistic against previous experience of similar projects.\nAn example of an objective might be ‘to reduce fatal road accidents in [location] to less than [number] by [date] through [construction of…]’\nA number of secondary objectives may also be listed if appropriate."
+        }
+      ]
+    },
+    {
+      "id": "project_description_and_impact",
+      "number": "3",
+      "title": "Project description and impact",
+      "fields": [
+        {
+          "id": "alternative_options_considered",
+          "number": "3.1",
+          "title": "Alternative options considered",
+          "guidance": "There may be several ways to address the identified problem or respond to the needs, including non-capital solutions. List and briefly describe the alternative options considered and explain why they were rejected in favour of the proposed solution."
+        },
+        {
+          "id": "scope_of_the_project",
+          "number": "3.2",
+          "title": "Scope of the project",
+          "guidance": "Present the project scope as a list of its components — the activities necessary for the completion of the project, such as preparation of documentation, procurement, construction works, and equipment procurement. Each component of the scope should be briefly described.",
+          "input": {
+            "type": "list",
+            "addItemLabel": "Add component",
+            "fields": [
+              {
+                "id": "component",
+                "label": "Component",
+                "type": "text"
+              },
+              {
+                "id": "expected_start_date",
+                "label": "Expected start date",
+                "type": "month"
+              },
+              {
+                "id": "expected_end_date",
+                "label": "Expected end date",
+                "type": "month"
+              }
+            ]
+          }
+        },
+        {
+          "id": "project_beneficiaries",
+          "number": "3.3",
+          "title": "Project beneficiaries",
+          "guidance": "Please provide an overview of the primary beneficiaries of the proposed project, including an estimate of their number. Additionally, provide an estimate of the anticipated project demand (how many users should be expected), referencing pertinent available statistics, examples of similar projects, or conducted surveys. If referring to forecasted data, include the source of such forecasts."
+        },
+        {
+          "id": "project_social_impact",
+          "number": "3.4",
+          "title": "Project social impact",
+          "guidance": "Please describe the potential effects of the project on society beyond the direct beneficiaries. Focus on the wider benefits and indirect impacts, such as effects on local communities, specific social groups, the local economy, or public services. Explain how the project may contribute to broader social, economic, or systemic changes. Please also take into account any potential negative or unintended social effects (costs) of the project, where relevant."
+        },
+        {
+          "id": "gender_equality",
+          "number": "3.5",
+          "title": "Gender equality",
+          "guidance": "Is the project expected to have a positive or negative impact on gender equality? Please justify your answer."
+        },
+        {
+          "id": "environmental_and_climate_impacts",
+          "number": "3.6",
+          "title": "Environmental and climate impacts",
+          "guidance": "Please analyse how the implementation of the proposed project may affect the natural environment and climate, including both potential positive and negative effects. This includes possible changes in greenhouse gas (GHG) emissions, impact on biodiversity, land use, water resources, or other relevant environmental factors."
+        },
+        {
+          "id": "climate_change_adaptation_and_mitigation",
+          "number": "3.7",
+          "title": "Climate change adaptation and mitigation",
+          "guidance": "Describe whether and how the proposed project contributes to strengthening the municipality's capacity to adapt to climate change. Adaptation measures may include, but are not limited to: increasing the surface of green areas, enhancing natural water retention, introducing nature-based solutions, providing support to climate change-vulnerable groups, implementing early warning systems, and modernisation of buildings for energy efficiency. Please provide information if the project includes solutions directly aimed at reducing GHG emissions, and if so describe them in detail."
+        }
+      ]
+    },
+    {
+      "id": "estimated_investment_costs_and_financing",
+      "number": "4",
+      "title": "Estimated investment costs and expected financing",
+      "fields": [
+        {
+          "id": "investment_cost_estimate",
+          "number": "4.1",
+          "title": "Investment cost estimate",
+          "guidance": "Provide the investment cost estimate by project component, drawing the components from the project scope in section 3.2. For each component, select the cost category that best describes it and enter its expected cost for each of the first five years, anchored by the component's start date in section 3.2; enter costs for any subsequent years where relevant. Component totals, the expenditure-category summary, and the grand total are calculated automatically. Then explain on what basis the costs were estimated (including whether they include VAT) and set out the expected sources of financing for the project.",
+          "input": {
+            "type": "worksheet",
+            "rowSource": {
+              "sectionId": "project_description_and_impact",
+              "fieldId": "scope_of_the_project",
+              "labelControlId": "component",
+              "startDateControlId": "expected_start_date"
+            },
+            "rowControls": [
+              {
+                "id": "cost_category",
+                "label": "Cost category",
+                "type": "select",
+                "options": [
+                  {
+                    "value": "preparatory_documentation",
+                    "label": "Preparatory documentation"
+                  },
+                  {
+                    "value": "land",
+                    "label": "Purchase of land"
+                  },
+                  {
+                    "value": "construction",
+                    "label": "Construction"
+                  },
+                  {
+                    "value": "equipment",
+                    "label": "Equipment, vehicles, machinery, furniture etc."
+                  },
+                  {
+                    "value": "software",
+                    "label": "Software"
+                  },
+                  {
+                    "value": "other_costs",
+                    "label": "Other costs"
+                  },
+                  {
+                    "value": "reserve",
+                    "label": "Reserve, up to 10%"
+                  }
+                ]
+              },
+              {
+                "id": "year_1",
+                "label": "Year 1",
+                "type": "number"
+              },
+              {
+                "id": "year_2",
+                "label": "Year 2",
+                "type": "number"
+              },
+              {
+                "id": "year_3",
+                "label": "Year 3",
+                "type": "number"
+              },
+              {
+                "id": "year_4",
+                "label": "Year 4",
+                "type": "number"
+              },
+              {
+                "id": "year_5",
+                "label": "Year 5",
+                "type": "number"
+              },
+              {
+                "id": "subsequent_years",
+                "label": "Subsequent years",
+                "type": "number"
+              }
+            ],
+            "rowTotal": {
+              "id": "total_investment_cost",
+              "label": "Total investment cost",
+              "sum": [
+                "year_1",
+                "year_2",
+                "year_3",
+                "year_4",
+                "year_5",
+                "subsequent_years"
+              ]
+            },
+            "summary": {
+              "groupBy": "cost_category",
+              "includeTotalRow": true
+            },
+            "optionalRowControls": [
+              "subsequent_years"
+            ],
+            "narrativeFields": [
+              {
+                "id": "estimation_basis",
+                "label": "Specify on what basis the investment costs were estimated. Do the costs include VAT?",
+                "type": "textarea"
+              },
+              {
+                "id": "financing_sources",
+                "label": "Please provide expected sources of financing for the project",
+                "type": "textarea"
+              }
+            ]
+          }
+        },
+        {
+          "id": "operating_costs",
+          "number": "4.2",
+          "title": "Operating costs",
+          "guidance": "Please provide estimates of the annual operating costs resulting from the implementation of the project. Where applicable, indicate the operating costs for relevant years in the scenario without project implementation and specify the difference.",
+          "input": {
+            "type": "scenario_comparison",
+            "columns": [
+              {
+                "id": "year_1",
+                "label": "1st operating year"
+              },
+              {
+                "id": "year_2",
+                "label": "2nd operating year"
+              },
+              {
+                "id": "year_3",
+                "label": "3rd operating year"
+              }
+            ],
+            "enteredRows": [
+              {
+                "id": "with_project",
+                "label": "With project"
+              },
+              {
+                "id": "without_project",
+                "label": "Without project"
+              }
+            ],
+            "computedRows": [
+              {
+                "id": "difference",
+                "label": "Difference",
+                "subtract": [
+                  "with_project",
+                  "without_project"
+                ]
+              }
+            ],
+            "requiredRows": [
+              "with_project"
+            ],
+            "narrativeFields": [
+              {
+                "id": "justification",
+                "label": "Justification",
+                "type": "textarea"
+              },
+              {
+                "id": "financing_approach",
+                "label": "If increased operating costs are foreseen, describe the approach to their financing. Has any preliminary assessment regarding the capacity to cover these costs been made?",
+                "type": "textarea"
+              }
+            ]
+          }
+        },
+        {
+          "id": "revenues",
+          "number": "4.3",
+          "title": "Revenues",
+          "guidance": "Is the project expected to generate revenue? If yes, please specify the nature of the revenue streams and provide estimated annual amounts for the initial 3 years of the operational period. If not, please indicate non-applicability. Where the project would generate no revenue without it, enter 0 in the \"without project\" row rather than leaving it blank, so the revenue row computes.",
+          "input": {
+            "type": "scenario_comparison",
+            "applicability": {
+              "id": "revenue_expected",
+              "label": "Is the project expected to generate revenue?",
+              "type": "select",
+              "activeValue": "yes",
+              "options": [
+                {
+                  "value": "yes",
+                  "label": "Yes"
+                },
+                {
+                  "value": "no",
+                  "label": "No"
+                }
+              ]
+            },
+            "columns": [
+              {
+                "id": "year_1",
+                "label": "1st operating year"
+              },
+              {
+                "id": "year_2",
+                "label": "2nd operating year"
+              },
+              {
+                "id": "year_3",
+                "label": "3rd operating year"
+              }
+            ],
+            "enteredRows": [
+              {
+                "id": "with_project",
+                "label": "Expected revenue with project"
+              },
+              {
+                "id": "without_project",
+                "label": "Expected revenue without project"
+              }
+            ],
+            "computedRows": [
+              {
+                "id": "revenue",
+                "label": "Revenue",
+                "subtract": [
+                  "with_project",
+                  "without_project"
+                ]
+              }
+            ],
+            "requiredRows": [
+              "with_project"
+            ],
+            "narrativeFields": [
+              {
+                "id": "justification",
+                "label": "Justification",
+                "type": "textarea"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "project_management_and_risks",
+      "number": "5",
+      "title": "Project management and risks",
+      "fields": [
+        {
+          "id": "project_risks",
+          "number": "5.1",
+          "title": "Project risks",
+          "guidance": "Projects are subject to a range of risks during both preparation and implementation, which may result in delays, cost overruns, or failure to deliver expected project outcomes. Identify and briefly describe all foreseeable risks that could affect the successful delivery or operational performance of the project (e.g. design risk, political risk, currency-exchange fluctuations), and outline what will be done to minimise their impact. Climate and disaster risks must be discussed, along with the assumed climate-change adaptation measures. For each risk factor, assess its likelihood of occurrence and potential impact on the project using a 5-grade scale — likelihood: 1 very unlikely, 2 unlikely, 3 about as likely as not, 4 likely, 5 very likely; impact: 1 negligible, 2 minor, 3 moderate, 4 critical, 5 catastrophic. For each risk with the combined severity (likelihood × impact) equal to or above 4, provide risk reduction measures.",
+          "input": {
+            "type": "list",
+            "addItemLabel": "Add risk",
+            "fields": [
+              {
+                "id": "risk_factor",
+                "label": "Risk factor",
+                "type": "textarea"
+              },
+              {
+                "id": "likelihood",
+                "label": "Likelihood",
+                "type": "select",
+                "options": [
+                  {
+                    "value": "1",
+                    "label": "1 — Very unlikely"
+                  },
+                  {
+                    "value": "2",
+                    "label": "2 — Unlikely"
+                  },
+                  {
+                    "value": "3",
+                    "label": "3 — About as likely as not"
+                  },
+                  {
+                    "value": "4",
+                    "label": "4 — Likely"
+                  },
+                  {
+                    "value": "5",
+                    "label": "5 — Very likely"
+                  }
+                ]
+              },
+              {
+                "id": "impact",
+                "label": "Impact",
+                "type": "select",
+                "options": [
+                  {
+                    "value": "1",
+                    "label": "1 — Negligible"
+                  },
+                  {
+                    "value": "2",
+                    "label": "2 — Minor"
+                  },
+                  {
+                    "value": "3",
+                    "label": "3 — Moderate"
+                  },
+                  {
+                    "value": "4",
+                    "label": "4 — Critical"
+                  },
+                  {
+                    "value": "5",
+                    "label": "5 — Catastrophic"
+                  }
+                ]
+              },
+              {
+                "id": "risk_reduction_measures",
+                "label": "Risk reduction measures",
+                "type": "textarea"
+              }
+            ],
+            "conditionalRequirements": [
+              {
+                "target": "risk_reduction_measures",
+                "when": {
+                  "kind": "product_gte",
+                  "factors": [
+                    "likelihood",
+                    "impact"
+                  ],
+                  "threshold": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "management_arrangements",
+          "number": "5.2",
+          "title": "Summary of the arrangements and roles of the institutions that will manage the project",
+          "guidance": "Describe how the project will be managed during both implementation and operation, identifying the positions or units responsible for key tasks and providing brief information on their relevant experience.",
+          "input": {
+            "type": "textarea"
+          }
+        }
+      ]
+    },
+    {
+      "id": "project_advancement_and_documentation",
+      "number": "6",
+      "title": "Project advancement and available documentation",
+      "fields": [
+        {
+          "id": "documentation_and_permits",
+          "number": "6.1",
+          "title": "Documentation and permits",
+          "guidance": "For each item of project documentation and each permit listed, indicate whether it is required for the project, its current status, the expected acquisition date where it is not yet available, and any clarifying comment. These rows are fixed; complete every row that applies to the project.",
+          "input": {
+            "type": "static_table",
+            "rows": [
+              {
+                "id": "preliminary_feasibility_study",
+                "label": "Preliminary feasibility study"
+              },
+              {
+                "id": "technical_and_economic_analysis",
+                "label": "Technical and economic analysis"
+              },
+              {
+                "id": "conceptual_design",
+                "label": "Conceptual design"
+              },
+              {
+                "id": "architectural_and_construction_project",
+                "label": "Architectural and construction project"
+              },
+              {
+                "id": "environmental_impact_assessment",
+                "label": "EIA / Environmental assessment"
+              },
+              {
+                "id": "building_permit",
+                "label": "Building permit"
+              },
+              {
+                "id": "other_permissions",
+                "label": "Other required permissions / licenses / patents"
+              },
+              {
+                "id": "tender_documentation",
+                "label": "Tender documentation"
+              }
+            ],
+            "columns": [
+              {
+                "id": "required",
+                "label": "Is it required for the project?",
+                "type": "select",
+                "options": [
+                  {
+                    "value": "yes",
+                    "label": "Yes"
+                  },
+                  {
+                    "value": "no",
+                    "label": "No"
+                  }
+                ]
+              },
+              {
+                "id": "status",
+                "label": "Status",
+                "type": "select",
+                "options": [
+                  {
+                    "value": "available",
+                    "label": "Available"
+                  },
+                  {
+                    "value": "in_progress",
+                    "label": "In progress"
+                  },
+                  {
+                    "value": "not_started",
+                    "label": "Not started"
+                  }
+                ]
+              },
+              {
+                "id": "expected_acquisition_date",
+                "label": "Expected acquisition date",
+                "type": "month"
+              },
+              {
+                "id": "comment",
+                "label": "Comment",
+                "type": "textarea"
+              }
+            ],
+            "requiredColumns": [
+              "required"
+            ]
+          }
+        },
+        {
+          "id": "land_and_property_status",
+          "number": "6.2",
+          "title": "Land and property status",
+          "guidance": "Indicate whether secure rights to the land needed for the project are required, their current status, the expected acquisition date where they are not yet secured, and any clarifying comment.",
+          "input": {
+            "type": "static_table",
+            "rows": [
+              {
+                "id": "land_ownership",
+                "label": "Land ownership or the right to use the land for construction purposes"
+              }
+            ],
+            "columns": [
+              {
+                "id": "required",
+                "label": "Is it required for the project?",
+                "type": "select",
+                "options": [
+                  {
+                    "value": "yes",
+                    "label": "Yes"
+                  },
+                  {
+                    "value": "no",
+                    "label": "No"
+                  }
+                ]
+              },
+              {
+                "id": "status",
+                "label": "Status",
+                "type": "select",
+                "options": [
+                  {
+                    "value": "ready_and_approved",
+                    "label": "Ready and approved"
+                  },
+                  {
+                    "value": "in_progress",
+                    "label": "In progress"
+                  },
+                  {
+                    "value": "not_started",
+                    "label": "Not started"
+                  }
+                ]
+              },
+              {
+                "id": "expected_acquisition_date",
+                "label": "Expected acquisition date",
+                "type": "month"
+              },
+              {
+                "id": "comment",
+                "label": "Comment",
+                "type": "textarea"
+              }
+            ],
+            "requiredColumns": [
+              "required"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

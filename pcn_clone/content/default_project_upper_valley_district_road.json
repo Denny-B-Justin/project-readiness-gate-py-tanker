@@ -1,0 +1,284 @@
+{
+  "id": "upper_valley_district_road",
+  "version": "1.0.0",
+  "title": "Upper Valley District Road Rehabilitation",
+  "description": "Completed global PCN example with impacts, costs, financing, risks, and documentation pre-filled.",
+  "tags": [
+    "Transport"
+  ],
+  "submission": {
+    "templateId": "pcn_global",
+    "answers": [
+      {
+        "sectionId": "investment_identification",
+        "fieldId": "project_title",
+        "answer": "Rehabilitation of the 18 km Upper Valley District Road to the District Hospital"
+      },
+      {
+        "sectionId": "investment_identification",
+        "fieldId": "project_location",
+        "answer": "Route D-14 in Northern District, from the Riverside Market junction (Riverside Main Road, GPS 41.1234, -8.1234) through Millbrook, Stonebridge, Greenfield and Oakhurst to the Hilltown District Hospital main gate (Hospital Road 22, GPS 41.2345, -8.2345), covering the full 18 km upper-valley corridor."
+      },
+      {
+        "sectionId": "investment_identification",
+        "fieldId": "implementation_period",
+        "answer": {
+          "project_start_date": "2026-03",
+          "estimated_project_completion_date": "2028-03"
+        }
+      },
+      {
+        "sectionId": "investment_rationale",
+        "fieldId": "issues_and_justification",
+        "answer": "The 18 km district road linking the five villages of the upper valley to the district hospital is severely degraded. It has not been resurfaced in 16 years, and the original drainage culverts have collapsed, so storm water now runs along and across the carriageway. Roughly 12,400 residents depend on this road as their only route to the hospital. In the dry season the 18 km journey takes about 90 minutes by shared minibus; for an estimated four months of the rainy season, three low-lying sections become impassable, cutting the villages off entirely or forcing a 47 km detour. District health records show 60 to 70 hospital transfers per month from these villages, and clinic staff report that delayed arrivals are a routine cause of complications in maternal and emergency cases. Two of the four minibus operators have stopped serving the route because of repeated vehicle damage, reducing available transport. Without intervention the road will continue to deteriorate, and the population—projected to reach about 15,000 within ten years—will face worsening access to essential health care, markets, and public services."
+      },
+      {
+        "sectionId": "investment_rationale",
+        "fieldId": "objectives",
+        "answer": "The primary objective is to reduce the average travel time from the five upper-valley villages to the district hospital from 90 minutes to no more than 35 minutes by March 2028, by rehabilitating the full 18 km of district road and reconstructing its drainage. A secondary objective is to keep the road passable year-round, eliminating the rainy-season closures that currently isolate the villages for roughly four months each year."
+      },
+      {
+        "sectionId": "project_description_and_impact",
+        "fieldId": "alternative_options_considered",
+        "answer": "Three options were assessed in the preliminary feasibility study. The first was continued reactive patching and culvert cleaning; it had the lowest initial cost but would not restore all-weather access and had the highest ten-year maintenance cost. The second was construction of a new 24 km alignment on higher ground; it reduced flood exposure but required substantial land acquisition, affected two sensitive habitats, and cost about 2.4 times more. The preferred option is rehabilitation of the existing 18 km alignment with reconstructed drainage, raised low-lying sections, safety improvements, and a funded maintenance plan. It delivers the required travel-time and resilience outcomes within the available budget while avoiding displacement and major new land take."
+      },
+      {
+        "sectionId": "project_description_and_impact",
+        "fieldId": "scope_of_the_project",
+        "answer": [
+          {
+            "_rowId": "comp-design",
+            "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+            "expected_start_date": "2026-03",
+            "expected_end_date": "2026-09"
+          },
+          {
+            "_rowId": "comp-works",
+            "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+            "expected_start_date": "2026-10",
+            "expected_end_date": "2028-03"
+          },
+          {
+            "_rowId": "comp-equipment",
+            "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+            "expected_start_date": "2027-06",
+            "expected_end_date": "2027-12"
+          }
+        ]
+      },
+      {
+        "sectionId": "project_description_and_impact",
+        "fieldId": "project_beneficiaries",
+        "answer": "The principal direct beneficiaries are the approximately 12,400 residents of Riverside, Millbrook, Stonebridge, Greenfield, and Oakhurst, including about 6,350 women and girls. District population projections indicate the catchment will reach roughly 15,000 people by 2036. Current demand includes 60–70 hospital transfers each month, approximately 1,100 weekly passenger trips recorded by the district transport survey, 740 pupils and staff travelling to three schools along the corridor, and 85 farms and small businesses that use the route to reach Riverside Market. Demand is expected to grow by 2.1% annually, based on the district statistics office's 2025 population forecast and traffic counts from two comparable rehabilitated rural roads."
+      },
+      {
+        "sectionId": "project_description_and_impact",
+        "fieldId": "project_social_impact",
+        "answer": "The project is expected to improve timely access to emergency and maternal health care, school attendance during the rainy season, and reliable market access for small producers. Safer shoulders, marked crossings near settlements, speed-calming at schools, and restored bus services will reduce exposure to traffic injury. Rehabilitation stays within the existing public right-of-way, so no households or businesses will be physically or economically displaced. Temporary construction impacts—noise, dust, traffic delays, and restricted property access—will be managed through a contractor traffic plan, advance notices, maintained pedestrian access, and a documented grievance mechanism. The scope reflects consultations held in all five villages in October 2025, attended by 286 residents, health workers, transport operators, traders, school representatives, and disability advocates."
+      },
+      {
+        "sectionId": "project_description_and_impact",
+        "fieldId": "gender_equality",
+        "answer": "Women and girls are expected to benefit disproportionately because women make most accompanied health trips, represent 63% of traders surveyed at Riverside Market, and reported the greatest safety concerns while waiting for transport after dark. The design includes lit waiting areas at the five settlement stops, continuous pedestrian space through village centres, and crossings located through a safety walk conducted with women's groups and school representatives. The works contract will target at least 30% women among locally recruited non-specialist workers and require equal pay and a worker code of conduct. Monitoring will report travel time, transport availability, road-safety incidents, employment, and grievance outcomes disaggregated by sex and age."
+      },
+      {
+        "sectionId": "project_description_and_impact",
+        "fieldId": "environmental_and_climate_impacts",
+        "answer": "The environmental assessment identifies temporary construction risks from dust, noise, spoil, fuel handling, erosion, sediment entering streams, and disruption around three culvert crossings. No protected habitat or critical ecosystem lies within the existing right-of-way, and no new road corridor or quarry is proposed. Contract measures include approved material sources, covered haulage, water-based dust suppression, bunded fuel storage, sediment controls, timed in-stream work, topsoil recovery, revegetation, and independent monthly compliance inspections. In operation, safer drainage will reduce uncontrolled runoff and erosion; possible induced traffic and associated emissions will be monitored through annual traffic counts."
+      },
+      {
+        "sectionId": "project_description_and_impact",
+        "fieldId": "climate_change_adaptation_and_mitigation",
+        "answer": "Climate screening used the national 2050 rainfall projections, which show an increase in short-duration rainfall intensity and more frequent flash flooding. Culverts and side drains will therefore be sized for the projected higher-intensity design storm, three vulnerable road sections will be raised, overflow routes will be protected, and nature-based slope stabilisation and roadside planting will slow runoff. The maintenance plan funds pre-rainy-season drain clearing and rapid post-event inspection and repair. Mitigation measures include reusing milled pavement in the sub-base, specifying warm-mix asphalt where locally available, minimising haul distances through approved nearby sources, maintaining efficient construction equipment, and replacing removed vegetation at a ratio of at least two native trees for every tree removed."
+      },
+      {
+        "sectionId": "estimated_investment_costs_and_financing",
+        "fieldId": "investment_cost_estimate",
+        "answer": {
+          "componentCosts": {
+            "comp-design": {
+              "cost_category": "preparatory_documentation",
+              "year_1": "180000",
+              "year_2": "0",
+              "year_3": "0",
+              "year_4": "0",
+              "year_5": "0",
+              "subsequent_years": ""
+            },
+            "comp-works": {
+              "cost_category": "construction",
+              "year_1": "600000",
+              "year_2": "4200000",
+              "year_3": "900000",
+              "year_4": "0",
+              "year_5": "0",
+              "subsequent_years": "0"
+            },
+            "comp-equipment": {
+              "cost_category": "equipment",
+              "year_1": "320000",
+              "year_2": "0",
+              "year_3": "0",
+              "year_4": "0",
+              "year_5": "0",
+              "subsequent_years": ""
+            }
+          },
+          "narratives": {
+            "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+            "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+          }
+        }
+      },
+      {
+        "sectionId": "estimated_investment_costs_and_financing",
+        "fieldId": "operating_costs",
+        "answer": {
+          "rows": {
+            "with_project": {
+              "year_1": "120000",
+              "year_2": "125000",
+              "year_3": "130000"
+            },
+            "without_project": {
+              "year_1": "90000",
+              "year_2": "92000",
+              "year_3": "95000"
+            }
+          },
+          "narratives": {
+            "justification": "With-project operating costs cover planned routine and periodic maintenance of the rehabilitated 18 km road, including patching, drainage clearing, vegetation control, and upkeep of signage and markings. The without-project figures reflect the current constrained reactive-repair budget, which is insufficient to prevent further deterioration. Estimates use the road authority's 2026 unit-rate maintenance schedule.",
+            "financing_approach": "The incremental planned maintenance requirement of approximately 30,000–35,000 per year is provided for in the road authority's recurrent budget line for the district network. A preliminary affordability check against the 2028–2031 medium-term expenditure ceiling confirms capacity to cover it without reducing maintenance allocations for other priority roads."
+          }
+        }
+      },
+      {
+        "sectionId": "estimated_investment_costs_and_financing",
+        "fieldId": "revenues",
+        "answer": {
+          "applicability": {
+            "revenue_expected": "yes"
+          },
+          "rows": {
+            "with_project": {
+              "year_1": "40000",
+              "year_2": "48000",
+              "year_3": "55000"
+            },
+            "without_project": {
+              "year_1": "0",
+              "year_2": "0",
+              "year_3": "0"
+            }
+          },
+          "narratives": {
+            "justification": "Revenue is expected from competitively awarded lease fees for two regulated roadside service areas at existing public lay-bys along the rehabilitated corridor. Amounts ramp up as traffic and commercial occupancy grow over the first three operating years. The sites cannot operate safely or reliably under current road conditions, so there is no comparable without-project revenue baseline."
+          }
+        }
+      },
+      {
+        "sectionId": "project_management_and_risks",
+        "fieldId": "project_risks",
+        "answer": [
+          {
+            "_rowId": "risk-cost",
+            "risk_factor": "Construction cost overrun driven by volatile material prices over the two-year works period.",
+            "likelihood": "3",
+            "impact": "4",
+            "risk_reduction_measures": "A fixed-price construction contract with a capped 10% contingency, quarterly price-index reviews, and a value-engineering clause allowing scope adjustment within the approved budget envelope."
+          },
+          {
+            "_rowId": "risk-permit",
+            "risk_factor": "Delay in obtaining the construction permit, pushing back the start of works.",
+            "likelihood": "2",
+            "impact": "3",
+            "risk_reduction_measures": "Early pre-application engagement with the permitting authority, a permit milestone built into the procurement schedule, and preparation of the environmental assessment in parallel rather than in sequence."
+          },
+          {
+            "_rowId": "risk-demand",
+            "risk_factor": "Lower-than-forecast usage of the rehabilitated road reducing the expected benefits.",
+            "likelihood": "2",
+            "impact": "3",
+            "risk_reduction_measures": "Demand estimates benchmarked against two comparable completed projects, with a post-completion monitoring plan and a phased maintenance commitment scaled to actual traffic."
+          },
+          {
+            "_rowId": "risk-climate",
+            "risk_factor": "More frequent extreme-rainfall events and flooding could damage the carriageway and drainage, disrupt operation, and increase construction runoff.",
+            "likelihood": "3",
+            "impact": "4",
+            "risk_reduction_measures": "Upgraded culverts and side drains sized for higher-intensity rainfall, raised vulnerable road segments, nature-based slope stabilisation, a funded drainage-maintenance regime, and a rapid post-event inspection and repair protocol."
+          }
+        ]
+      },
+      {
+        "sectionId": "project_management_and_risks",
+        "fieldId": "management_arrangements",
+        "answer": "During implementation the project will be managed by the Municipal Infrastructure Unit's Project Management Office, which delivered two comparable district road projects in 2024–2025, supported by a procurement specialist from the central procurement agency and an external supervising engineer. A project steering committee chaired by the Deputy Mayor will provide oversight and sign off on stage gates. During operation the road will be handed to the Municipal Roads Maintenance Department, which already maintains the surrounding network and will absorb the asset into its existing routine- and periodic-maintenance programme, with dedicated budget lines confirmed in the medium-term expenditure framework."
+      },
+      {
+        "sectionId": "project_advancement_and_documentation",
+        "fieldId": "documentation_and_permits",
+        "answer": {
+          "rows": {
+            "preliminary_feasibility_study": {
+              "required": "yes",
+              "status": "available",
+              "comment": "Completed and approved in 2025."
+            },
+            "technical_and_economic_analysis": {
+              "required": "yes",
+              "status": "available",
+              "comment": "Prepared alongside the feasibility study."
+            },
+            "conceptual_design": {
+              "required": "yes",
+              "status": "available",
+              "comment": "Approved by the municipal engineering review panel."
+            },
+            "architectural_and_construction_project": {
+              "required": "yes",
+              "status": "in_progress",
+              "expected_acquisition_date": "2026-06",
+              "comment": "Detailed design is under a contract awarded in early 2026."
+            },
+            "environmental_impact_assessment": {
+              "required": "yes",
+              "status": "in_progress",
+              "expected_acquisition_date": "2026-05",
+              "comment": "Draft assessment submitted for public consultation."
+            },
+            "building_permit": {
+              "required": "yes",
+              "status": "not_started",
+              "expected_acquisition_date": "2026-08",
+              "comment": "Application will follow completion of the detailed design."
+            },
+            "other_permissions": {
+              "required": "no",
+              "comment": "No additional licences, patents, or sector permits are needed."
+            },
+            "tender_documentation": {
+              "required": "yes",
+              "status": "not_started",
+              "expected_acquisition_date": "2026-09",
+              "comment": "Tender documents will be finalised after design approval."
+            }
+          }
+        }
+      },
+      {
+        "sectionId": "project_advancement_and_documentation",
+        "fieldId": "land_and_property_status",
+        "answer": {
+          "rows": {
+            "land_ownership": {
+              "required": "yes",
+              "status": "ready_and_approved",
+              "comment": "The municipality holds full title to the existing road right-of-way; no land acquisition or expropriation is required for the rehabilitation works."
+            }
+          }
+        }
+      }
+    ]
+  }
+}

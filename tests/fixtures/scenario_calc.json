@@ -1,0 +1,475 @@
+{
+  "defaults": {
+    "operating_costs": {
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "120000",
+            "year_2": "125000",
+            "year_3": "130000"
+          },
+          "without_project": {
+            "year_1": "90000",
+            "year_2": "92000",
+            "year_3": "95000"
+          }
+        },
+        "narratives": {
+          "justification": "With-project operating costs cover planned routine and periodic maintenance of the rehabilitated 18 km road, including patching, drainage clearing, vegetation control, and upkeep of signage and markings. The without-project figures reflect the current constrained reactive-repair budget, which is insufficient to prevent further deterioration. Estimates use the road authority's 2026 unit-rate maintenance schedule.",
+          "financing_approach": "The incremental planned maintenance requirement of approximately 30,000–35,000 per year is provided for in the road authority's recurrent budget line for the district network. A preliminary affordability check against the 2028–2031 medium-term expenditure ceiling confirms capacity to cover it without reducing maintenance allocations for other priority roads."
+        }
+      },
+      "applicable": true,
+      "computedRows": [
+        {
+          "rowId": "difference",
+          "label": "Difference",
+          "subtract": [
+            "with_project",
+            "without_project"
+          ],
+          "cells": {
+            "year_1": {
+              "present": true,
+              "value": 30000
+            },
+            "year_2": {
+              "present": true,
+              "value": 33000
+            },
+            "year_3": {
+              "present": true,
+              "value": 35000
+            }
+          }
+        }
+      ]
+    },
+    "revenues": {
+      "answer": {
+        "applicability": {
+          "revenue_expected": "yes"
+        },
+        "rows": {
+          "with_project": {
+            "year_1": "40000",
+            "year_2": "48000",
+            "year_3": "55000"
+          },
+          "without_project": {
+            "year_1": "0",
+            "year_2": "0",
+            "year_3": "0"
+          }
+        },
+        "narratives": {
+          "justification": "Revenue is expected from competitively awarded lease fees for two regulated roadside service areas at existing public lay-bys along the rehabilitated corridor. Amounts ramp up as traffic and commercial occupancy grow over the first three operating years. The sites cannot operate safely or reliably under current road conditions, so there is no comparable without-project revenue baseline."
+        }
+      },
+      "applicable": true,
+      "computedRows": [
+        {
+          "rowId": "revenue",
+          "label": "Revenue",
+          "subtract": [
+            "with_project",
+            "without_project"
+          ],
+          "cells": {
+            "year_1": {
+              "present": true,
+              "value": 40000
+            },
+            "year_2": {
+              "present": true,
+              "value": 48000
+            },
+            "year_3": {
+              "present": true,
+              "value": 55000
+            }
+          }
+        }
+      ]
+    }
+  },
+  "computedCellCases": [
+    {
+      "name": "both_present",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "120000"
+          },
+          "without_project": {
+            "year_1": "90000"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": true,
+        "value": 30000
+      }
+    },
+    {
+      "name": "both_present_negative_difference",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "80000"
+          },
+          "without_project": {
+            "year_1": "90000"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": true,
+        "value": -10000
+      }
+    },
+    {
+      "name": "both_present_float_precision",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_2",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_2": "0.3"
+          },
+          "without_project": {
+            "year_2": "0.1"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": true,
+        "value": 0.19999999999999998
+      }
+    },
+    {
+      "name": "both_zero",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_3",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_3": "0"
+          },
+          "without_project": {
+            "year_3": "0"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": true,
+        "value": 0
+      }
+    },
+    {
+      "name": "right_missing_row",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "120000"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": false,
+        "value": null
+      }
+    },
+    {
+      "name": "right_blank_cell",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "120000"
+          },
+          "without_project": {
+            "year_1": "  "
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": false,
+        "value": null
+      }
+    },
+    {
+      "name": "left_missing_column",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_2",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "120000"
+          },
+          "without_project": {
+            "year_2": "90000"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": false,
+        "value": null
+      }
+    },
+    {
+      "name": "left_invalid_string",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "n/a"
+          },
+          "without_project": {
+            "year_1": "90000"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": false,
+        "value": null
+      }
+    },
+    {
+      "name": "right_negative_value",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "120000"
+          },
+          "without_project": {
+            "year_1": "-5"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": false,
+        "value": null
+      }
+    },
+    {
+      "name": "thousands_separator_invalid",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": "120,000"
+          },
+          "without_project": {
+            "year_1": "90000"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": false,
+        "value": null
+      }
+    },
+    {
+      "name": "exponent_and_whitespace_valid",
+      "fieldId": "operating_costs",
+      "computedRowId": "difference",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_1": " 1.2e5 "
+          },
+          "without_project": {
+            "year_1": "9e4"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": true,
+        "value": 30000
+      }
+    },
+    {
+      "name": "revenue_both_present",
+      "fieldId": "revenues",
+      "computedRowId": "revenue",
+      "columnId": "year_3",
+      "answer": {
+        "rows": {
+          "with_project": {
+            "year_3": "55000"
+          },
+          "without_project": {
+            "year_3": "0"
+          }
+        },
+        "narratives": {}
+      },
+      "result": {
+        "present": true,
+        "value": 55000
+      }
+    },
+    {
+      "name": "no_rows_at_all",
+      "fieldId": "revenues",
+      "computedRowId": "revenue",
+      "columnId": "year_1",
+      "answer": {
+        "rows": {},
+        "narratives": {}
+      },
+      "result": {
+        "present": false,
+        "value": null
+      }
+    }
+  ],
+  "isApplicableCases": [
+    {
+      "name": "ungated_field_always_applicable",
+      "fieldId": "operating_costs",
+      "answer": {
+        "rows": {},
+        "narratives": {}
+      },
+      "result": true
+    },
+    {
+      "name": "ungated_field_ignores_stray_gate",
+      "fieldId": "operating_costs",
+      "answer": {
+        "applicability": {
+          "revenue_expected": "no"
+        },
+        "rows": {},
+        "narratives": {}
+      },
+      "result": true
+    },
+    {
+      "name": "gate_yes",
+      "fieldId": "revenues",
+      "answer": {
+        "applicability": {
+          "revenue_expected": "yes"
+        },
+        "rows": {},
+        "narratives": {}
+      },
+      "result": true
+    },
+    {
+      "name": "gate_no",
+      "fieldId": "revenues",
+      "answer": {
+        "applicability": {
+          "revenue_expected": "no"
+        },
+        "rows": {},
+        "narratives": {}
+      },
+      "result": false
+    },
+    {
+      "name": "gate_unanswered_key_absent",
+      "fieldId": "revenues",
+      "answer": {
+        "rows": {},
+        "narratives": {}
+      },
+      "result": false
+    },
+    {
+      "name": "gate_unanswered_empty_string",
+      "fieldId": "revenues",
+      "answer": {
+        "applicability": {
+          "revenue_expected": ""
+        },
+        "rows": {},
+        "narratives": {}
+      },
+      "result": false
+    },
+    {
+      "name": "gate_unanswered_empty_record",
+      "fieldId": "revenues",
+      "answer": {
+        "applicability": {},
+        "rows": {},
+        "narratives": {}
+      },
+      "result": false
+    },
+    {
+      "name": "gate_wrong_case",
+      "fieldId": "revenues",
+      "answer": {
+        "applicability": {
+          "revenue_expected": "Yes"
+        },
+        "rows": {},
+        "narratives": {}
+      },
+      "result": false
+    },
+    {
+      "name": "gate_padded_not_trimmed",
+      "fieldId": "revenues",
+      "answer": {
+        "applicability": {
+          "revenue_expected": " yes "
+        },
+        "rows": {},
+        "narratives": {}
+      },
+      "result": false
+    },
+    {
+      "name": "gate_invalid_option",
+      "fieldId": "revenues",
+      "answer": {
+        "applicability": {
+          "revenue_expected": "maybe"
+        },
+        "rows": {},
+        "narratives": {}
+      },
+      "result": false
+    }
+  ]
+}

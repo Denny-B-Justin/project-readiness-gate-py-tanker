@@ -1,0 +1,236 @@
+{
+  "normalize": [
+    {
+      "name": "plain",
+      "input": "Plain text.",
+      "output": "Plain text."
+    },
+    {
+      "name": "nfd_e_acute_composes",
+      "input": "Café décor",
+      "output": "Café décor"
+    },
+    {
+      "name": "nfc_already",
+      "input": "Café décor",
+      "output": "Café décor"
+    },
+    {
+      "name": "nfd_a_ring_composes",
+      "input": "Ångström",
+      "output": "Ångström"
+    },
+    {
+      "name": "angstrom_sign_singleton_to_a_ring",
+      "input": "Å",
+      "output": "Å"
+    },
+    {
+      "name": "nfc_does_not_fold_compatibility_ligature",
+      "input": "ﬁnancing ①",
+      "output": "ﬁnancing ①"
+    },
+    {
+      "name": "hangul_jamo_compose",
+      "input": "가",
+      "output": "가"
+    },
+    {
+      "name": "nbsp_collapsed",
+      "input": "18 km road",
+      "output": "18 km road"
+    },
+    {
+      "name": "narrow_nbsp_and_ideographic_space",
+      "input": "a b　c",
+      "output": "a b c"
+    },
+    {
+      "name": "tabs_newlines_collapsed",
+      "input": "line one\n\tline two\r\nline three",
+      "output": "line one line two line three"
+    },
+    {
+      "name": "runs_of_spaces_collapsed",
+      "input": "a    b  c",
+      "output": "a b c"
+    },
+    {
+      "name": "bom_feff_is_whitespace_in_js",
+      "input": "﻿starts with BOM﻿",
+      "output": "starts with BOM"
+    },
+    {
+      "name": "line_and_paragraph_separators",
+      "input": "a b c",
+      "output": "a b c"
+    },
+    {
+      "name": "nel_u0085_not_whitespace_in_js",
+      "input": "ab",
+      "output": "ab"
+    },
+    {
+      "name": "unit_separator_u001f_not_whitespace_in_js",
+      "input": "a\u001fb",
+      "output": "a\u001fb"
+    },
+    {
+      "name": "zero_width_space_not_whitespace",
+      "input": "a​b",
+      "output": "a​b"
+    },
+    {
+      "name": "mongolian_vowel_separator_not_whitespace",
+      "input": "a᠎b",
+      "output": "a᠎b"
+    },
+    {
+      "name": "vertical_tab_and_form_feed",
+      "input": "a\u000bb\fc",
+      "output": "a b c"
+    },
+    {
+      "name": "leading_trailing_space_trimmed",
+      "input": "   padded   ",
+      "output": "padded"
+    },
+    {
+      "name": "case_preserved",
+      "input": "MiXeD Case",
+      "output": "MiXeD Case"
+    },
+    {
+      "name": "empty",
+      "input": "",
+      "output": ""
+    },
+    {
+      "name": "whitespace_only",
+      "input": " \n\t  ",
+      "output": ""
+    }
+  ],
+  "verify": [
+    {
+      "name": "exact_substring",
+      "quote": "reduce the average travel time",
+      "fieldText": "The primary objective is to reduce the average travel time from the five upper-valley villages to the district hospital from 90 minutes to no more than 35 minutes by March 2028, by rehabilitating the full 18 km of district road and reconstructing its drainage. A secondary objective is to keep the road passable year-round, eliminating the rainy-season closures that currently isolate the villages for roughly four months each year.",
+      "verified": true
+    },
+    {
+      "name": "case_difference_fails",
+      "quote": "Reduce The Average Travel Time",
+      "fieldText": "The primary objective is to reduce the average travel time from the five upper-valley villages to the district hospital from 90 minutes to no more than 35 minutes by March 2028, by rehabilitating the full 18 km of district road and reconstructing its drainage. A secondary objective is to keep the road passable year-round, eliminating the rainy-season closures that currently isolate the villages for roughly four months each year.",
+      "verified": false
+    },
+    {
+      "name": "whole_text",
+      "quote": "The primary objective is to reduce the average travel time from the five upper-valley villages to the district hospital from 90 minutes to no more than 35 minutes by March 2028, by rehabilitating the full 18 km of district road and reconstructing its drainage. A secondary objective is to keep the road passable year-round, eliminating the rainy-season closures that currently isolate the villages for roughly four months each year.",
+      "fieldText": "The primary objective is to reduce the average travel time from the five upper-valley villages to the district hospital from 90 minutes to no more than 35 minutes by March 2028, by rehabilitating the full 18 km of district road and reconstructing its drainage. A secondary objective is to keep the road passable year-round, eliminating the rainy-season closures that currently isolate the villages for roughly four months each year.",
+      "verified": true
+    },
+    {
+      "name": "paraphrase_fails",
+      "quote": "cut the mean journey time",
+      "fieldText": "The primary objective is to reduce the average travel time from the five upper-valley villages to the district hospital from 90 minutes to no more than 35 minutes by March 2028, by rehabilitating the full 18 km of district road and reconstructing its drainage. A secondary objective is to keep the road passable year-round, eliminating the rainy-season closures that currently isolate the villages for roughly four months each year.",
+      "verified": false
+    },
+    {
+      "name": "nfd_quote_vs_nfc_text",
+      "quote": "Café renovation",
+      "fieldText": "The Café renovation is complete.",
+      "verified": true
+    },
+    {
+      "name": "nfc_quote_vs_nfd_text",
+      "quote": "Café renovation",
+      "fieldText": "The Café renovation is complete.",
+      "verified": true
+    },
+    {
+      "name": "nbsp_in_text_space_in_quote",
+      "quote": "18 km district road",
+      "fieldText": "The 18 km district road links five villages.",
+      "verified": true
+    },
+    {
+      "name": "newline_tab_in_text_space_in_quote",
+      "quote": "links five villages to the hospital",
+      "fieldText": "links five\n\tvillages to the\r\nhospital",
+      "verified": true
+    },
+    {
+      "name": "line_wrap_double_space_in_quote",
+      "quote": "links  five\nvillages",
+      "fieldText": "The road links five villages.",
+      "verified": true
+    },
+    {
+      "name": "bom_in_quote",
+      "quote": "﻿links five villages",
+      "fieldText": "The road links five villages.",
+      "verified": true
+    },
+    {
+      "name": "bom_inside_text_word",
+      "quote": "fivevillages",
+      "fieldText": "five﻿villages",
+      "verified": false
+    },
+    {
+      "name": "leading_trailing_space_in_quote",
+      "quote": "   links five villages  ",
+      "fieldText": "The road links five villages.",
+      "verified": true
+    },
+    {
+      "name": "empty_quote_fails",
+      "quote": "",
+      "fieldText": "The road links five villages.",
+      "verified": false
+    },
+    {
+      "name": "whitespace_only_quote_fails",
+      "quote": " \n\t ",
+      "fieldText": "The road links five villages.",
+      "verified": false
+    },
+    {
+      "name": "empty_quote_empty_text_fails",
+      "quote": "",
+      "fieldText": "",
+      "verified": false
+    },
+    {
+      "name": "quote_longer_than_text_fails",
+      "quote": "The road links five villages and more.",
+      "fieldText": "The road links five villages.",
+      "verified": false
+    },
+    {
+      "name": "curly_vs_straight_apostrophe_fails",
+      "quote": "authority's budget",
+      "fieldText": "the road authority’s budget",
+      "verified": false
+    },
+    {
+      "name": "zero_width_space_in_quote_fails",
+      "quote": "five​villages",
+      "fieldText": "five villages",
+      "verified": false
+    },
+    {
+      "name": "quote_is_no_answer_marker",
+      "quote": "No answer provided.",
+      "fieldText": "No answer provided.",
+      "verified": true
+    },
+    {
+      "name": "quote_across_list_item_lines",
+      "quote": "Item 1 Component: Preparation of detailed design",
+      "fieldText": "Item 1\nComponent: Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.\nExpected start date: 2026-03\nExpected end date: 2026-09\n\nItem 2\nComponent: Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.\nExpected start date: 2026-10\nExpected end date: 2028-03\n\nItem 3\nComponent: Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.\nExpected start date: 2027-06\nExpected end date: 2027-12",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+/* The Assessment list and the review page's context bar.
+ *
+ * The list reuses the Projects table (`.data-table`, `.row-link`); the bar
+ * reuses the proposer bar's frame and crumbs (`.pf-bar*`, `.pf-crumb-*`,
+ * form.css) and adds the review's own end: the details popover and the
+ * status line.
+ */
+
+/* ── The list ──────────────────────────────────────────────────────────── */
+
+.data-table th.as-col-progress {
+  width: 210px;
+}
+
+.data-table th.as-col-submitted {
+  width: 116px;
+}
+
+.as-progress {
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.as-unreadable {
+  background: var(--nc-bg);
+}
+
+.as-unreadable .col-no {
+  color: var(--nc-ink);
+}
+
+.as-unreadable-title {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.as-unreadable-reason {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+/* ── The context bar ───────────────────────────────────────────────────── */
+
+.rv-ctx-back {
+  flex-shrink: 1;
+  min-width: 0;
+  margin: -2px -8px;
+  padding: 2px 8px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.rv-ctx-back:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.rv-ctx-back:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.rv-ctx-tail {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+.rv-ctx-tail > span:last-child {
+  overflow: hidden;
+  color: var(--ink);
+  font-family: var(--font-heading), "Trebuchet MS", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rv-ctx-end {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.rv-ctx-status {
+  min-width: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (width >= 48rem) {
+  .rv-ctx-end {
+    flex-shrink: 0;
+    gap: 12px;
+  }
+
+  .rv-ctx-status {
+    max-width: 34ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* ── The assessment details popover ────────────────────────────────────── */
+
+.rv-prov-trigger[aria-expanded="true"] {
+  background: var(--surface-2);
+  color: var(--ink-soft);
+}
+
+:root .mantine-Popover-dropdown.rv-prov {
+  padding: 0;
+  overflow: hidden;
+}
+
+.rv-prov-head {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.rv-prov-eyebrow {
+  margin: 0;
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rv-prov-lede {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.rv-prov-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 16px;
+}
+
+.rv-prov-row dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rv-prov-row dd {
+  margin: 3px 0 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rv-prov-id {
+  margin-left: 6px;
+  color: var(--faint);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.rv-prov-note {
+  margin: 0;
+  padding: 12px 16px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}

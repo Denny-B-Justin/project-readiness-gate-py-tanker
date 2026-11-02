@@ -1,0 +1,1877 @@
+{
+  "rows": [
+    {
+      "rowId": "comp-design",
+      "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+      "cost_category": "preparatory_documentation",
+      "amounts": {
+        "year_1": "180000",
+        "year_2": "0",
+        "year_3": "0",
+        "year_4": "0",
+        "year_5": "0",
+        "subsequent_years": ""
+      },
+      "rowTotal": 180000,
+      "amountValues": {
+        "year_1": 180000,
+        "year_2": 0,
+        "year_3": 0,
+        "year_4": 0,
+        "year_5": 0,
+        "subsequent_years": 0
+      },
+      "startDate": "2026-03",
+      "startYear": 2026,
+      "hasStartDate": true,
+      "sourceItem": {
+        "_rowId": "comp-design",
+        "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+        "expected_start_date": "2026-03",
+        "expected_end_date": "2026-09"
+      }
+    },
+    {
+      "rowId": "comp-works",
+      "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+      "cost_category": "construction",
+      "amounts": {
+        "year_1": "600000",
+        "year_2": "4200000",
+        "year_3": "900000",
+        "year_4": "0",
+        "year_5": "0",
+        "subsequent_years": "0"
+      },
+      "rowTotal": 5700000,
+      "amountValues": {
+        "year_1": 600000,
+        "year_2": 4200000,
+        "year_3": 900000,
+        "year_4": 0,
+        "year_5": 0,
+        "subsequent_years": 0
+      },
+      "startDate": "2026-10",
+      "startYear": 2026,
+      "hasStartDate": true,
+      "sourceItem": {
+        "_rowId": "comp-works",
+        "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+        "expected_start_date": "2026-10",
+        "expected_end_date": "2028-03"
+      }
+    },
+    {
+      "rowId": "comp-equipment",
+      "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+      "cost_category": "equipment",
+      "amounts": {
+        "year_1": "320000",
+        "year_2": "0",
+        "year_3": "0",
+        "year_4": "0",
+        "year_5": "0",
+        "subsequent_years": ""
+      },
+      "rowTotal": 320000,
+      "amountValues": {
+        "year_1": 320000,
+        "year_2": 0,
+        "year_3": 0,
+        "year_4": 0,
+        "year_5": 0,
+        "subsequent_years": 0
+      },
+      "startDate": "2027-06",
+      "startYear": 2027,
+      "hasStartDate": true,
+      "sourceItem": {
+        "_rowId": "comp-equipment",
+        "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+        "expected_start_date": "2027-06",
+        "expected_end_date": "2027-12"
+      }
+    }
+  ],
+  "countedRowIds": [
+    "comp-design",
+    "comp-works",
+    "comp-equipment"
+  ],
+  "grandTotal": 6200000,
+  "categorySummary": {
+    "columns": [
+      {
+        "id": "year_1",
+        "label": "Year 1"
+      },
+      {
+        "id": "year_2",
+        "label": "Year 2"
+      },
+      {
+        "id": "year_3",
+        "label": "Year 3"
+      },
+      {
+        "id": "year_4",
+        "label": "Year 4"
+      },
+      {
+        "id": "year_5",
+        "label": "Year 5"
+      },
+      {
+        "id": "subsequent_years",
+        "label": "Subsequent years"
+      }
+    ],
+    "rows": [
+      {
+        "category": "preparatory_documentation",
+        "label": "Preparatory documentation",
+        "isTotal": false,
+        "perColumn": {
+          "year_1": 180000,
+          "year_2": 0,
+          "year_3": 0,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 180000
+      },
+      {
+        "category": "land",
+        "label": "Purchase of land",
+        "isTotal": false,
+        "perColumn": {
+          "year_1": 0,
+          "year_2": 0,
+          "year_3": 0,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 0
+      },
+      {
+        "category": "construction",
+        "label": "Construction",
+        "isTotal": false,
+        "perColumn": {
+          "year_1": 600000,
+          "year_2": 4200000,
+          "year_3": 900000,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 5700000
+      },
+      {
+        "category": "equipment",
+        "label": "Equipment, vehicles, machinery, furniture etc.",
+        "isTotal": false,
+        "perColumn": {
+          "year_1": 320000,
+          "year_2": 0,
+          "year_3": 0,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 320000
+      },
+      {
+        "category": "software",
+        "label": "Software",
+        "isTotal": false,
+        "perColumn": {
+          "year_1": 0,
+          "year_2": 0,
+          "year_3": 0,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 0
+      },
+      {
+        "category": "other_costs",
+        "label": "Other costs",
+        "isTotal": false,
+        "perColumn": {
+          "year_1": 0,
+          "year_2": 0,
+          "year_3": 0,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 0
+      },
+      {
+        "category": "reserve",
+        "label": "Reserve, up to 10%",
+        "isTotal": false,
+        "perColumn": {
+          "year_1": 0,
+          "year_2": 0,
+          "year_3": 0,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 0
+      },
+      {
+        "category": "",
+        "label": "Total",
+        "isTotal": true,
+        "perColumn": {
+          "year_1": 1100000,
+          "year_2": 4200000,
+          "year_3": 900000,
+          "year_4": 0,
+          "year_5": 0,
+          "subsequent_years": 0
+        },
+        "total": 6200000
+      }
+    ],
+    "grandTotal": 6200000
+  },
+  "yearLabels": null,
+  "requiredCostControlIds": [
+    "year_1",
+    "year_2",
+    "year_3",
+    "year_4",
+    "year_5"
+  ],
+  "derivedRows": [
+    {
+      "rowId": "comp-design",
+      "label": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+      "startDate": "2026-03",
+      "hasStartDate": true,
+      "startYear": 2026
+    },
+    {
+      "rowId": "comp-works",
+      "label": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+      "startDate": "2026-10",
+      "hasStartDate": true,
+      "startYear": 2026
+    },
+    {
+      "rowId": "comp-equipment",
+      "label": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+      "startDate": "2027-06",
+      "hasStartDate": true,
+      "startYear": 2027
+    }
+  ],
+  "variants": [
+    {
+      "name": "start_date_cleared_costs_not_counted",
+      "sourceAnswer": [
+        {
+          "_rowId": "comp-design",
+          "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "expected_start_date": "2026-03",
+          "expected_end_date": "2026-09"
+        },
+        {
+          "_rowId": "comp-works",
+          "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "expected_start_date": "2026-10",
+          "expected_end_date": "2028-03"
+        },
+        {
+          "_rowId": "comp-equipment",
+          "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "expected_start_date": "",
+          "expected_end_date": "2027-12"
+        }
+      ],
+      "worksheetAnswer": {
+        "componentCosts": {
+          "comp-design": {
+            "cost_category": "preparatory_documentation",
+            "year_1": "180000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-works": {
+            "cost_category": "construction",
+            "year_1": "600000",
+            "year_2": "4200000",
+            "year_3": "900000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": "0"
+          },
+          "comp-equipment": {
+            "cost_category": "equipment",
+            "year_1": "320000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          }
+        },
+        "narratives": {
+          "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+          "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+        }
+      },
+      "derivedRows": [
+        {
+          "rowId": "comp-design",
+          "label": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "startDate": "2026-03",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-works",
+          "label": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "startDate": "2026-10",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-equipment",
+          "label": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "startDate": "",
+          "hasStartDate": false,
+          "startYear": null
+        }
+      ],
+      "rowTotals": {
+        "comp-design": 180000,
+        "comp-works": 5700000,
+        "comp-equipment": 320000
+      },
+      "countedRowIds": [
+        "comp-design",
+        "comp-works"
+      ],
+      "grandTotal": 5880000,
+      "categorySummary": {
+        "columns": [
+          {
+            "id": "year_1",
+            "label": "Year 1"
+          },
+          {
+            "id": "year_2",
+            "label": "Year 2"
+          },
+          {
+            "id": "year_3",
+            "label": "Year 3"
+          },
+          {
+            "id": "year_4",
+            "label": "Year 4"
+          },
+          {
+            "id": "year_5",
+            "label": "Year 5"
+          },
+          {
+            "id": "subsequent_years",
+            "label": "Subsequent years"
+          }
+        ],
+        "rows": [
+          {
+            "category": "preparatory_documentation",
+            "label": "Preparatory documentation",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 180000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 180000
+          },
+          {
+            "category": "land",
+            "label": "Purchase of land",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "construction",
+            "label": "Construction",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 600000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 5700000
+          },
+          {
+            "category": "equipment",
+            "label": "Equipment, vehicles, machinery, furniture etc.",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "software",
+            "label": "Software",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "other_costs",
+            "label": "Other costs",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "reserve",
+            "label": "Reserve, up to 10%",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "",
+            "label": "Total",
+            "isTotal": true,
+            "perColumn": {
+              "year_1": 780000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 5880000
+          }
+        ],
+        "grandTotal": 5880000
+      }
+    },
+    {
+      "name": "unparseable_start_date_not_counted",
+      "sourceAnswer": [
+        {
+          "_rowId": "comp-design",
+          "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "expected_start_date": "March 2026",
+          "expected_end_date": "2026-09"
+        },
+        {
+          "_rowId": "comp-works",
+          "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "expected_start_date": "2026-10",
+          "expected_end_date": "2028-03"
+        },
+        {
+          "_rowId": "comp-equipment",
+          "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "expected_start_date": "2027-06",
+          "expected_end_date": "2027-12"
+        }
+      ],
+      "worksheetAnswer": {
+        "componentCosts": {
+          "comp-design": {
+            "cost_category": "preparatory_documentation",
+            "year_1": "180000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-works": {
+            "cost_category": "construction",
+            "year_1": "600000",
+            "year_2": "4200000",
+            "year_3": "900000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": "0"
+          },
+          "comp-equipment": {
+            "cost_category": "equipment",
+            "year_1": "320000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          }
+        },
+        "narratives": {
+          "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+          "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+        }
+      },
+      "derivedRows": [
+        {
+          "rowId": "comp-design",
+          "label": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "startDate": "March 2026",
+          "hasStartDate": false,
+          "startYear": null
+        },
+        {
+          "rowId": "comp-works",
+          "label": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "startDate": "2026-10",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-equipment",
+          "label": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "startDate": "2027-06",
+          "hasStartDate": true,
+          "startYear": 2027
+        }
+      ],
+      "rowTotals": {
+        "comp-design": 180000,
+        "comp-works": 5700000,
+        "comp-equipment": 320000
+      },
+      "countedRowIds": [
+        "comp-works",
+        "comp-equipment"
+      ],
+      "grandTotal": 6020000,
+      "categorySummary": {
+        "columns": [
+          {
+            "id": "year_1",
+            "label": "Year 1"
+          },
+          {
+            "id": "year_2",
+            "label": "Year 2"
+          },
+          {
+            "id": "year_3",
+            "label": "Year 3"
+          },
+          {
+            "id": "year_4",
+            "label": "Year 4"
+          },
+          {
+            "id": "year_5",
+            "label": "Year 5"
+          },
+          {
+            "id": "subsequent_years",
+            "label": "Subsequent years"
+          }
+        ],
+        "rows": [
+          {
+            "category": "preparatory_documentation",
+            "label": "Preparatory documentation",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "land",
+            "label": "Purchase of land",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "construction",
+            "label": "Construction",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 600000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 5700000
+          },
+          {
+            "category": "equipment",
+            "label": "Equipment, vehicles, machinery, furniture etc.",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 320000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 320000
+          },
+          {
+            "category": "software",
+            "label": "Software",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "other_costs",
+            "label": "Other costs",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "reserve",
+            "label": "Reserve, up to 10%",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "",
+            "label": "Total",
+            "isTotal": true,
+            "perColumn": {
+              "year_1": 920000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 6020000
+          }
+        ],
+        "grandTotal": 6020000
+      }
+    },
+    {
+      "name": "uncategorised_row_counted_in_grand_total_only",
+      "sourceAnswer": [
+        {
+          "_rowId": "comp-design",
+          "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "expected_start_date": "2026-03",
+          "expected_end_date": "2026-09"
+        },
+        {
+          "_rowId": "comp-works",
+          "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "expected_start_date": "2026-10",
+          "expected_end_date": "2028-03"
+        },
+        {
+          "_rowId": "comp-equipment",
+          "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "expected_start_date": "2027-06",
+          "expected_end_date": "2027-12"
+        }
+      ],
+      "worksheetAnswer": {
+        "componentCosts": {
+          "comp-design": {
+            "cost_category": "preparatory_documentation",
+            "year_1": "180000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-works": {
+            "cost_category": "",
+            "year_1": "600000",
+            "year_2": "4200000",
+            "year_3": "900000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": "0"
+          },
+          "comp-equipment": {
+            "cost_category": "equipment",
+            "year_1": "320000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          }
+        },
+        "narratives": {
+          "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+          "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+        }
+      },
+      "derivedRows": [
+        {
+          "rowId": "comp-design",
+          "label": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "startDate": "2026-03",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-works",
+          "label": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "startDate": "2026-10",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-equipment",
+          "label": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "startDate": "2027-06",
+          "hasStartDate": true,
+          "startYear": 2027
+        }
+      ],
+      "rowTotals": {
+        "comp-design": 180000,
+        "comp-works": 5700000,
+        "comp-equipment": 320000
+      },
+      "countedRowIds": [
+        "comp-design",
+        "comp-works",
+        "comp-equipment"
+      ],
+      "grandTotal": 6200000,
+      "categorySummary": {
+        "columns": [
+          {
+            "id": "year_1",
+            "label": "Year 1"
+          },
+          {
+            "id": "year_2",
+            "label": "Year 2"
+          },
+          {
+            "id": "year_3",
+            "label": "Year 3"
+          },
+          {
+            "id": "year_4",
+            "label": "Year 4"
+          },
+          {
+            "id": "year_5",
+            "label": "Year 5"
+          },
+          {
+            "id": "subsequent_years",
+            "label": "Subsequent years"
+          }
+        ],
+        "rows": [
+          {
+            "category": "preparatory_documentation",
+            "label": "Preparatory documentation",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 180000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 180000
+          },
+          {
+            "category": "land",
+            "label": "Purchase of land",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "construction",
+            "label": "Construction",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "equipment",
+            "label": "Equipment, vehicles, machinery, furniture etc.",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 320000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 320000
+          },
+          {
+            "category": "software",
+            "label": "Software",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "other_costs",
+            "label": "Other costs",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "reserve",
+            "label": "Reserve, up to 10%",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "",
+            "label": "Total",
+            "isTotal": true,
+            "perColumn": {
+              "year_1": 500000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 500000
+          }
+        ],
+        "grandTotal": 500000
+      }
+    },
+    {
+      "name": "invalid_amounts_sum_as_zero",
+      "sourceAnswer": [
+        {
+          "_rowId": "comp-design",
+          "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "expected_start_date": "2026-03",
+          "expected_end_date": "2026-09"
+        },
+        {
+          "_rowId": "comp-works",
+          "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "expected_start_date": "2026-10",
+          "expected_end_date": "2028-03"
+        },
+        {
+          "_rowId": "comp-equipment",
+          "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "expected_start_date": "2027-06",
+          "expected_end_date": "2027-12"
+        }
+      ],
+      "worksheetAnswer": {
+        "componentCosts": {
+          "comp-design": {
+            "cost_category": "preparatory_documentation",
+            "year_1": "abc",
+            "year_2": "-5",
+            "year_3": "1,000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-works": {
+            "cost_category": "construction",
+            "year_1": "600000",
+            "year_2": "4200000",
+            "year_3": "900000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": "0"
+          },
+          "comp-equipment": {
+            "cost_category": "equipment",
+            "year_1": "320000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          }
+        },
+        "narratives": {
+          "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+          "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+        }
+      },
+      "derivedRows": [
+        {
+          "rowId": "comp-design",
+          "label": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "startDate": "2026-03",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-works",
+          "label": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "startDate": "2026-10",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-equipment",
+          "label": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "startDate": "2027-06",
+          "hasStartDate": true,
+          "startYear": 2027
+        }
+      ],
+      "rowTotals": {
+        "comp-design": 0,
+        "comp-works": 5700000,
+        "comp-equipment": 320000
+      },
+      "countedRowIds": [
+        "comp-design",
+        "comp-works",
+        "comp-equipment"
+      ],
+      "grandTotal": 6020000,
+      "categorySummary": {
+        "columns": [
+          {
+            "id": "year_1",
+            "label": "Year 1"
+          },
+          {
+            "id": "year_2",
+            "label": "Year 2"
+          },
+          {
+            "id": "year_3",
+            "label": "Year 3"
+          },
+          {
+            "id": "year_4",
+            "label": "Year 4"
+          },
+          {
+            "id": "year_5",
+            "label": "Year 5"
+          },
+          {
+            "id": "subsequent_years",
+            "label": "Subsequent years"
+          }
+        ],
+        "rows": [
+          {
+            "category": "preparatory_documentation",
+            "label": "Preparatory documentation",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "land",
+            "label": "Purchase of land",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "construction",
+            "label": "Construction",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 600000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 5700000
+          },
+          {
+            "category": "equipment",
+            "label": "Equipment, vehicles, machinery, furniture etc.",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 320000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 320000
+          },
+          {
+            "category": "software",
+            "label": "Software",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "other_costs",
+            "label": "Other costs",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "reserve",
+            "label": "Reserve, up to 10%",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "",
+            "label": "Total",
+            "isTotal": true,
+            "perColumn": {
+              "year_1": 920000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 6020000
+          }
+        ],
+        "grandTotal": 6020000
+      }
+    },
+    {
+      "name": "decimal_amounts",
+      "sourceAnswer": [
+        {
+          "_rowId": "comp-design",
+          "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "expected_start_date": "2026-03",
+          "expected_end_date": "2026-09"
+        },
+        {
+          "_rowId": "comp-works",
+          "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "expected_start_date": "2026-10",
+          "expected_end_date": "2028-03"
+        },
+        {
+          "_rowId": "comp-equipment",
+          "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "expected_start_date": "2027-06",
+          "expected_end_date": "2027-12"
+        }
+      ],
+      "worksheetAnswer": {
+        "componentCosts": {
+          "comp-design": {
+            "cost_category": "preparatory_documentation",
+            "year_1": "0.1",
+            "year_2": "0.2",
+            "year_3": "1234.567",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-works": {
+            "cost_category": "construction",
+            "year_1": "600000",
+            "year_2": "4200000",
+            "year_3": "900000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": "0"
+          },
+          "comp-equipment": {
+            "cost_category": "equipment",
+            "year_1": "320000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          }
+        },
+        "narratives": {
+          "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+          "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+        }
+      },
+      "derivedRows": [
+        {
+          "rowId": "comp-design",
+          "label": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "startDate": "2026-03",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-works",
+          "label": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "startDate": "2026-10",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-equipment",
+          "label": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "startDate": "2027-06",
+          "hasStartDate": true,
+          "startYear": 2027
+        }
+      ],
+      "rowTotals": {
+        "comp-design": 1234.867,
+        "comp-works": 5700000,
+        "comp-equipment": 320000
+      },
+      "countedRowIds": [
+        "comp-design",
+        "comp-works",
+        "comp-equipment"
+      ],
+      "grandTotal": 6021234.867,
+      "categorySummary": {
+        "columns": [
+          {
+            "id": "year_1",
+            "label": "Year 1"
+          },
+          {
+            "id": "year_2",
+            "label": "Year 2"
+          },
+          {
+            "id": "year_3",
+            "label": "Year 3"
+          },
+          {
+            "id": "year_4",
+            "label": "Year 4"
+          },
+          {
+            "id": "year_5",
+            "label": "Year 5"
+          },
+          {
+            "id": "subsequent_years",
+            "label": "Subsequent years"
+          }
+        ],
+        "rows": [
+          {
+            "category": "preparatory_documentation",
+            "label": "Preparatory documentation",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0.1,
+              "year_2": 0.2,
+              "year_3": 1234.567,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 1234.867
+          },
+          {
+            "category": "land",
+            "label": "Purchase of land",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "construction",
+            "label": "Construction",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 600000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 5700000
+          },
+          {
+            "category": "equipment",
+            "label": "Equipment, vehicles, machinery, furniture etc.",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 320000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 320000
+          },
+          {
+            "category": "software",
+            "label": "Software",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "other_costs",
+            "label": "Other costs",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "reserve",
+            "label": "Reserve, up to 10%",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "",
+            "label": "Total",
+            "isTotal": true,
+            "perColumn": {
+              "year_1": 920000.1,
+              "year_2": 4200000.2,
+              "year_3": 901234.567,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 6021234.867
+          }
+        ],
+        "grandTotal": 6021234.867
+      }
+    },
+    {
+      "name": "stale_component_key_ignored",
+      "sourceAnswer": [
+        {
+          "_rowId": "comp-design",
+          "component": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "expected_start_date": "2026-03",
+          "expected_end_date": "2026-09"
+        },
+        {
+          "_rowId": "comp-works",
+          "component": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "expected_start_date": "2026-10",
+          "expected_end_date": "2028-03"
+        },
+        {
+          "_rowId": "comp-equipment",
+          "component": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "expected_start_date": "2027-06",
+          "expected_end_date": "2027-12"
+        }
+      ],
+      "worksheetAnswer": {
+        "componentCosts": {
+          "comp-design": {
+            "cost_category": "preparatory_documentation",
+            "year_1": "180000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-works": {
+            "cost_category": "construction",
+            "year_1": "600000",
+            "year_2": "4200000",
+            "year_3": "900000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": "0"
+          },
+          "comp-equipment": {
+            "cost_category": "equipment",
+            "year_1": "320000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-removed": {
+            "cost_category": "land",
+            "year_1": "999999"
+          }
+        },
+        "narratives": {
+          "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+          "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+        }
+      },
+      "derivedRows": [
+        {
+          "rowId": "comp-design",
+          "label": "Preparation of detailed design documentation, topographic and drainage surveys, environmental assessment, and construction permits for the full 18 km road rehabilitation.",
+          "startDate": "2026-03",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-works",
+          "label": "Rehabilitation of the 18 km district road carriageway, reconstruction of culverts and side drains, raising of flood-prone sections, and installation of pedestrian and road-safety measures.",
+          "startDate": "2026-10",
+          "hasStartDate": true,
+          "startYear": 2026
+        },
+        {
+          "rowId": "comp-equipment",
+          "label": "Procurement of routine-maintenance equipment and road-safety furniture, including signage, guardrails, road markings, and drainage-cleaning tools.",
+          "startDate": "2027-06",
+          "hasStartDate": true,
+          "startYear": 2027
+        }
+      ],
+      "rowTotals": {
+        "comp-design": 180000,
+        "comp-works": 5700000,
+        "comp-equipment": 320000
+      },
+      "countedRowIds": [
+        "comp-design",
+        "comp-works",
+        "comp-equipment"
+      ],
+      "grandTotal": 6200000,
+      "categorySummary": {
+        "columns": [
+          {
+            "id": "year_1",
+            "label": "Year 1"
+          },
+          {
+            "id": "year_2",
+            "label": "Year 2"
+          },
+          {
+            "id": "year_3",
+            "label": "Year 3"
+          },
+          {
+            "id": "year_4",
+            "label": "Year 4"
+          },
+          {
+            "id": "year_5",
+            "label": "Year 5"
+          },
+          {
+            "id": "subsequent_years",
+            "label": "Subsequent years"
+          }
+        ],
+        "rows": [
+          {
+            "category": "preparatory_documentation",
+            "label": "Preparatory documentation",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 180000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 180000
+          },
+          {
+            "category": "land",
+            "label": "Purchase of land",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "construction",
+            "label": "Construction",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 600000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 5700000
+          },
+          {
+            "category": "equipment",
+            "label": "Equipment, vehicles, machinery, furniture etc.",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 320000,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 320000
+          },
+          {
+            "category": "software",
+            "label": "Software",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "other_costs",
+            "label": "Other costs",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "reserve",
+            "label": "Reserve, up to 10%",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "",
+            "label": "Total",
+            "isTotal": true,
+            "perColumn": {
+              "year_1": 1100000,
+              "year_2": 4200000,
+              "year_3": 900000,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 6200000
+          }
+        ],
+        "grandTotal": 6200000
+      }
+    },
+    {
+      "name": "no_source_rows",
+      "sourceAnswer": [],
+      "worksheetAnswer": {
+        "componentCosts": {
+          "comp-design": {
+            "cost_category": "preparatory_documentation",
+            "year_1": "180000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          },
+          "comp-works": {
+            "cost_category": "construction",
+            "year_1": "600000",
+            "year_2": "4200000",
+            "year_3": "900000",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": "0"
+          },
+          "comp-equipment": {
+            "cost_category": "equipment",
+            "year_1": "320000",
+            "year_2": "0",
+            "year_3": "0",
+            "year_4": "0",
+            "year_5": "0",
+            "subsequent_years": ""
+          }
+        },
+        "narratives": {
+          "estimation_basis": "The estimate is based on a detailed engineering cost estimate prepared by a licensed civil engineering firm in February 2026, using unit rates from the national public works price book and benchmarked against two comparable district road rehabilitation projects completed in 2024 and 2025. A 10% contingency is included within the construction figure. All amounts are inclusive of VAT at 18%.",
+          "financing_sources": "The project will be financed from the municipal capital investment budget (40%), a central government PIM co-financing grant (45%), and a concessional loan from a regional development bank (15%). Letters of intent from the central PIM unit and the development bank are attached to the full proposal."
+        }
+      },
+      "derivedRows": [],
+      "rowTotals": {},
+      "countedRowIds": [],
+      "grandTotal": 0,
+      "categorySummary": {
+        "columns": [
+          {
+            "id": "year_1",
+            "label": "Year 1"
+          },
+          {
+            "id": "year_2",
+            "label": "Year 2"
+          },
+          {
+            "id": "year_3",
+            "label": "Year 3"
+          },
+          {
+            "id": "year_4",
+            "label": "Year 4"
+          },
+          {
+            "id": "year_5",
+            "label": "Year 5"
+          },
+          {
+            "id": "subsequent_years",
+            "label": "Subsequent years"
+          }
+        ],
+        "rows": [
+          {
+            "category": "preparatory_documentation",
+            "label": "Preparatory documentation",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "land",
+            "label": "Purchase of land",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "construction",
+            "label": "Construction",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "equipment",
+            "label": "Equipment, vehicles, machinery, furniture etc.",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "software",
+            "label": "Software",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "other_costs",
+            "label": "Other costs",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "reserve",
+            "label": "Reserve, up to 10%",
+            "isTotal": false,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          },
+          {
+            "category": "",
+            "label": "Total",
+            "isTotal": true,
+            "perColumn": {
+              "year_1": 0,
+              "year_2": 0,
+              "year_3": 0,
+              "year_4": 0,
+              "year_5": 0,
+              "subsequent_years": 0
+            },
+            "total": 0
+          }
+        ],
+        "grandTotal": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "pcn_global_mca_default",
+  "templateId": "pcn_global",
+  "version": "0.1.0",
+  "description": "Default prioritisation (MCA) matrix for the PCN v1 template: four weighted criteria scored on a shared 1–5 ordinal scale, rolling up to a weighted total, a percent-of-maximum score, and a priority band.",
+  "matrix": {
+    "scale": [
+      {
+        "value": 1,
+        "label": "Very low",
+        "meaning": "The project performs very poorly against this criterion. Strong argument against selection; normally requires the proposal to be reworked before it can be prioritised."
+      },
+      {
+        "value": 2,
+        "label": "Low",
+        "meaning": "The project performs weakly against this criterion. Contributes little; would need compensating strength elsewhere to be selected."
+      },
+      {
+        "value": 3,
+        "label": "Moderate",
+        "meaning": "The project performs acceptably against this criterion. Meets the minimum expectation without standing out."
+      },
+      {
+        "value": 4,
+        "label": "High",
+        "meaning": "The project performs well against this criterion. A clear, evidenced strength that supports selection."
+      },
+      {
+        "value": 5,
+        "label": "Very high",
+        "meaning": "The project performs exceptionally against this criterion. A decisive strength, fully documented and verifiable."
+      }
+    ],
+    "bands": [
+      {
+        "id": "high",
+        "label": "High",
+        "minPercentOfMaximum": 80
+      },
+      {
+        "id": "medium",
+        "label": "Medium",
+        "minPercentOfMaximum": 60
+      },
+      {
+        "id": "low",
+        "label": "Low",
+        "minPercentOfMaximum": 0
+      }
+    ],
+    "criteria": [
+      {
+        "id": "urgency_and_criticality",
+        "label": "Urgency and criticality",
+        "weight": 30,
+        "description": "How soon the intervention must happen, and what happens if it does not. Considers safety and public-health risk, remaining useful life of the asset, service gaps, and binding legal or contractual deadlines.",
+        "descriptors": {
+          "1": "Fully deferrable beyond 5 years with no material consequence. No service gap, no asset at risk, no legal or contractual obligation attached.",
+          "2": "Deferrable by 3–5 years. Addresses a convenience or efficiency improvement; existing assets and services remain functional in the meantime.",
+          "3": "Needed within 2–3 years. Service quality is measurably degrading or the asset is approaching the end of its useful life; risk remains manageable in the interim.",
+          "4": "Needed within 12–24 months. Significant service shortfall, accelerating asset deterioration, or a regulatory / contractual deadline that will be breached without action.",
+          "5": "Immediate action required (under 12 months). Risk to life, safety, public health or the continuity of an essential service; asset failure imminent, or a legal obligation already in default."
+        }
+      },
+      {
+        "id": "expected_economic_and_development_impact",
+        "label": "Expected economic and development impact",
+        "weight": 30,
+        "description": "The scale and breadth of socio-economic benefit and the strength of the link to national development objectives. Where an appraisal exists, anchor the score on EIRR / ENPV against the hurdle rate stated in the submission's appraisal evidence.",
+        "descriptors": {
+          "1": "Benefits confined to a very small group. No measurable contribution to national or sector objectives; EIRR below the hurdle rate or ENPV negative.",
+          "2": "Localised benefits, few beneficiaries. Weak or unquantified link to development plan targets; EIRR at or marginally below the hurdle rate.",
+          "3": "Moderate benefits for a district or regional population. Supports at least one national development plan objective; EIRR at or modestly above the hurdle rate.",
+          "4": "Substantial benefits across several districts or sectors. Directly supports a priority development plan objective; strong EIRR / ENPV with measurable gains in jobs, productivity or access.",
+          "5": "Transformational, nationwide or multi-sector benefits. Flagship of the national strategy; very strong EIRR / ENPV with wide, well-evidenced returns (jobs, trade, inclusion, regional integration)."
+        }
+      },
+      {
+        "id": "environmental_impact",
+        "label": "Environmental impact",
+        "weight": 20,
+        "description": "Net environmental and climate effect after mitigation, plus the credibility of the mitigation plan. Note the direction of the scale: a HIGH score means a favourable environmental outcome, not a large impact.",
+        "descriptors": {
+          "1": "Major, irreversible adverse impacts (full EIA category). Significant resettlement or loss of protected habitat, and no credible mitigation plan in place.",
+          "2": "Significant adverse impacts requiring a full EIA and costly mitigation. Material residual impacts remain after mitigation.",
+          "3": "Moderate, site-specific impacts, manageable through a standard ESMP. Net environmental effect broadly neutral once mitigation is applied.",
+          "4": "Minor, short-term construction-phase impacts only, fully mitigated. Some positive co-benefits such as lower emissions or improved energy efficiency.",
+          "5": "Clear net-positive environmental outcome: climate adaptation or mitigation, pollution reduction, ecosystem restoration. Explicitly aligned with national climate commitments."
+        }
+      },
+      {
+        "id": "fiscal_affordability_and_sustainability",
+        "label": "Fiscal affordability and sustainability",
+        "weight": 20,
+        "description": "Whether the capital cost can be financed and the recurrent cost carried over the asset's life. Considers MTEF coverage, secured financing, O&M funding, and contingent liabilities.",
+        "descriptors": {
+          "1": "No identified financing. Capital cost exceeds available fiscal space; O&M cost unfunded and unaffordable; would breach debt or deficit ceilings.",
+          "2": "Financing uncertain and not reflected in the MTEF. O&M funding not secured; material fiscal risk from FX exposure, guarantees or contingent liabilities.",
+          "3": "Financing plausible and partly reflected in the MTEF. O&M cost identified and broadly affordable within the sector ceiling.",
+          "4": "Financing secured or formally committed (budget, IFI, verified donor or PPP). O&M fully costed and provided for in the sector budget; contingent liabilities limited and disclosed.",
+          "5": "Fully financed on concessional, grant or self-financing terms. Generates own revenue or verified savings; no additional pressure on the recurrent budget; no contingent liabilities."
+        }
+      }
+    ]
+  }
+}

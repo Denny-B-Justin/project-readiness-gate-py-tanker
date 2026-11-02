@@ -1,0 +1,66 @@
+[project]
+name = "pcn-clone"
+version = "0.1.0"
+description = "Python rebuild of the core PCN (Project Concept Note) proposal and assessment workflow."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "dash-mantine-components==2.8.0",
+    "dash[fastapi]==4.4.1",
+    "fastapi>=0.142.2",
+    "httpx>=0.28.1",
+    "openrouter>=1.3.23",
+    "pydantic>=2.11,<3",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pcn_clone"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/pcn_clone", "/tests", "/README.md"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+# Deliberate typography in docstrings and messages.
+allowed-confusables = ["×", "–"]
+
+[tool.ruff.lint.per-file-ignores]
+# Prompt text stays one paragraph per line, exactly as the model receives it.
+"pcn_clone/ai/prompts.py" = ["E501"]
+
+[tool.mypy]
+strict = true
+packages = ["pcn_clone"]
+plugins = ["pydantic.mypy"]
+# Dash ships types, but its page and asset helpers are unannotated.
+untyped_calls_exclude = ["dash"]
+
+[[tool.mypy.overrides]]
+# dash-mantine-components ships no type information.
+module = ["dash_mantine_components", "dash_mantine_components.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+markers = [
+    "browser: drives the real app in headless Chrome (skipped when Chrome is absent)",
+    "live: calls the real model provider (skipped without OPENROUTER_API_KEY)",
+]

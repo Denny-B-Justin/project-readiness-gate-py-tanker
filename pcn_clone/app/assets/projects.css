@@ -1,0 +1,479 @@
+/*
+ * Projects workflow: the Projects list (`pj-`), its dialogs, the tag entry
+ * (`tag-entry-`), and the project page's gate panels.
+ *
+ * Colours, radii and shadows come from the brand tokens in brand.css, which
+ * also styles the shared pieces used here (.btn, .pill, .section-label,
+ * .count-badge, .table-card, .data-table, .empty-state, .spinner and the
+ * Mantine modal). Rules below cover only what the Projects design adds or
+ * changes; dialog overrides are scoped under `:root .pj-dialog` so they
+ * outrank the shared modal skin.
+ */
+
+/* --- Toolbar and table ---------------------------------------------------- */
+
+.pj-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.pj-toolbar .section-label {
+  margin-bottom: 0;
+}
+
+.pj-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pj-actions .btn,
+.empty-state-actions .btn {
+  gap: 6px;
+}
+
+.pj-new-btn {
+  padding-inline: 13px;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--blue-600) 30%, transparent);
+}
+
+.data-table th.pj-col-updated {
+  width: 116px;
+}
+
+.pj-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.pill.pj-tag {
+  border-color: var(--blue-500);
+}
+
+/* --- Dialogs --------------------------------------------------------------
+   The header holds the title (the dialog's heading) and the close button;
+   the lede opens the body directly under it. */
+
+:root .pj-dialog .pj-dialog-header {
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px 0;
+  border-bottom: 0;
+}
+
+:root .pj-dialog .pj-dialog-title {
+  flex: 1;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+:root .pj-dialog-defaults .pj-dialog-header {
+  padding: 18px 20px 0;
+}
+
+:root .pj-dialog-defaults .pj-dialog-title {
+  font-size: 18px;
+  letter-spacing: -0.015em;
+}
+
+.pj-dialog-lede {
+  margin: 0;
+  padding: 4px 22px 14px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.pj-dialog-defaults .pj-dialog-lede {
+  padding: 4px 20px 18px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 13px;
+}
+
+:root .pj-dialog .pj-dialog-body {
+  padding: 0;
+}
+
+.pj-dialog-section {
+  padding: 8px 22px 22px;
+}
+
+.pj-dialog-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid var(--line-soft);
+  background: var(--surface-2);
+}
+
+.pj-dialog-foot .btn {
+  gap: 7px;
+}
+
+.pj-dialog-defaults .pj-dialog-foot {
+  padding: 14px 20px;
+}
+
+/* Create dialog fields */
+
+.pj-field-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pj-field-gap {
+  margin-top: 18px;
+}
+
+.pj-field-hint {
+  margin: -4px 0 9px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.pj-template-panel {
+  padding: 13px 14px;
+  border: 1.5px solid var(--blue-500);
+  border-radius: 12px;
+  background: var(--blue-tint);
+}
+
+.pj-template-name {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pj-template-desc {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* --- Tag entry ------------------------------------------------------------ */
+
+.tag-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  min-height: 46px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface-2);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tag-entry:focus-within {
+  border-color: var(--blue-500);
+  background: var(--surface);
+  box-shadow: var(--focus-halo);
+}
+
+.tag-entry-chips {
+  display: contents;
+}
+
+.tag-entry-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 6px 4px 10px;
+  border: 1px solid var(--blue-border);
+  border-radius: 8px;
+  background: var(--blue-tint);
+  color: var(--dark-blue);
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tag-entry-remove {
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--blue-600);
+  cursor: pointer;
+}
+
+.tag-entry-remove:hover {
+  background: var(--blue-tint-2);
+}
+
+/* The chip entry's input is bare inside the box, overriding the shared
+   field look. */
+:root .tag-entry-input.dash-input-container,
+:root .tag-entry-input.dash-input-container:focus-within {
+  flex: 1;
+  min-width: 120px;
+  width: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+:root .tag-entry-input .dash-input-element {
+  padding: 4px 2px;
+  font-size: 14px;
+}
+
+.tag-entry-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-top: 11px;
+}
+
+.tag-entry-suggest-label {
+  margin-right: 2px;
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tag-entry-suggest {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--body);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.tag-entry-suggest:hover {
+  border-color: var(--blue-border);
+  background: var(--blue-tint);
+}
+
+/* --- Defaults dialog ------------------------------------------------------ */
+
+.pj-defaults-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 16px 20px;
+  border: 0;
+}
+
+.pj-default-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.pj-default-card:hover:not(:disabled) {
+  border-color: var(--blue-border);
+  background: var(--blue-tint);
+}
+
+.pj-default-card:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.pj-default-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--blue-tint);
+  color: var(--blue-600);
+}
+
+.pj-default-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.pj-default-headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.pj-default-title {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.pill.pj-default-badge {
+  height: auto;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pj-default-blurb {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.pj-default-end {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  color: var(--faint);
+}
+
+.pj-default-end > * {
+  grid-area: 1 / 1;
+}
+
+.pj-default-spinner {
+  --spinner-size: 15px;
+  visibility: hidden;
+}
+
+/* While the default loads, the fieldset disables the cards and a spinner
+   replaces the chevron. */
+.pj-default-card:disabled {
+  cursor: progress;
+}
+
+.pj-defaults-list.is-busy .pj-default-end .icon {
+  visibility: hidden;
+}
+
+.pj-defaults-list.is-busy .pj-default-spinner {
+  visibility: visible;
+}
+
+/* --- Delete confirmation -------------------------------------------------- */
+
+:root .pj-dialog .pj-alert-header {
+  padding: 20px 22px 0;
+}
+
+:root .pj-dialog .pj-alert-title {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.pj-alert-text {
+  margin: 7px 0 0;
+  padding: 0 22px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.pj-dialog-delete .pj-dialog-foot {
+  gap: 8px;
+  padding: 14px 18px;
+}
+
+/* --- Project page: gate ----------------------------------------------------- */
+
+.pj-gate {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.pj-gate-quiet {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pj-gate-card {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 28px 28px 24px;
+}
+
+.pj-gate-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pj-gate-text {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.pj-gate-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--blue-600);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pj-gate-link:hover {
+  color: var(--blue-700);
+}

@@ -1,0 +1,873 @@
+/*
+ * Static content pages: Methodology (`meth-`) and Release Notes (`rn-`).
+ *
+ * Colours come from the brand tokens in brand.css, including the
+ * `--on-dark-*` shades on the dark mastheads; cards and verdict pills build
+ * on its `.card` and `.pill` primitives, glyphs on icons.css.
+ *
+ * Breakpoints: 40rem (sm), 48rem (md), 64rem (lg).
+ */
+
+.meth-page,
+.rn-page {
+  min-height: calc(100vh - var(--nav-h));
+}
+
+/* ── Methodology ─────────────────────────────────────────────────────────── */
+
+.meth-page {
+  padding-bottom: 90px;
+}
+
+.meth-wrap,
+.meth-section {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 28px;
+}
+
+.meth-section {
+  padding-top: 56px;
+}
+
+.meth-section--spaced {
+  padding-top: 64px;
+}
+
+.meth-section--after-band {
+  padding-top: 48px;
+}
+
+/* Hero */
+
+.meth-hero {
+  background: var(--header-bg);
+  padding: 62px 0 72px;
+}
+
+.meth-hero-kicker,
+.meth-band-kicker,
+.meth-outcome-kicker {
+  display: block;
+  color: var(--on-dark-kicker);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.meth-hero-kicker {
+  margin-bottom: 18px;
+}
+
+.meth-hero-title {
+  max-width: 820px;
+  color: var(--on-dark-heading);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+}
+
+.meth-hero-lede {
+  max-width: 800px;
+  margin-top: 20px;
+  color: var(--on-dark-lede);
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.meth-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.meth-hero-tag {
+  border: 1px solid var(--on-dark-chip-border);
+  border-radius: 9999px;
+  background: var(--on-dark-chip-bg);
+  color: var(--on-dark-chip-ink);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Section head */
+
+.meth-head {
+  max-width: 850px;
+  margin-bottom: 28px;
+}
+
+.meth-kicker {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.meth-h2 {
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.024em;
+}
+
+.meth-sub {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* Cards and grids */
+
+/* Cards build on brand.css `.card` (surface, border, radius, shadow) and set
+   their own padding. */
+
+.card.meth-card-pad {
+  padding: 24px;
+}
+
+.card.meth-card-pad-sm {
+  padding: 20px;
+}
+
+.card.meth-card--accent {
+  border-color: var(--blue-border);
+}
+
+.meth-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.meth-grid--tight {
+  gap: 12px;
+}
+
+/* Why it exists */
+
+.meth-compare-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  padding: 4px 11px;
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.meth-compare-tag--with {
+  border-color: var(--blue-border);
+  background: var(--blue-tint);
+  color: var(--blue-600);
+}
+
+.meth-compare-body {
+  color: var(--body);
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* Diagrams */
+
+.meth-figure {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+}
+
+.meth-figure-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.meth-note {
+  margin-top: 20px;
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-card);
+  background: var(--blue-tint);
+  padding: 16px 20px;
+}
+
+.meth-note-body {
+  color: var(--blue-700);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Icon tiles */
+
+.meth-tile {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--blue-tint);
+  color: var(--blue-600);
+}
+
+.meth-tile--lg {
+  width: 46px;
+  height: 46px;
+}
+
+.meth-tile--stacked {
+  margin-bottom: 16px;
+}
+
+/* Feature cards: roles and reviewer components */
+
+.meth-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.meth-card-label {
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.meth-feature-title {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.meth-feature-body {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.62;
+}
+
+.meth-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.meth-check-item {
+  display: flex;
+  gap: 10px;
+  color: var(--body);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* List check marks shrink with their text in narrow items. */
+:is(.meth-check-item, .meth-outcome) > .icon {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* Agency configuration and reviewer bands */
+
+.meth-band {
+  margin-top: 64px;
+  background: var(--header-bg);
+  padding: 58px 0;
+}
+
+.meth-band-title {
+  max-width: 760px;
+  color: var(--on-dark-heading);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+}
+
+.meth-band-body {
+  max-width: 760px;
+  margin-top: 16px;
+  color: var(--on-dark-lede);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.68;
+}
+
+/* Configuration blocks */
+
+.meth-config-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meth-config {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.meth-config-lead {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.meth-config-n {
+  color: var(--faint);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.meth-config-main {
+  flex: 1 1 0%;
+  min-width: 250px;
+}
+
+.meth-config-title {
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+}
+
+.meth-config-body {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.meth-config-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 16px;
+}
+
+.meth-config-chip {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface-2);
+  padding: 4px 9px;
+  color: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.meth-config-foot {
+  max-width: 800px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* Proponent workflow */
+
+.meth-step-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.meth-step-n {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--blue-border);
+  border-radius: 9999px;
+  background: var(--blue-tint);
+  color: var(--blue-700);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.meth-step-title,
+.meth-principle-title {
+  color: var(--ink);
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.meth-step-body {
+  color: var(--muted);
+  font-size: 13.8px;
+  font-weight: 500;
+  line-height: 1.58;
+}
+
+/* Verdicts */
+
+.card.meth-verdict {
+  overflow: hidden;
+  padding: 0;
+}
+
+.meth-verdict-head {
+  border-bottom: 1px solid var(--verdict-border);
+  background: var(--verdict-bg);
+  padding: 16px 18px;
+}
+
+.meth-verdict--pass {
+  --verdict-bg: var(--pass-bg);
+  --verdict-border: var(--pass-border);
+}
+
+.meth-verdict--nc {
+  --verdict-bg: var(--nc-bg);
+  --verdict-border: var(--nc-border);
+}
+
+.meth-verdict--fail {
+  --verdict-bg: var(--fail-bg);
+  --verdict-border: var(--fail-border);
+}
+
+.meth-verdict-body {
+  padding: 16px 18px 20px;
+}
+
+.meth-verdict-title {
+  color: var(--ink);
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.meth-verdict-detail {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Prose under the reviewer and calibration sections */
+
+.meth-prose {
+  max-width: 860px;
+  margin-top: 24px;
+}
+
+.meth-prose-p {
+  color: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.meth-prose-p:not(:last-child) {
+  margin-bottom: 1.65em;
+}
+
+/* Principles */
+
+.meth-principle-body {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.58;
+}
+
+/* Intended outcome */
+
+.meth-outcome-panel {
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--header-bg);
+  padding: 32px 24px;
+}
+
+.meth-outcome-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+.meth-outcome-kicker {
+  font-size: 11.5px;
+}
+
+.meth-outcome-title {
+  color: var(--on-dark-heading);
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.meth-outcome-body {
+  margin-top: 12px;
+  color: var(--on-dark-lede);
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.meth-outcomes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+
+.meth-outcome {
+  display: flex;
+  gap: 10px;
+  border: 1px solid var(--on-dark-item-border);
+  border-radius: 12px;
+  background: var(--on-dark-item-bg);
+  padding: 12px 14px;
+  color: var(--on-dark-item-ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+@media (width >= 40rem) {
+  .meth-hero-title {
+    font-size: 54px;
+  }
+
+  .meth-grid--sm2,
+  .meth-outcomes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .meth-grid--sm3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .meth-figure {
+    padding: 20px;
+  }
+
+  .meth-config-examples {
+    width: 230px;
+    border-top: 0;
+    border-left: 1px solid var(--line-soft);
+    padding-top: 0;
+    padding-left: 20px;
+  }
+
+  .meth-outcome-panel {
+    padding-inline: 32px;
+  }
+}
+
+@media (width >= 48rem) {
+  .meth-grid--md2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .meth-outcome-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+  }
+}
+
+@media (width >= 64rem) {
+  .meth-grid--lg4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ── Release notes ───────────────────────────────────────────────────────── */
+
+.rn-badge--major {
+  --type-ink: var(--major-ink);
+  --type-bg: var(--major-bg);
+  --type-border: var(--major-border);
+  --type-dot: var(--major-dot);
+}
+
+.rn-badge--minor {
+  --type-ink: var(--minor-ink);
+  --type-bg: var(--minor-bg);
+  --type-border: var(--minor-border);
+  --type-dot: var(--minor-dot);
+}
+
+.rn-badge--patch {
+  --type-ink: var(--patch-ink);
+  --type-bg: var(--patch-bg);
+  --type-border: var(--patch-border);
+  --type-dot: var(--patch-dot);
+}
+
+.rn-badge--op {
+  --type-ink: var(--op-ink);
+  --type-bg: var(--op-bg);
+  --type-border: var(--op-border);
+  --type-dot: var(--op-dot);
+}
+
+/* Hero */
+
+.rn-hero {
+  overflow: hidden;
+  background: var(--header-bg);
+  padding: 56px 0 64px;
+}
+
+.rn-hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 28px;
+}
+
+.rn-hero-intro {
+  flex: 1 1 0%;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.rn-hero-kicker-row {
+  margin-bottom: 18px;
+}
+
+.rn-hero-kicker {
+  color: var(--on-dark-kicker);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rn-hero-title {
+  margin-bottom: 18px;
+  color: var(--on-dark-heading);
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+}
+
+.rn-hero-lede {
+  color: var(--on-dark-lede);
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+/* Version anatomy */
+
+.rn-anatomy {
+  flex-shrink: 0;
+}
+
+.rn-anatomy-digits {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.rn-anatomy-v {
+  margin-right: 4px;
+  color: var(--on-dark-version-v);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.rn-anatomy-seg {
+  min-width: 26px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.rn-anatomy-seg--major {
+  color: var(--major-dot);
+}
+
+.rn-anatomy-seg--minor {
+  color: var(--minor-dot);
+}
+
+.rn-anatomy-seg--patch {
+  color: var(--patch-dot);
+}
+
+.rn-anatomy-seg--op {
+  color: var(--op-dot);
+}
+
+.rn-anatomy-sep {
+  color: var(--on-dark-version-sep);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.rn-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.rn-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rn-legend-desc {
+  color: var(--on-dark-legend);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+/* Release-type badge */
+
+.rn-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--type-border);
+  border-radius: 9999px;
+  background: var(--type-bg);
+  padding: 3px 10px 3px 9px;
+  color: var(--type-ink);
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rn-badge--dark {
+  border-color: var(--on-dark-badge-border);
+  background: var(--on-dark-badge-bg);
+  color: var(--on-dark-badge-ink);
+}
+
+.rn-badge-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--type-dot);
+}
+
+/* Changelog */
+
+.rn-changelog {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 12px 28px 90px;
+}
+
+.rn-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.rn-entry {
+  border-bottom: 1px solid var(--line);
+  padding: 40px 0;
+}
+
+.rn-entry:last-child {
+  border-bottom: 0;
+}
+
+.rn-entry-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rn-entry-date {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rn-entry-rule {
+  flex-shrink: 0;
+  width: 1px;
+  height: 13px;
+  background: var(--line);
+}
+
+.rn-entry-version {
+  color: var(--faint);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rn-entry-title {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.rn-entry-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.rn-entry-body {
+  color: var(--body);
+  font-size: 15.5px;
+  line-height: 1.66;
+  text-wrap: pretty;
+}

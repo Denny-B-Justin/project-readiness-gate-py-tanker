@@ -1,0 +1,271 @@
+{
+  "templateVersion": "1.5.0",
+  "criteriaVersion": "1.4.0",
+  "assessmentVersion": "0.3.0",
+  "mcaVersion": "0.1.0",
+  "fieldOrder": [
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "project_title",
+      "kind": "text",
+      "declaredInputType": "text",
+      "number": "1.1",
+      "title": "Project title"
+    },
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "project_location",
+      "kind": "text",
+      "declaredInputType": "text",
+      "number": "1.2",
+      "title": "Project location"
+    },
+    {
+      "sectionId": "investment_identification",
+      "fieldId": "implementation_period",
+      "kind": "group",
+      "declaredInputType": "group",
+      "number": "1.3",
+      "title": "Implementation period"
+    },
+    {
+      "sectionId": "investment_rationale",
+      "fieldId": "issues_and_justification",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "2.1",
+      "title": "Issues that need to be addressed. Justification of the need for investments"
+    },
+    {
+      "sectionId": "investment_rationale",
+      "fieldId": "objectives",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "2.2",
+      "title": "Objectives of the project"
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "alternative_options_considered",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "3.1",
+      "title": "Alternative options considered"
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "scope_of_the_project",
+      "kind": "list",
+      "declaredInputType": "list",
+      "number": "3.2",
+      "title": "Scope of the project"
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "project_beneficiaries",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "3.3",
+      "title": "Project beneficiaries"
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "project_social_impact",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "3.4",
+      "title": "Project social impact"
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "gender_equality",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "3.5",
+      "title": "Gender equality"
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "environmental_and_climate_impacts",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "3.6",
+      "title": "Environmental and climate impacts"
+    },
+    {
+      "sectionId": "project_description_and_impact",
+      "fieldId": "climate_change_adaptation_and_mitigation",
+      "kind": "textarea",
+      "declaredInputType": null,
+      "number": "3.7",
+      "title": "Climate change adaptation and mitigation"
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "investment_cost_estimate",
+      "kind": "worksheet",
+      "declaredInputType": "worksheet",
+      "number": "4.1",
+      "title": "Investment cost estimate"
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "operating_costs",
+      "kind": "scenario_comparison",
+      "declaredInputType": "scenario_comparison",
+      "number": "4.2",
+      "title": "Operating costs"
+    },
+    {
+      "sectionId": "estimated_investment_costs_and_financing",
+      "fieldId": "revenues",
+      "kind": "scenario_comparison",
+      "declaredInputType": "scenario_comparison",
+      "number": "4.3",
+      "title": "Revenues"
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "fieldId": "project_risks",
+      "kind": "list",
+      "declaredInputType": "list",
+      "number": "5.1",
+      "title": "Project risks"
+    },
+    {
+      "sectionId": "project_management_and_risks",
+      "fieldId": "management_arrangements",
+      "kind": "textarea",
+      "declaredInputType": "textarea",
+      "number": "5.2",
+      "title": "Summary of the arrangements and roles of the institutions that will manage the project"
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "fieldId": "documentation_and_permits",
+      "kind": "static_table",
+      "declaredInputType": "static_table",
+      "number": "6.1",
+      "title": "Documentation and permits"
+    },
+    {
+      "sectionId": "project_advancement_and_documentation",
+      "fieldId": "land_and_property_status",
+      "kind": "static_table",
+      "declaredInputType": "static_table",
+      "number": "6.2",
+      "title": "Land and property status"
+    }
+  ],
+  "dimensionIds": [
+    "completeness_and_conformity",
+    "internal_coherence",
+    "evidence_quality",
+    "cost_realism",
+    "risk_and_deliverability"
+  ],
+  "criterionIds": [
+    "urgency_and_criticality",
+    "expected_economic_and_development_impact",
+    "environmental_impact",
+    "fiscal_affordability_and_sustainability"
+  ],
+  "scale": {
+    "min": 1,
+    "max": 5,
+    "entries": [
+      {
+        "value": 1,
+        "label": "Very low",
+        "meaning": "The project performs very poorly against this criterion. Strong argument against selection; normally requires the proposal to be reworked before it can be prioritised."
+      },
+      {
+        "value": 2,
+        "label": "Low",
+        "meaning": "The project performs weakly against this criterion. Contributes little; would need compensating strength elsewhere to be selected."
+      },
+      {
+        "value": 3,
+        "label": "Moderate",
+        "meaning": "The project performs acceptably against this criterion. Meets the minimum expectation without standing out."
+      },
+      {
+        "value": 4,
+        "label": "High",
+        "meaning": "The project performs well against this criterion. A clear, evidenced strength that supports selection."
+      },
+      {
+        "value": 5,
+        "label": "Very high",
+        "meaning": "The project performs exceptionally against this criterion. A decisive strength, fully documented and verifiable."
+      }
+    ]
+  },
+  "bands": [
+    {
+      "id": "high",
+      "label": "High",
+      "minPercentOfMaximum": 80
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "minPercentOfMaximum": 60
+    },
+    {
+      "id": "low",
+      "label": "Low",
+      "minPercentOfMaximum": 0
+    }
+  ],
+  "weights": {
+    "urgency_and_criticality": 30,
+    "expected_economic_and_development_impact": 30,
+    "environmental_impact": 20,
+    "fiscal_affordability_and_sustainability": 20
+  },
+  "templateId": "pcn_global",
+  "criteriaSetId": "pcn_global_default",
+  "assessmentSetId": "pcn_global_reviewer_default",
+  "mcaSetId": "pcn_global_mca_default",
+  "defaultProject": {
+    "id": "upper_valley_district_road",
+    "version": "1.0.0",
+    "title": "Upper Valley District Road Rehabilitation"
+  },
+  "sections": [
+    {
+      "id": "investment_identification",
+      "number": "1",
+      "title": "Investment Identification"
+    },
+    {
+      "id": "investment_rationale",
+      "number": "2",
+      "title": "Investment Rationale"
+    },
+    {
+      "id": "project_description_and_impact",
+      "number": "3",
+      "title": "Project description and impact"
+    },
+    {
+      "id": "estimated_investment_costs_and_financing",
+      "number": "4",
+      "title": "Estimated investment costs and expected financing"
+    },
+    {
+      "id": "project_management_and_risks",
+      "number": "5",
+      "title": "Project management and risks"
+    },
+    {
+      "id": "project_advancement_and_documentation",
+      "number": "6",
+      "title": "Project advancement and available documentation"
+    }
+  ],
+  "assessorRevision": "arv1-1d272762bd7f4eecd1ee7ad80a12ec5fa073e4dcdc9ced9e121fbee209ab3891",
+  "mcaRevision": "mrv1-a2e245f462d3c5b6381454ddd1991684f32b41e732052a3ad4118d1d208becbe",
+  "defaultInputDigest": "aiv1-9c6739310785cf83573edbc5cad497bec75851e179e6dbecbe8812eb306719a6"
+}

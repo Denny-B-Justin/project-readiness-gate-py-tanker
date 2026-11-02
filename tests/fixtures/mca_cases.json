@@ -1,0 +1,503 @@
+[
+  {
+    "name": "all_1",
+    "scores": {
+      "urgency_and_criticality": 1,
+      "expected_economic_and_development_impact": 1,
+      "environmental_impact": 1,
+      "fiscal_affordability_and_sustainability": 1
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 1,
+          "weightedPoints": 30
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 1,
+          "weightedPoints": 30
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 1,
+          "weightedPoints": 20
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 1,
+          "weightedPoints": 20
+        }
+      ],
+      "totalWeightedPoints": 100,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 20,
+      "band": {
+        "id": "low",
+        "label": "Low",
+        "minPercentOfMaximum": 0
+      }
+    }
+  },
+  {
+    "name": "all_5",
+    "scores": {
+      "urgency_and_criticality": 5,
+      "expected_economic_and_development_impact": 5,
+      "environmental_impact": 5,
+      "fiscal_affordability_and_sustainability": 5
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 5,
+          "weightedPoints": 150
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 5,
+          "weightedPoints": 150
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 5,
+          "weightedPoints": 100
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 5,
+          "weightedPoints": 100
+        }
+      ],
+      "totalWeightedPoints": 500,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 100,
+      "band": {
+        "id": "high",
+        "label": "High",
+        "minPercentOfMaximum": 80
+      }
+    }
+  },
+  {
+    "name": "scores_4_3_5_2",
+    "scores": {
+      "urgency_and_criticality": 4,
+      "expected_economic_and_development_impact": 3,
+      "environmental_impact": 5,
+      "fiscal_affordability_and_sustainability": 2
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 4,
+          "weightedPoints": 120
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 3,
+          "weightedPoints": 90
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 5,
+          "weightedPoints": 100
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 2,
+          "weightedPoints": 40
+        }
+      ],
+      "totalWeightedPoints": 350,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 70,
+      "band": {
+        "id": "medium",
+        "label": "Medium",
+        "minPercentOfMaximum": 60
+      }
+    }
+  },
+  {
+    "name": "exactly_80_all_4",
+    "scores": {
+      "urgency_and_criticality": 4,
+      "expected_economic_and_development_impact": 4,
+      "environmental_impact": 4,
+      "fiscal_affordability_and_sustainability": 4
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 4,
+          "weightedPoints": 120
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 4,
+          "weightedPoints": 120
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 4,
+          "weightedPoints": 80
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 4,
+          "weightedPoints": 80
+        }
+      ],
+      "totalWeightedPoints": 400,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 80,
+      "band": {
+        "id": "high",
+        "label": "High",
+        "minPercentOfMaximum": 80
+      }
+    }
+  },
+  {
+    "name": "exactly_80_mixed_5_5_3_2",
+    "scores": {
+      "urgency_and_criticality": 5,
+      "expected_economic_and_development_impact": 5,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 2
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 5,
+          "weightedPoints": 150
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 5,
+          "weightedPoints": 150
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 3,
+          "weightedPoints": 60
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 2,
+          "weightedPoints": 40
+        }
+      ],
+      "totalWeightedPoints": 400,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 80,
+      "band": {
+        "id": "high",
+        "label": "High",
+        "minPercentOfMaximum": 80
+      }
+    }
+  },
+  {
+    "name": "just_below_80_78pct",
+    "scores": {
+      "urgency_and_criticality": 5,
+      "expected_economic_and_development_impact": 4,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 3
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 5,
+          "weightedPoints": 150
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 4,
+          "weightedPoints": 120
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 3,
+          "weightedPoints": 60
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 3,
+          "weightedPoints": 60
+        }
+      ],
+      "totalWeightedPoints": 390,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 78,
+      "band": {
+        "id": "medium",
+        "label": "Medium",
+        "minPercentOfMaximum": 60
+      }
+    }
+  },
+  {
+    "name": "exactly_60_all_3",
+    "scores": {
+      "urgency_and_criticality": 3,
+      "expected_economic_and_development_impact": 3,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 3
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 3,
+          "weightedPoints": 90
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 3,
+          "weightedPoints": 90
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 3,
+          "weightedPoints": 60
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 3,
+          "weightedPoints": 60
+        }
+      ],
+      "totalWeightedPoints": 300,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 60,
+      "band": {
+        "id": "medium",
+        "label": "Medium",
+        "minPercentOfMaximum": 60
+      }
+    }
+  },
+  {
+    "name": "exactly_60_mixed_2_4_3_3",
+    "scores": {
+      "urgency_and_criticality": 2,
+      "expected_economic_and_development_impact": 4,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 3
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 2,
+          "weightedPoints": 60
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 4,
+          "weightedPoints": 120
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 3,
+          "weightedPoints": 60
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 3,
+          "weightedPoints": 60
+        }
+      ],
+      "totalWeightedPoints": 300,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 60,
+      "band": {
+        "id": "medium",
+        "label": "Medium",
+        "minPercentOfMaximum": 60
+      }
+    }
+  },
+  {
+    "name": "just_below_60_58pct",
+    "scores": {
+      "urgency_and_criticality": 3,
+      "expected_economic_and_development_impact": 4,
+      "environmental_impact": 2,
+      "fiscal_affordability_and_sustainability": 2
+    },
+    "result": {
+      "rows": [
+        {
+          "criterionId": "urgency_and_criticality",
+          "label": "Urgency and criticality",
+          "weight": 30,
+          "score": 3,
+          "weightedPoints": 90
+        },
+        {
+          "criterionId": "expected_economic_and_development_impact",
+          "label": "Expected economic and development impact",
+          "weight": 30,
+          "score": 4,
+          "weightedPoints": 120
+        },
+        {
+          "criterionId": "environmental_impact",
+          "label": "Environmental impact",
+          "weight": 20,
+          "score": 2,
+          "weightedPoints": 40
+        },
+        {
+          "criterionId": "fiscal_affordability_and_sustainability",
+          "label": "Fiscal affordability and sustainability",
+          "weight": 20,
+          "score": 2,
+          "weightedPoints": 40
+        }
+      ],
+      "totalWeightedPoints": 290,
+      "maxWeightedPoints": 500,
+      "percentOfMaximum": 57.99999999999999,
+      "band": {
+        "id": "low",
+        "label": "Low",
+        "minPercentOfMaximum": 0
+      }
+    }
+  },
+  {
+    "name": "missing_criterion_error",
+    "scores": {
+      "urgency_and_criticality": 3,
+      "expected_economic_and_development_impact": 3,
+      "environmental_impact": 3
+    },
+    "result": {
+      "error": "Score map is missing criterion \"fiscal_affordability_and_sustainability\" — the summary is computed over a complete map only, never partially."
+    }
+  },
+  {
+    "name": "unknown_criterion_error",
+    "scores": {
+      "urgency_and_criticality": 3,
+      "expected_economic_and_development_impact": 3,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 3,
+      "not_a_criterion": 3
+    },
+    "result": {
+      "error": "Score map names unknown criterion \"not_a_criterion\" — the matrix defines [urgency_and_criticality, expected_economic_and_development_impact, environmental_impact, fiscal_affordability_and_sustainability]."
+    }
+  },
+  {
+    "name": "score_0_out_of_scale_error",
+    "scores": {
+      "urgency_and_criticality": 0,
+      "expected_economic_and_development_impact": 3,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 3
+    },
+    "result": {
+      "error": "Score 0 for criterion \"urgency_and_criticality\" is not a value on the matrix's scale."
+    }
+  },
+  {
+    "name": "score_6_out_of_scale_error",
+    "scores": {
+      "urgency_and_criticality": 3,
+      "expected_economic_and_development_impact": 3,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 6
+    },
+    "result": {
+      "error": "Score 6 for criterion \"fiscal_affordability_and_sustainability\" is not a value on the matrix's scale."
+    }
+  },
+  {
+    "name": "score_2_5_not_on_scale_error",
+    "scores": {
+      "urgency_and_criticality": 3,
+      "expected_economic_and_development_impact": 2.5,
+      "environmental_impact": 3,
+      "fiscal_affordability_and_sustainability": 3
+    },
+    "result": {
+      "error": "Score 2.5 for criterion \"expected_economic_and_development_impact\" is not a value on the matrix's scale."
+    }
+  }
+]

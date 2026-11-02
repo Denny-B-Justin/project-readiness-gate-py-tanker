@@ -1,0 +1,1350 @@
+/*
+ * Brand stylesheet: the GPBP / PIM-PAM tokens (palette, radii, shadows,
+ * sticky-chrome heights), base element styles, the suite header, and the
+ * shared primitives every page builds on: buttons, icon buttons, pills,
+ * cards, page heads, data tables, empty states and the spinner, plus the
+ * form fields Dash draws for `dcc.Input` and `dcc.Textarea`. The last
+ * section skins the Mantine overlays (modal, menu, popover, toast).
+ *
+ * Light theme only: the brand sheet specifies a light surface.
+ *
+ * Cascade: base element rules sit in `@layer base`, so every class below,
+ * and every Mantine component style (unlayered), wins over them whatever
+ * the selector specificity. Mantine and Dash inject their stylesheets at
+ * runtime, after this file, so the overrides that target their classes are
+ * prefixed with `:root` to outrank their single-class selectors.
+ */
+
+:root {
+  /* Brand — GPBP / PIM palette */
+  --azure: #021420;
+  --dark-blue: #374291;
+  --mid-blue: #3675b7;
+  --header-bg: #021420;
+  --header-link: #c9d3ea;
+
+  --blue-700: #2c3576;
+  --blue-600: #374291;
+  --blue-500: #4a56a4;
+  --blue-tint: #eef0f8;
+  --blue-tint-2: #dfe3f3;
+  --blue-border: #ccd2ea;
+
+  /* Neutrals — blue-tinted slate */
+  --ink: #14223b;
+  --ink-soft: #28324d;
+  --body: #3c4965;
+  --muted: #64708c;
+  --faint: #95a0b6;
+  --line: #e4e7ef;
+  --line-soft: #eef0f5;
+  --bg: #eef1f6;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+
+  /* Verdict palette. */
+  --pass-ink: #1c7a4d;
+  --pass-bg: #e9f6ef;
+  --pass-border: #c2e6d2;
+  --pass-dot: #28a268;
+  --nc-ink: #976312;
+  --nc-bg: #fbf2df;
+  --nc-border: #f0d9a8;
+  --nc-dot: #d79626;
+  --fail-ink: #b23a2c;
+  --fail-bg: #fceae7;
+  --fail-border: #f3ccc4;
+  --fail-dot: #d6543f;
+
+  /* Release-type palette — drives the Release Notes changelog badges and the
+     version-anatomy diagram. Kept distinct from the verdict palette on purpose
+     (a "major" release is not a "fail" verdict), even though several hues
+     coincide; `op` (operational / pre-release, indigo) has no verdict analogue.
+     Four slots per type so badge (bg + border + ink) and the dot stay tunable. */
+  --major-ink: #b23a2c; --major-bg: #fceae7; --major-border: #f3ccc4; --major-dot: #d6543f;
+  --minor-ink: #976313; --minor-bg: #fbf2df; --minor-border: #f0d9a8; --minor-dot: #d79626;
+  --patch-ink: #1c7a4d; --patch-bg: #e9f6ef; --patch-border: #c2e6d2; --patch-dot: #28a268;
+  --op-ink: #4a4db0;    --op-bg: #ecedfb;    --op-border: #d3d5f4;    --op-dot: #6166d8;
+
+  /* Radii and shadows. */
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-card: 14px;
+  --radius-chip: 10px;
+  --radius-pill: 8px;
+  --radius-button: 10px;
+  --radius-dialog: 16px;
+  --shadow-sm:
+    0 1px 2px rgba(22, 34, 58, 0.05), 0 1px 1px rgba(22, 34, 58, 0.04);
+  --shadow-md:
+    0 8px 24px -8px rgba(22, 34, 58, 0.16),
+    0 2px 8px -2px rgba(22, 34, 58, 0.08);
+  --shadow-lg:
+    0 24px 60px -16px rgba(22, 34, 58, 0.3),
+    0 8px 24px -8px rgba(22, 34, 58, 0.14);
+  --shadow-card: var(--shadow-sm);
+  --shadow-pop: var(--shadow-md);
+  --shadow-dialog: var(--shadow-lg);
+  /* Floating menus and popovers: a small drop shadow plus a hairline ring. */
+  --shadow-float:
+    0 0 0 1px rgba(20, 34, 59, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+
+  /* Typography: Fira Sans headings, Inter body, IBM Plex Mono for eyebrows,
+     references and version numbers. */
+  --font-heading: "Fira Sans";
+  --font-body: "Inter";
+  --font-mono: "IBM Plex Mono";
+
+  /* Sticky-chrome heights.
+     `--nav-h` is the suite header's total height: what every sticky tier-2
+     context bar offsets its `top` by, and what full-height pages subtract
+     from the viewport. It is composed of the rows the header renders: the
+     main row always, plus the compact nav row it adds below 48rem (see the
+     media query after this block). `--nav-row-h` is the main row alone. */
+  --nav-row-h: 58px;
+  --nav-compact-h: 40px;
+  --nav-h: var(--nav-row-h);
+  --subbar-h: 52px;
+
+  /* Semantic aliases. `--accent` is the hover/focus highlight (the active
+     menu row): the light blue tint with blue-700 text. */
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink-soft);
+  --primary: var(--blue-600);
+  --primary-foreground: var(--surface);
+  --muted-foreground: var(--faint);
+  --accent: var(--blue-tint);
+  --accent-foreground: var(--blue-700);
+  --destructive: var(--fail-ink);
+  --border: var(--line);
+  --border-strong: #cbd5e1;
+  --input: var(--border-strong);
+  --ring: var(--blue-500);
+
+  /* Keyboard focus rings, drawn as box-shadows: a 2px gap in the surface
+     colour, then 2px of a colour with at least 3:1 contrast against it.
+     Text fields mark focus with a blue border and a soft halo instead. */
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--ring);
+  --focus-ring-on-dark: 0 0 0 2px var(--azure), 0 0 0 4px var(--header-link);
+  --focus-halo: 0 0 0 3px color-mix(in srgb, var(--blue-500) 25%, transparent);
+
+  /* Light-on-dark shades for the dark mastheads and bands. */
+  --on-dark-heading: #ffffff;
+  --on-dark-kicker: #83a0d8;
+  --on-dark-lede: #a7b2c9;
+  --on-dark-chip-ink: #d6def0;
+  --on-dark-chip-bg: rgba(255, 255, 255, 0.05);
+  --on-dark-chip-border: rgba(255, 255, 255, 0.13);
+  --on-dark-item-ink: #dbe3f2;
+  --on-dark-item-bg: rgba(255, 255, 255, 0.045);
+  --on-dark-item-border: rgba(255, 255, 255, 0.11);
+  --on-dark-badge-ink: #dfe5f2;
+  --on-dark-badge-bg: rgba(255, 255, 255, 0.06);
+  --on-dark-badge-border: rgba(255, 255, 255, 0.14);
+  --on-dark-control-bg: #0b1f2b;
+  --on-dark-control-border: #23343e;
+  --on-dark-control-hover-bg: #1c2e39;
+  --on-dark-control-hover-border: #34444d;
+  --on-dark-legend: #b8c2d6;
+  --on-dark-version-v: #7c8aa6;
+  --on-dark-version-sep: #56627e;
+}
+
+/* Dash draws its `dcc` controls (inputs, dropdowns, sliders, date pickers,
+   tabs, tooltips) from these variables; mapped onto the brand palette so
+   focus, selection and accent colours are brand blue, not Dash's purple.
+   `html:root` outranks the `:root` block Dash injects at runtime. */
+html:root {
+  --Dash-Fill-Interactive-Strong: var(--blue-600);
+  --Dash-Fill-Interactive-Weak: var(--blue-tint);
+  --Dash-Fill-Inverse-Strong: var(--surface);
+  --Dash-Fill-Primary-Hover: var(--surface-2);
+  --Dash-Fill-Primary-Active: var(--line-soft);
+  --Dash-Fill-Disabled: var(--line-soft);
+  --Dash-Stroke-Strong: var(--border-strong);
+  --Dash-Stroke-Weak: var(--line);
+  --Dash-Text-Strong: var(--ink);
+  --Dash-Text-Primary: var(--ink-soft);
+  --Dash-Text-Weak: var(--muted);
+  --Dash-Text-Disabled: var(--faint);
+  --Dash-Shading-Strong: rgba(22, 34, 58, 0.34);
+  --Dash-Shading-Weak: rgba(22, 34, 58, 0.16);
+}
+
+/* Below 48rem the suite header hides its inline link row and renders a
+   second, compact nav row instead, so the chrome a sticky context bar must
+   clear is taller. */
+@media (width < 48rem) {
+  :root {
+    --nav-h: calc(var(--nav-row-h) + var(--nav-compact-h));
+  }
+}
+
+html body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--font-body), Roboto, Arial, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--blue-tint-2);
+}
+
+/* Skeleton shimmer + drafting-meter slide, used by loading states. */
+@keyframes skwave {
+  from {
+    background-position: 180% 0;
+  }
+  to {
+    background-position: -40% 0;
+  }
+}
+@keyframes barslide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 22px 0;
+  }
+}
+
+/* Pop animations used by floating menu chrome. */
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 6px)) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes pop-out {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 6px)) scale(0.985);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer base {
+  /* Reset: no default margins or padding, border-box sizing, borders off
+     until an element asks for one. */
+  *,
+  ::before,
+  ::after,
+  ::backdrop {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid var(--border);
+  }
+  /* Anything focusable without its own ring gets a solid blue outline. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  html {
+    font-family: var(--font-body), Roboto, Arial, system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+  }
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1em;
+  }
+  ol,
+  ul,
+  menu {
+    list-style: none;
+  }
+  img,
+  svg,
+  video,
+  canvas,
+  iframe {
+    display: block;
+    vertical-align: middle;
+  }
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), "Trebuchet MS", system-ui, sans-serif;
+    color: var(--ink);
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  /* Labels stack above their input. */
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--foreground);
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 0.375rem;
+    padding: 0.45rem 0.6rem;
+    font: inherit;
+    color: inherit;
+  }
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--blue-500);
+    box-shadow: var(--focus-halo);
+  }
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    background: var(--line-soft);
+    color: var(--faint);
+    cursor: not-allowed;
+  }
+  textarea {
+    resize: vertical;
+  }
+
+  /* Buttons default to a neutral, secondary look; `.btn` variants restyle
+     them. */
+  button {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    color: var(--foreground);
+    padding: 0.4rem 0.85rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+  }
+  button:hover:not(:disabled) {
+    background: var(--surface-2);
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--line-soft);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  /* Inputs sit flush inside table cells (no label margin, tighter padding). */
+  td input {
+    padding: 0.3rem 0.4rem;
+  }
+}
+
+/* ── Utilities ─────────────────────────────────────────────────────────── */
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Mono uppercase label above a heading ("GET STARTED"). */
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue-500);
+}
+
+/* Visible to screen readers only. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Suite header ──────────────────────────────────────────────────────── */
+
+.suite-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--header-bg);
+}
+.suite-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: var(--nav-row-h);
+  padding: 0 14px 0 22px;
+}
+.suite-header-start {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  min-width: 0;
+}
+.suite-logo {
+  display: flex;
+  align-items: center;
+}
+.suite-logo img {
+  display: block;
+  width: auto;
+  height: 32px;
+}
+.suite-nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+/* Below 48rem the inline links move to their own scrollable row. */
+.suite-nav-compact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: var(--nav-compact-h);
+  padding: 0 20px;
+  overflow-x: auto;
+}
+@media (width >= 48rem) {
+  .suite-nav {
+    display: flex;
+  }
+  .suite-nav-compact {
+    display: none;
+  }
+}
+
+.suite-link {
+  position: relative;
+  color: var(--header-link);
+  background: none;
+  border: none;
+  padding: 6px 2px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+.suite-link:hover {
+  color: #ffffff;
+  background: none;
+}
+.suite-link.active {
+  color: #ffffff;
+}
+/* Chrome shape for a button on the header's right side. */
+.suite-iconbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 9px;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  color: var(--header-link);
+  transition:
+    background 0.15s,
+    color 0.15s;
+  cursor: pointer;
+}
+.suite-iconbtn:hover:not(:disabled) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.suite-iconbtn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-on-dark);
+}
+.suite-link:focus-visible {
+  outline: none;
+  border-radius: 4px;
+  box-shadow: var(--focus-ring-on-dark);
+}
+
+/* The page area under the header fills the rest of the viewport. */
+.shell-main {
+  display: block;
+  min-height: calc(100vh - var(--nav-h));
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────
+   `.btn` + one variant (`.btn-primary`, `.btn-secondary`, `.btn-ghost`,
+   `.btn-destructive`) + optionally a size (`.btn-md` is the default,
+   `.btn-sm` is compact). Works on <button> and <a>. An icon sits 8px from
+   its label. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition-property: color, background-color, border-color, box-shadow, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.btn:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-md {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+  border-radius: var(--radius-button);
+}
+.btn-sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background: var(--blue-600);
+  color: #ffffff;
+  border: 0;
+  box-shadow: 0 1px 2px rgba(31, 79, 204, 0.28);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--blue-700);
+}
+.btn-primary:disabled {
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 0;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.btn-destructive {
+  background: var(--fail-ink);
+  color: #ffffff;
+  border: 0;
+  box-shadow: 0 1px 2px rgba(178, 58, 44, 0.28);
+}
+.btn-destructive:hover:not(:disabled) {
+  background: #962c1f;
+}
+.btn-destructive:disabled {
+  box-shadow: none;
+}
+
+/* ── Icon button ───────────────────────────────────────────────────────────
+   Square, icon-only; the `aria-label` carries the meaning. `.icon-btn-sm`
+   is the 28px size; `.icon-btn-ghost` drops the chrome until hover (row
+   actions). */
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  outline: none;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.icon-btn:hover:not(:disabled) {
+  background: var(--surface-2);
+  color: var(--ink-soft);
+}
+.icon-btn:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+.icon-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.icon-btn-sm {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+}
+.icon-btn-ghost {
+  border-color: transparent;
+  background: transparent;
+}
+.icon-btn-ghost:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--muted);
+}
+
+/* ── Pills ─────────────────────────────────────────────────────────────────
+   `.pill` + a variant: `.pill-neutral` (line border, transparent), `.pill-tint`
+   (blue tint), `.pill-muted` (faint surface), or a verdict (`.pill-pass`,
+   `.pill-nc`, `.pill-fail`, with an optional leading `.pill-dot`). `.pill-sm`
+   is the 22px size. `.pill-button` makes it interactive; add `.active` (or
+   `aria-pressed="true"`) for the tinted selected state. */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.pill-sm {
+  height: 22px;
+  padding: 0 8px;
+  font-size: 11.5px;
+  border-radius: 7px;
+}
+.pill-neutral {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+}
+.pill-tint {
+  border-color: var(--blue-border);
+  background: var(--blue-tint);
+  color: var(--blue-700);
+}
+.pill-muted {
+  border-color: var(--line-soft);
+  background: var(--surface-2);
+  color: var(--muted);
+}
+.pill-pass {
+  border-color: var(--pass-border);
+  background: var(--pass-bg);
+  color: var(--pass-ink);
+}
+.pill-nc {
+  border-color: var(--nc-border);
+  background: var(--nc-bg);
+  color: var(--nc-ink);
+}
+.pill-fail {
+  border-color: var(--fail-border);
+  background: var(--fail-bg);
+  color: var(--fail-ink);
+}
+.pill-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+}
+.pill-sm .pill-dot {
+  width: 6px;
+  height: 6px;
+}
+.pill-pass .pill-dot {
+  background: var(--pass-dot);
+}
+.pill-nc .pill-dot {
+  background: var(--nc-dot);
+}
+.pill-fail .pill-dot {
+  background: var(--fail-dot);
+}
+
+.pill-button {
+  cursor: pointer;
+  outline: none;
+}
+.pill-button:hover:not(:disabled) {
+  border-color: var(--line);
+  background: var(--surface-2);
+}
+.pill-button:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+.pill-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.pill-button.active,
+.pill-button[aria-pressed="true"] {
+  border-color: var(--blue-border);
+  background: var(--blue-tint);
+  color: var(--blue-700);
+}
+.pill-button.active:hover:not(:disabled),
+.pill-button[aria-pressed="true"]:hover:not(:disabled) {
+  border-color: var(--blue-border);
+  background: var(--blue-tint-2);
+}
+
+/* ── Card ──────────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 20px 22px 18px;
+}
+
+/* ── Page column and head ──────────────────────────────────────────────────
+   `.page` is the centred content column of a list page; `.page-head` holds
+   an optional `.page-kicker`, the `.page-title` and the `.page-lede`. */
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 28px 90px;
+}
+@media (width < 40rem) {
+  .page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.page-head {
+  margin-bottom: 26px;
+}
+.page-kicker {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue-500);
+}
+.page-title {
+  margin: 0 0 8px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.page-lede {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* List heading with its item count ("YOUR CONCEPT NOTES  8"). */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--faint);
+}
+.count-badge {
+  display: inline-grid;
+  place-items: center;
+  height: 20px;
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--blue-tint);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--blue-700);
+}
+
+/* ── Data table ────────────────────────────────────────────────────────────
+   `.table-card` is the rounded surface around a `.data-table`; it scrolls
+   sideways on narrow screens instead of widening the page. Column classes:
+   `.col-no` (centred row number), `.col-action` (right-aligned row actions);
+   header cells take `.sortable` (+ `.sort-arrow`, `.active`). Rows that
+   open something take `.row-link`; inside a cell, `.cell-title` is the
+   primary link, `.cell-strong` / `.cell-sub` a value over its caption. */
+
+.table-card {
+  overflow: hidden;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+.data-table {
+  width: 100%;
+  min-width: 560px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.data-table thead tr {
+  border-bottom: 1px solid var(--blue-border);
+}
+.data-table th {
+  padding: 13px 18px;
+  border: 0;
+  background: var(--blue-tint);
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  user-select: none;
+}
+.data-table th.sortable {
+  cursor: pointer;
+}
+/* A sortable column's label is a button that keeps the header's type. */
+.data-table .sort-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  outline: none;
+}
+.data-table .sort-btn:hover:not(:disabled) {
+  background: none;
+}
+.data-table .sort-btn:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+.data-table .sort-arrow {
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--faint);
+}
+.data-table th.active .sort-arrow {
+  color: var(--blue-600);
+}
+.data-table tbody tr {
+  border-bottom: 1px solid var(--line-soft);
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.data-table tbody tr:last-child {
+  border-bottom: 0;
+}
+.data-table tbody tr:hover {
+  background: var(--surface-2);
+}
+.data-table tr.row-link {
+  cursor: pointer;
+}
+.data-table td {
+  padding: 14px 18px;
+  border: 0;
+  vertical-align: middle;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.data-table .col-no {
+  width: 56px;
+  text-align: center;
+}
+.data-table td.col-no {
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+}
+.data-table .col-action {
+  width: 80px;
+  text-align: right;
+}
+.data-table td.col-action > * {
+  display: inline-grid;
+  vertical-align: middle;
+}
+.data-table .cell-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color 0.15s;
+}
+.data-table .cell-title:hover {
+  color: var(--blue-600);
+}
+.data-table .cell-title:focus-visible {
+  outline: none;
+  border-radius: 4px;
+  box-shadow: var(--focus-ring);
+}
+.data-table .cell-strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+}
+.data-table .cell-sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--faint);
+}
+
+/* ── Empty state ───────────────────────────────────────────────────────────
+   A card with a centred `.empty-state-icon` tile, `.empty-state-title`,
+   `.empty-state-text`, and an optional `.empty-state-link` or
+   `.empty-state-actions` row. */
+
+.empty-state {
+  overflow: hidden;
+  padding: 54px 28px 60px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+.empty-state-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-card);
+  background: var(--blue-tint);
+  color: var(--blue-500);
+}
+.empty-state-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.empty-state-text {
+  max-width: 24rem;
+  margin: 5px auto 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.empty-state-link {
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--blue-600);
+}
+.empty-state-link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.empty-state-actions {
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* ── Spinner ───────────────────────────────────────────────────────────────
+   A spin ring for pending work: faint track, quarter arc in the current
+   colour (blue-700 by default). `--spinner-size` sets the box. */
+
+.spinner {
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--spinner-size, 14px);
+  height: var(--spinner-size, 14px);
+  color: var(--blue-700);
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Ccircle cx='12' cy='12' r='9' stroke-opacity='0.2'/%3E%3Cpath d='M21 12a9 9 0 0 0-9-9' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5'%3E%3Ccircle cx='12' cy='12' r='9' stroke-opacity='0.2'/%3E%3Cpath d='M21 12a9 9 0 0 0-9-9' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  animation: spin 1s linear infinite;
+}
+
+/* ── Form fields ───────────────────────────────────────────────────────────
+   The one look for text fields: `dcc.Input` (a `.dash-input-container`
+   wrapping a `.dash-input-element`) and `dcc.Textarea` (`.dash-textarea`).
+   A faint filled box with a hairline border; on focus the fill turns white,
+   the border blue, and a soft halo appears. Pages size fields with layout
+   only; a field that must look different (an inline chip entry) overrides
+   these rules under its own class. */
+
+:root .dash-input-container {
+  height: auto;
+  border: 1.5px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  transition-property: border-color, background-color, box-shadow;
+  transition-duration: 0.15s;
+}
+:root .dash-input-container:focus-within {
+  border: 1.5px solid var(--blue-500);
+  background: var(--surface);
+  box-shadow: var(--focus-halo);
+}
+:root .dash-input-container:has(:focus-visible) {
+  outline: none;
+}
+:root .dash-input-element {
+  height: auto;
+  padding: 12px 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+:root .dash-input-element:focus {
+  border: 0;
+  box-shadow: none;
+}
+:root .dash-textarea {
+  display: block;
+  min-height: 116px;
+  padding: 14px 15px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  line-height: 1.625;
+  resize: vertical;
+  transition-property: border-color, background-color, box-shadow;
+  transition-duration: 0.15s;
+}
+:root .dash-textarea:focus,
+:root .dash-textarea:focus-within {
+  border: 1.5px solid var(--blue-500);
+  outline: none;
+  background: var(--surface);
+  box-shadow: var(--focus-halo);
+}
+:root .dash-input-element::placeholder,
+:root .dash-textarea::placeholder {
+  color: var(--faint);
+}
+:root .dash-input-element::selection,
+:root .dash-textarea::selection {
+  background: var(--blue-tint-2);
+  color: var(--ink);
+}
+:root .dash-input-container:has(.dash-input-element:disabled),
+:root .dash-textarea:disabled {
+  opacity: 1;
+  background: var(--line-soft);
+  color: var(--faint);
+}
+
+/* ── Mantine overlays ──────────────────────────────────────────────────────
+   Modal (dialog), Menu (dropdown), Popover and Notification (toast) wear the
+   brand chrome. Radius, shadow, scrim colour and blur come from the theme's
+   component defaults; the rest is here. */
+
+/* Modal: white surface, line border, 16px radius, hairline-ruled header. */
+:root .mantine-Modal-overlay {
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+}
+:root .mantine-Modal-content {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--body);
+}
+:root .mantine-Modal-header {
+  gap: 12px;
+  min-height: 0;
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--surface);
+}
+:root .mantine-Modal-title {
+  font-family: var(--font-heading), "Trebuchet MS", system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+:root .mantine-Modal-body {
+  padding: 17px 18px 20px;
+}
+:root .mantine-Modal-close {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--muted);
+  --cb-icon-size: 16px;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 0.15s;
+}
+:root .mantine-Modal-close:hover {
+  background: var(--surface-2);
+  color: var(--ink-soft);
+}
+:root .mantine-Modal-close:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Menu: 14px floating surface with a hairline ring; rows highlight in tint. */
+:root .mantine-Menu-dropdown {
+  min-width: 128px;
+  padding: 4px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--popover);
+  color: var(--popover-foreground);
+  box-shadow: var(--shadow-float);
+}
+:root .mantine-Menu-item {
+  gap: 6px;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: 11px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--popover-foreground);
+}
+:root .mantine-Menu-item[data-hovered] {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+:root .mantine-Menu-item[data-disabled] {
+  opacity: 0.5;
+}
+:root .mantine-Menu-item.menu-item-destructive {
+  color: var(--destructive);
+}
+:root .mantine-Menu-item.menu-item-destructive[data-hovered] {
+  background: color-mix(in srgb, var(--destructive) 10%, transparent);
+  color: var(--destructive);
+}
+:root .mantine-Menu-itemSection {
+  margin: 0;
+}
+:root .mantine-Menu-label {
+  padding: 4px 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+:root .mantine-Menu-divider {
+  margin: 4px -4px;
+  border-color: var(--line);
+}
+
+/* Popover: the menu's surface with roomier padding, for read-only panels. */
+:root .mantine-Popover-dropdown {
+  padding: 16px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--popover);
+  color: var(--popover-foreground);
+  font-size: 14px;
+  box-shadow: var(--shadow-float);
+}
+
+/* Toast: a compact, content-width card centred at the top of the viewport.
+   `.toast-success` keeps the neutral surface with green text; `.toast-error`,
+   `.toast-warning` and `.toast-info` tint the whole card. */
+:root .mantine-Notification-root {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--popover);
+  color: var(--popover-foreground);
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+:root .mantine-Notification-root::before {
+  display: none;
+}
+:root .mantine-Notification-icon {
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  margin-inline-end: 6px;
+  background: transparent;
+  color: inherit;
+}
+:root .mantine-Notification-body {
+  margin-inline-end: 0;
+}
+:root .mantine-Notification-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: inherit;
+}
+:root .mantine-Notification-title + .mantine-Notification-description {
+  font-weight: 400;
+}
+:root .mantine-Notification-description {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: inherit;
+}
+:root .mantine-Notification-closeButton {
+  color: inherit;
+}
+:root .mantine-Notification-root.toast-success {
+  color: var(--pass-ink);
+}
+:root .mantine-Notification-root.toast-error {
+  border-color: var(--fail-border);
+  background: var(--fail-bg);
+  color: var(--fail-ink);
+}
+:root .mantine-Notification-root.toast-warning {
+  border-color: var(--nc-border);
+  background: var(--nc-bg);
+  color: var(--nc-ink);
+}
+:root .mantine-Notification-root.toast-info {
+  border-color: var(--blue-border);
+  background: var(--blue-tint);
+  color: var(--blue-700);
+}

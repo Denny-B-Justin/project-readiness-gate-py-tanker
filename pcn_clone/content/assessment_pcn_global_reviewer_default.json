@@ -1,0 +1,63 @@
+{
+  "id": "pcn_global_reviewer_default",
+  "templateId": "pcn_global",
+  "version": "0.3.0",
+  "description": "Default reviewer-facing assessment dimensions for the PCN v1 template: the whole-document checks a central PIM agency evaluator applies to a submitted concept note before drafting an assessment memo.",
+  "dimensions": [
+    {
+      "id": "completeness_and_conformity",
+      "label": "Completeness & conformity",
+      "description": "Whether every required element of the concept note is present and in the form the template expects — the document can be assessed at all before it can be assessed well.",
+      "guidance": "Read the document section by section against the template structure. The document enumerates every field of the template in order, so completeness is decided only by what those fields show: unanswered fields are marked explicitly (\"No answer provided.\"), and structurally invalid answers carry their validation issues — treat both as gaps to report, not omissions to infer around. Never fault the note for elements the template does not ask for or that you cannot see. Distinguish a missing answer from an answer that is present but does not address what its own field asks for; the latter is a conformity gap. If every field is answered with the kind of information its own field asks for, completeness and conformity pass — even when answers contradict each other, and even when figures or claims look implausible. Contradiction between sections belongs exclusively to the internal-coherence dimension, and plausibility of figures to the cost-realism and evidence dimensions; judging either here would score the same defect twice. Ground every completeness or conformity concern in something quotable — an explicit marker or the answer text itself; never report structural or numerical problems the document does not display (derived table totals, for instance, are computed from the entered values and always reconcile). Do not judge the quality of what is present — that belongs to the other dimensions.",
+      "verdicts": {
+        "fail": "Material parts of the concept note are missing, unanswered, or answer something other than what their fields ask for, to the point that a meaningful review of the proposal is not possible.",
+        "notClear": "The concept note is largely complete, but one or more required elements are missing, only partially answered, or off-form, and the gaps would need to be closed before the proposal could be appraised.",
+        "pass": "Every required element is present, answers what its field asks for, and is in the expected form; any remaining gaps are minor and do not impede review."
+      }
+    },
+    {
+      "id": "internal_coherence",
+      "label": "Internal coherence",
+      "description": "Whether objectives, scope, components, costs, and schedule tell one consistent story — the sections describe the same project, at the same scale, on the same timeline.",
+      "guidance": "Read across sections, not within them. Check that the stated objectives are what the described scope would plausibly deliver; that the project components match the scope narrative; that costed items correspond to described components; and that the implementation period is consistent with the component schedule and cost phasing. When you find a contradiction, cite the specific fields on both sides of it. An individually weak answer is not incoherence — only answers that pull against each other are. Reserve concern for tensions material enough to change or obscure the story; minor timing or presentational slack a reader can reconcile from the document itself is not incoherence. A conflict is material — never presentational — when the sections cannot all be true at once: for example, a component, cost phase, or milestone extending beyond the stated project completion date, or a completion date the component schedule cannot meet. Do not wave such a conflict through unless the document itself reconciles it.",
+      "verdicts": {
+        "fail": "Sections of the concept note materially contradict each other — for example, objectives unrelated to the described scope, components that do not appear in the costs, or a schedule irreconcilable with the implementation period — so the document does not describe one consistent project.",
+        "notClear": "The overall story mostly holds, but there are unexplained tensions between sections material enough to change or obscure the account — they would need reconciling before the proposal can be relied on.",
+        "pass": "Objectives, scope, components, costs, and schedule align into one consistent account of the project, with no material contradictions between sections. Minor timing or presentational looseness that does not change the story is consistent with a pass."
+      }
+    },
+    {
+      "id": "evidence_quality",
+      "label": "Evidence quality",
+      "description": "Whether the concept note's material claims — about the problem, demand, costs, and benefits — are supported by evidence, or merely asserted.",
+      "guidance": "For each material claim, look for what the document itself offers in support: figures, sources, studies, baselines, or verifiable specifics. An assertion restated with emphasis is still an assertion. Weigh whether the evidence offered actually bears on the claim it accompanies, and weight claims by the load they carry: the claims the case for the investment rests on — the scale of the problem and the demand for the solution — matter most, and when those are unevidenced the verdict is at best \"notClear\" even where peripheral fields carry figures. Judge only the evidence inside the document — do not supply, presume, or dispute facts from outside it.",
+      "verdicts": {
+        "fail": "The proposal's material claims are asserted without supporting evidence, or the evidence offered does not bear on the claims it is attached to.",
+        "notClear": "Some claims are supported, but key claims — those the case for the investment rests on — lack evidence of scale, source, or baseline, and would need substantiation before appraisal.",
+        "pass": "The material claims are supported by relevant figures, sources, or verifiable specifics, proportionate to the early concept-note stage."
+      }
+    },
+    {
+      "id": "cost_realism",
+      "label": "Cost realism",
+      "description": "Whether the cost estimates are plausible, complete, and consistent with the scope and schedule the document describes.",
+      "guidance": "Judge realism relative to the supplied scope and schedule and to any benchmarks stated in the document itself — never against market knowledge of your own; do not invent prices or reference costs. Check that everything the scope describes appears in the costs, that the cost phasing fits the schedule, and that the document explains how its figures were arrived at. Always compare the document's own totals against any benchmark or reference figures the document itself states — a large unexplained divergence between the two is a contradiction on the document's own terms, not an absence of basis. Where the document offers no basis at all to judge a figure — no breakdown, no source, no stated benchmark — the verdict for that absence is \"notClear\", not a guess in either direction.",
+      "verdicts": {
+        "fail": "The cost estimates are clearly inconsistent with the described scope or schedule — material scope elements are uncosted, phasing cannot fit the implementation period, or the figures contradict the document's own stated basis, including totals that diverge by an order of magnitude from benchmark figures the document itself states, without explanation.",
+        "notClear": "The costs are not obviously inconsistent, but the document gives too little basis — breakdown, method, or source — to judge whether the estimates are realistic and complete for the described scope.",
+        "pass": "The cost estimates cover the described scope, fit the schedule, and rest on a stated basis that is plausible on the document's own terms."
+      }
+    },
+    {
+      "id": "risk_and_deliverability",
+      "label": "Risk & deliverability",
+      "description": "Whether the material risks to the project are identified and the implementation arrangement described is credible for delivering it.",
+      "guidance": "Ask two questions of the document. First, are the risks a reviewer would expect for this kind of project acknowledged — and are the risks it does list specific to this project rather than generic boilerplate? A risk implied elsewhere in the document (a dependency, an assumption, a constraint in the scope or schedule) but absent from the risk answer is a gap worth citing. Second, does the described implementation arrangement — who delivers, with what capacity and mandate — plausibly match the scale and complexity of the scope? Judge credibility on the document's own account; do not import outside knowledge of the institutions involved. Calibrate to the concept-note stage: a named implementing unit with relevant track record, identified support functions, oversight, and an operations handover plan is a credible arrangement at this stage — detailed staffing and delivery plans belong to later phases and their absence is not a gap here.",
+      "verdicts": {
+        "fail": "Material risks evident from the document itself go unacknowledged — a purely generic risk entry for a project whose own document evidences specific risks is unacknowledgement — or the implementation arrangement is missing or clearly inadequate for the scale and complexity of what is proposed. Either condition alone is a fail.",
+        "notClear": "Risks are listed but generic or incomplete, or the implementation arrangement is described too thinly to judge whether it can deliver the project as scoped.",
+        "pass": "The material risks are identified with project-specific substance, and the implementation arrangement described is credible for the scope, scale, and schedule proposed."
+      }
+    }
+  ]
+}
