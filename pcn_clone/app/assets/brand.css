@@ -1178,8 +1178,11 @@ html body {
   -webkit-backdrop-filter: blur(1.5px);
   backdrop-filter: blur(1.5px);
 }
+/* Mantine caps the content at the viewport height; let it scroll there so a
+   dialog's footer stays reachable on short (mobile) screens. */
 :root .mantine-Modal-content {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   border: 1px solid var(--line);
   background: var(--surface);
   color: var(--body);
