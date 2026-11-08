@@ -6,7 +6,7 @@
     "entrypoint": "pcn_clone.app.server:server"
   },
   "python": {
-    "version": "3.11.9",
+    "version": "3.12.12",
     "package_manager": {
       "name": "pip",
       "version": "26.3",
@@ -15,12 +15,12 @@
   },
   "environment": {
     "python": {
-      "requires": "~=3.11.0"
+      "requires": "~=3.12.0"
     }
   },
   "files": {
     "requirements.txt": {
-      "checksum": "5040b36f07ba8a2cbbb3cc627d2115a5"
+      "checksum": "3d705550758ea534bf2ca4d2c8282b75"
     },
     ".gitattributes": {
       "checksum": "629aaf3a623054d5c5eda39bf74aeacc"
@@ -32,7 +32,7 @@
       "checksum": "bf72105a69d303b78352c6a39239bc69"
     },
     "README.md": {
-      "checksum": "27851056c48cc4554e9dfbf25028b641"
+      "checksum": "f1b02bf2b309c98bdb05367d21731261"
     },
     "pcn_clone/__init__.py": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
@@ -401,7 +401,7 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "pyproject.toml": {
-      "checksum": "ff6500f58566ba48cebbae85f9a642e4"
+      "checksum": "ed9586dcd5695c554a9b9e743ecc9e91"
     }
   }
 }

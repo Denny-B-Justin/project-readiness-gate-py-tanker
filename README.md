@@ -10,7 +10,7 @@ application, a Next.js app, in Dash on a FastAPI backend.
 
 ## Setup
 
-Requires Python 3.11.9 and [uv](https://docs.astral.sh/uv/).
+Requires Python 3.12.12 and [uv](https://docs.astral.sh/uv/).
 
 ```bash
 uv sync                                  # creates .venv with pinned dependencies
@@ -264,7 +264,7 @@ On the first deploy, check:
   mount location.
 
 `manifest.json` and `requirements.txt` describe the deployment for
-rsconnect-python: Python 3.11, the FastAPI app mode and entrypoint, the
+rsconnect-python: Python 3.12, the FastAPI app mode and entrypoint, the
 runtime packages pinned from `uv.lock`, and the files to bundle (the app,
 without tests, caches or `.env`). `uv.lock` stays the source of truth, so
 regenerate both whenever dependencies or app files change:
