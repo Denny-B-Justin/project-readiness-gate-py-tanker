@@ -20,7 +20,7 @@
   },
   "files": {
     "requirements.txt": {
-      "checksum": "1d4f5f932ca432f3bc31c3b0deffcd00"
+      "checksum": "5040b36f07ba8a2cbbb3cc627d2115a5"
     },
     ".gitattributes": {
       "checksum": "629aaf3a623054d5c5eda39bf74aeacc"
@@ -32,34 +32,37 @@
       "checksum": "bf72105a69d303b78352c6a39239bc69"
     },
     "README.md": {
-      "checksum": "c39ceb73562ddcc6751aa7d839b4c65f"
+      "checksum": "27851056c48cc4554e9dfbf25028b641"
     },
     "pcn_clone/__init__.py": {
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "pcn_clone/ai/__init__.py": {
-      "checksum": "2bd776f3f73cd4520f0f62878f58fba4"
+      "checksum": "005479565e601d515ece9da5b7ffc973"
     },
     "pcn_clone/ai/assess.py": {
       "checksum": "c326b5a73a6a7ecae1a5bdf28f1d095d"
     },
     "pcn_clone/ai/config.py": {
-      "checksum": "ae3ebd5b012c2bc575d3da1f2d549694"
+      "checksum": "65478d1db11a6ee6cc88ec81a9824e78"
     },
     "pcn_clone/ai/evaluate.py": {
       "checksum": "e337731a98442e4a7e3544dbd1e8aa72"
+    },
+    "pcn_clone/ai/mai.py": {
+      "checksum": "64277b5b6baee905d5147cc742908dd1"
     },
     "pcn_clone/ai/prompts.py": {
       "checksum": "72dfbb3416ec91540ddc7d19af834b1d"
     },
     "pcn_clone/ai/provider.py": {
-      "checksum": "519da4bb53ef425d944c53e4cddf345b"
+      "checksum": "5d26f0fbacf4fdd77b5dfc2127e4d853"
     },
     "pcn_clone/ai/schemas.py": {
       "checksum": "3d444e8765502b923dcabae45348df53"
     },
     "pcn_clone/app/__init__.py": {
-      "checksum": "a918facc7a2637aea6a7a97daecf2c6b"
+      "checksum": "11ed8c36a991d6a4f5bc2a358372aa0f"
     },
     "pcn_clone/app/__main__.py": {
       "checksum": "7c45c30af790ca8a52882c4a65dcb6e9"
@@ -398,7 +401,7 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     "pyproject.toml": {
-      "checksum": "1a951882a35e742b124316e4631f0670"
+      "checksum": "ff6500f58566ba48cebbae85f9a642e4"
     }
   }
 }

@@ -243,10 +243,10 @@ def test_invalid_request(
     assert client.calls == []
 
 
-def test_missing_key_is_a_terminal_not_configured_value(
+def test_missing_gateway_settings_are_a_terminal_not_configured_value(
     ai_env: SetAiEnvironment, caplog: pytest.LogCaptureFixture
 ) -> None:
-    ai_env(PCN_AI_PROVIDER="openrouter")
+    ai_env(PCN_AI_PROVIDER="WB-mAI")
     with caplog.at_level(logging.ERROR, logger="pcn_clone.ai.evaluate"):
         response = asyncio.run(
             evaluate_field("investment_identification", "project_title", "A road")
@@ -254,7 +254,7 @@ def test_missing_key_is_a_terminal_not_configured_value(
     assert not response.ok
     assert not response.retryable
     assert response.error_message == NOT_CONFIGURED_MESSAGE
-    assert "OPENROUTER_API_KEY" in caplog.text
+    assert "MAI_BASE_URL" in caplog.text
     assert "Traceback" not in caplog.text
 
 

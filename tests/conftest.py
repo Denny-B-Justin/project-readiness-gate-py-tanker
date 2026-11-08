@@ -10,8 +10,9 @@ need a server nobody has requested yet run in a fresh process instead (see
 The suite runs offline against the fake AI provider. ``PCN_AI_PROVIDER`` is
 set when this module is imported, before any fixture builds the app and
 before a fresh process or app server copies the environment; the cached AI
-settings are reset to read it. ``OPENROUTER_API_KEY`` is left alone: the
-live test uses it, and skips itself without it.
+settings are reset to read it. The ``MAI_*`` variables and
+``CONNECT_CONTENT_GUID`` are left alone: the live test uses them, and skips
+itself without them.
 """
 
 from __future__ import annotations

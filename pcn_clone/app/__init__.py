@@ -74,9 +74,10 @@ def create_app() -> Dash:
     app: later calls return the same instance.
 
     The AI settings and model client are resolved first, so a malformed or
-    incomplete ``PCN_AI_*`` configuration (such as the OpenRouter provider
-    without ``OPENROUTER_API_KEY``) stops the app at startup instead of at
-    the first evaluation.
+    incomplete configuration (such as the mAI Gateway provider without
+    ``MAI_BASE_URL`` or ``MAI_ENDPOINT``, or off Posit Connect without
+    ``CONNECT_CONTENT_GUID``) stops the app at startup instead of at the
+    first evaluation.
 
     The review run's stores sit in the shell, outside the pages, so a run
     keeps saving results wherever the reviewer goes. The run travels over

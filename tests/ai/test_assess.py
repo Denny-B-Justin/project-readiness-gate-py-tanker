@@ -202,15 +202,20 @@ def test_snapshot_accepts_the_json_shape_and_completes_blanks() -> None:
     assert snapshot.fields[1].serialized_text == "No answer provided."
 
 
-def test_snapshot_model_is_the_configured_openrouter_model(
+def test_snapshot_model_is_the_configured_mai_model(
     ai_env: SetAiEnvironment,
 ) -> None:
     ai_env(
-        PCN_AI_PROVIDER="openrouter",
-        OPENROUTER_API_KEY="sk-test",
-        OPENROUTER_MODEL="vendor/model-x",
+        PCN_AI_PROVIDER="WB-mAI",
+        MAI_BASE_URL="https://gateway.example.invalid/posit-mai/conversationalai/",
+        MAI_ENDPOINT=(
+            "https://mai.example.invalid/maifactory/bedrock/model/"
+            "us.anthropic.<model>/converse"
+        ),
+        MAI_MODEL="us.anthropic.claude-haiku-5-5",
+        CONNECT_CONTENT_GUID="0b7e3a52-6c1d-4f7e-9a0b-2f5d8c4e1a93",
     )
-    assert _snapshot().model == "vendor/model-x"
+    assert _snapshot().model == "claude-haiku-5-5"
 
 
 @pytest.mark.parametrize(
@@ -402,7 +407,7 @@ def test_unusable_settings_are_a_not_configured_value(
     ai_env: SetAiEnvironment,
 ) -> None:
     request = _dimension_request("cost_realism")
-    ai_env(PCN_AI_PROVIDER="openrouter")
+    ai_env(PCN_AI_PROVIDER="WB-mAI")
     client = RecordingClient(DIMENSION_REPLY)
     response = _assess(request, client)
     assert response.error_message == NOT_CONFIGURED_MESSAGE

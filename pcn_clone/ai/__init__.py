@@ -8,8 +8,9 @@ workspace freezes a submission with :func:`build_snapshot` at Submit, then
 calls :func:`assess_dimension` per dimension and :func:`score_criterion` per
 MCA criterion (async, never raise). Calls share
 one process-wide model client chosen by the environment
-(:func:`settings`; ``PCN_AI_PROVIDER=fake`` selects the offline
-:class:`FakeClient`) unless a client is passed explicitly. The app calls
+(:func:`settings`): :class:`MaiClient`, which reaches GPT, Gemini or Claude
+models through the Posit mAI Gateway, or, with ``PCN_AI_PROVIDER=fake``,
+the offline :class:`FakeClient`, unless a client is passed explicitly. The app calls
 :func:`startup` when it is built, so a misconfiguration stops it there, and
 awaits :func:`aclose` at shutdown; :func:`reset_settings` makes the next call
 read the environment again.
@@ -47,11 +48,11 @@ from pcn_clone.ai.evaluate import (
     is_field_ready,
     readiness,
 )
+from pcn_clone.ai.mai import MaiClient
 from pcn_clone.ai.provider import (
     FakeClient,
     ModelClient,
     ModelReply,
-    OpenRouterClient,
     ProviderError,
     TokenUsage,
     aclose,
@@ -77,9 +78,9 @@ __all__ = [
     "FieldEvaluation",
     "FieldEvaluationResponse",
     "IntakeSnapshot",
+    "MaiClient",
     "ModelClient",
     "ModelReply",
-    "OpenRouterClient",
     "ProviderError",
     "RunError",
     "ScoreCriterionRequest",

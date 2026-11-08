@@ -10,8 +10,9 @@ dependencies = [
     "dash-mantine-components==2.8.0",
     "dash[fastapi]==4.4.1",
     "fastapi>=0.142.2",
+    "google-genai>=2.34.0,<3",
     "httpx>=0.28.1",
-    "openrouter>=1.3.23",
+    "openai>=3.46.0",
     "pydantic>=2.11,<3",
     "uvicorn[standard]>=0.54.0",
 ]
@@ -63,5 +64,5 @@ testpaths = ["tests"]
 addopts = ["-ra", "--strict-markers", "--strict-config"]
 markers = [
     "browser: drives the real app in headless Chrome (skipped when Chrome is absent)",
-    "live: calls the real model provider (skipped without OPENROUTER_API_KEY)",
+    "live: calls the real Posit mAI Gateway (skipped unless MAI_BASE_URL, MAI_ENDPOINT and CONNECT_CONTENT_GUID are set)",
 ]

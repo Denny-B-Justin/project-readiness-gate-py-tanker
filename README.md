@@ -24,16 +24,16 @@ Checks:
 uv run pytest -q -m "not browser and not live"    # unit tests, about 7 s
 uv run pytest -q -m browser                       # headless Chrome suite, about 2.5 min
 uv run pytest -q -m "not live"                    # everything offline: the gate for a PR
-uv run pytest -q -m live                          # one real OpenRouter call, needs the key
+uv run pytest -q -m live                          # one real mAI Gateway call, on Posit Connect only
 uv run ruff check . && uv run ruff format --check .   # lint and formatting
 uv run mypy pcn_clone                             # types
 ```
 
 A plain `uv run pytest -q` runs every marker, including `live`, so it spends
-one real call whenever a key is set. The browser suite under `tests/browser/`
-starts the real app with the offline provider and drives it in headless Chrome
-over the DevTools Protocol; it skips itself when Chrome is not installed. No
-Node.js is involved.
+one real call whenever the gateway settings are present. The browser suite
+under `tests/browser/` starts the real app with the offline provider and
+drives it in headless Chrome over the DevTools Protocol; it skips itself when
+Chrome is not installed. No Node.js is involved.
 
 ## Layout
 
@@ -45,8 +45,8 @@ Node.js is involved.
   tables, submission canonicalization, the serialized document and its
   digest, MCA scoring, and evidence-quote verification.
 - `pcn_clone/ai/` — the model layer: prompts and JSON schemas pinned to
-  golden fixtures, the OpenRouter client with an offline fake, field
-  evaluation, and the assessment and prioritisation engines.
+  golden fixtures, the Posit mAI Gateway client (`mai.py`) with an offline
+  fake, field evaluation, and the assessment and prioritisation engines.
 - `pcn_clone/app/` — the web application (see the primer below).
   - `__init__.py` builds the Dash app; `server.py` exposes it for uvicorn;
     `__main__.py` runs the dev server; `routing.py` is the query router.
@@ -75,22 +75,108 @@ Node.js is involved.
 
 ## AI provider
 
-Field evaluation calls a model through OpenRouter with a strict JSON schema,
-using the same prompts as the reference app (pinned by golden fixtures).
-Configuration lives in `.env` (gitignored; copy `.env.example`). The app
-refuses to start unless `OPENROUTER_API_KEY` is set or `PCN_AI_PROVIDER=fake`
-is chosen, so a misconfigured server fails at startup rather than on the
-first click:
+Field evaluation, and the nine review calls after Submit, call a model
+through the **Posit mAI Gateway** with a strict JSON schema, using the same
+prompts as the reference app (pinned by golden fixtures). The gateway serves
+GPT, Gemini and Claude models; `MAI_ENDPOINT` (or `MAI_MODEL`) picks the
+family. It authenticates the app itself: there is no API key, token or
+subscription key anywhere in the app.
 
-| Variable | Meaning |
-| --- | --- |
-| `OPENROUTER_API_KEY` | Required for the `openrouter` provider. |
-| `OPENROUTER_MODEL` | Default `openai/gpt-5.6-luna`. |
-| `PCN_AI_PROVIDER` | `openrouter` (default) or `fake`, an offline deterministic provider used by the browser tests. |
-| `PCN_AI_TIMEOUT_SECONDS`, `PCN_AI_MAX_RETRIES` | Per-attempt timeout and bounded retries on retryable failures. |
+Configuration lives in `.env` (gitignored; copy `.env.example`); variables
+already set in the environment win. The app refuses to start unless
+`MAI_BASE_URL` and `MAI_ENDPOINT` are set and it runs on Posit Connect
+(which sets `CONNECT_CONTENT_GUID`), or `PCN_AI_PROVIDER=fake` is chosen, so
+a misconfigured server fails at startup rather than on the first click:
 
-`uv run pytest -q -m live` runs one real evaluation against OpenRouter and is
-skipped when no key is set; every other test runs offline.
+| Variable | Required | Default | Meaning |
+| --- | --- | --- | --- |
+| `PCN_AI_PROVIDER` | no | `WB-mAI` | `WB-mAI` (the gateway) or `fake` (offline deterministic replies, for development and the browser tests), in any letter case. |
+| `MAI_BASE_URL` | for `WB-mAI` | — | The gateway URL; a missing trailing `/` is added. |
+| `MAI_ENDPOINT` | for `WB-mAI` | — | The mAI endpoint, sent as the `mai-endpoint` query parameter. Also names the model family. |
+| `MAI_MODEL` | no | per family | A model the gateway allows, of the same family as `MAI_ENDPOINT`. Defaults: `gpt-5.6-luna`, `gemini-3.8-flash`, `claude-haiku-5-5`. |
+| `CONNECT_CONTENT_GUID` | set by Connect | — | Sent as `X-Posit-App-Id`. Never set it by hand except as a dummy against the local fake gateway. |
+| `PCN_AI_TIMEOUT_SECONDS` | no | `600` | Per-attempt timeout, above 0. |
+| `PCN_AI_MAX_RETRIES` | no | `2` | Retries on retryable failures, 0 to 5. |
+| `PCN_AI_MAX_OUTPUT_TOKENS` | no | unset | Output cap per call. Unset leaves GPT and Gemini at the model default and sends 8192 for Claude. |
+| `PCN_AI_FAKE_DELAY_SECONDS`, `PCN_AI_FAKE_FAIL` | no | `0`, empty | Fake-provider latency and failure injection. |
+
+Only three settings describe the connection: `MAI_BASE_URL`, `MAI_ENDPOINT`
+and, optionally, `MAI_MODEL`. Requests carry `X-Posit-App-Id` and
+`x-source-type: interactive`; sampling and reasoning settings are left to
+the model. Connection failures and HTTP 408, 409, 425, 429 and 5xx are
+retried with backoff (a `Retry-After`, or the gateway's "try again in N
+seconds" or quota text, is honoured up to 60 s; a longer wait ends the
+retries). Refusals (400, 401, 403, 404) are not retried; the server log
+names the fix. If a provider rejects the response schema, the client
+resends once with a portable schema (references inlined, `const` as `enum`)
+and then once more without length bounds, and keeps that level; replies are
+validated in full either way. Leave SDK debug logging off in production
+(for example, do not set `OPENAI_LOG=debug`): the SDKs log request bodies,
+and proposals are confidential.
+
+### Gateway reference
+
+From the *Posit mAI Gateway – Developer Guide*. Use QA with QA, and
+Production with Production.
+
+| | QA | Production |
+| --- | --- | --- |
+| `MAI_BASE_URL` | `https://apiqa2.worldbank.org/posit-mai/conversationalai/` | `https://api.worldbank.org/posit-mai/conversationalai/` |
+| `MAI_ENDPOINT`, GPT | `https://azapimqa.worldbank.org/maifactory/openai/responses` | `https://azapim.worldbank.org/maifactory/openai/responses` |
+| `MAI_ENDPOINT`, Gemini | `https://azapimqa.worldbank.org/maifactory/gemini/interactions` | `https://azapim.worldbank.org/maifactory/gemini/interactions` |
+| `MAI_ENDPOINT`, Claude | `https://azapimqa.worldbank.org/maifactory/bedrock/model/us.anthropic.<model>/converse` | `https://azapim.worldbank.org/maifactory/bedrock/model/us.anthropic.<model>/converse` |
+
+Allowed models (anything else is refused with 403 *Model not allowed for
+Posit applications*; ask the platform team for more): GPT `gpt-6-luna`,
+`gpt-5.6-luna`; Gemini `gemini-3.1-flash-lite`, `gemini-3.5-flash-lite`,
+`gemini-3.6-flash`, `gemini-3.7-flash`, `gemini-3.8-flash`; Claude
+`claude-haiku-5-5`. The Claude endpoint names its model in its path: the
+app writes the resolved model there (filling in `<model>`), so `MAI_MODEL`
+alone selects it and reviews record it as `claude-haiku-5-5`.
+
+| Family | Wire format | Call |
+| --- | --- | --- |
+| GPT | OpenAI Responses API | `openai` SDK, strict `json_schema` text format |
+| Gemini | Interactions API | `google-genai` SDK, schema as `response_format` |
+| Claude | Bedrock Converse | plain HTTP `POST <gateway>converse`, the JSON as one forced `answer` tool call |
+
+### Local development
+
+The gateway only answers apps running on Posit Connect; it refuses local
+machines. Locally, use `PCN_AI_PROVIDER=fake`, or run the whole app through
+the real gateway client against the local fake gateway:
+
+```bash
+uv run python -m tests.ai.fake_gateway --family gpt --port 9000   # or gemini, claude
+# in another shell:
+PCN_AI_PROVIDER=WB-mAI \
+MAI_BASE_URL=http://127.0.0.1:9000/posit-mai/conversationalai/ \
+MAI_ENDPOINT=https://mai.example.invalid/maifactory/openai/responses \
+CONNECT_CONTENT_GUID=00000000-0000-0000-0000-000000000000 \
+uv run python -m pcn_clone.app
+```
+
+The fake gateway answers like the offline provider; the endpoint is only
+passed through, never called.
+
+### Checking the gateway on Connect
+
+`uv run pytest -q -m live` makes one real evaluation and is skipped unless
+`MAI_BASE_URL`, `MAI_ENDPOINT` and `CONNECT_CONTENT_GUID` are all set; every
+other test runs offline. `python -m tests.ai.live_check`, run with the
+app's Connect environment, makes one small call per output contract (field
+evaluation, assessment finding, MCA score) on the sample project and
+reports pass or fail, the time taken, the schema level each settled at and
+the gateway's error, if any. `--fake` runs it against the local fake
+gateway to test the script itself.
+
+### Migration from the previous provider
+
+Reviews record the model that drafted them, and a retry is refused when
+the configured model differs. Reviews started before this change recorded
+the previous provider's model string, so retrying one of their failed
+calls now ends in the existing `model_mismatch` error. This is expected:
+start a new review from the project.
 
 ## How the app is put together
 
@@ -143,13 +229,27 @@ instead. The run is `run_review` in `app/review/run.py`.
 ## Deploying on Posit Connect
 
 Deploy as a FastAPI app with the entrypoint `pcn_clone.app.server:server`.
-In the content settings, set `DASH_REQUESTS_PATHNAME_PREFIX` to the content
-URL's path, `/content/<GUID>/`, and the `PCN_*` and `OPENROUTER_*` variables
-above. Connect serves the app at that content URL and at its vanity URL.
-The app is designed to work at both, with assets, callbacks and the
-WebSocket always going through the content URL; that is tested locally
-against a Connect-like proxy but not yet checked on Connect itself. On the
-first deploy, start with `PCN_AI_PROVIDER=fake` and check:
+In the content settings (Settings → Runtime → Environment Variables), set
+`DASH_REQUESTS_PATHNAME_PREFIX` to the content URL's path,
+`/content/<GUID>/`, and the `PCN_*` and `MAI_*` variables above. Connect
+sets `CONNECT_CONTENT_GUID` itself; do not set it. Leave Integrations empty:
+do not attach *mai Integration-QA* or *mai-posit*, and add no key. Connect
+serves the app at that content URL and at its vanity URL. The app is
+designed to work at both, with assets, callbacks and the WebSocket always
+going through the content URL; that is tested locally against a
+Connect-like proxy but not yet checked on Connect itself.
+
+Roll out the model provider in three steps:
+
+1. First deploy with `PCN_AI_PROVIDER=fake`, and check the pages (below).
+2. Set the QA `MAI_BASE_URL` and `MAI_ENDPOINT` (and `MAI_MODEL` if not the
+   family default) and `PCN_AI_PROVIDER=WB-mAI`. The log shows one line,
+   `AI provider WB-mAI: <family> family, model <model>`. Run
+   `python -m tests.ai.live_check` with the app's environment, then a field
+   evaluation and a full review in the app.
+3. Switch both URLs to their Production values.
+
+On the first deploy, check:
 
 - at both the vanity URL and `/content/<GUID>/`: a direct link to each
   page, stylesheets and callbacks loading, and a complete review run;

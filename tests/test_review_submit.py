@@ -95,14 +95,14 @@ def test_unusable_ai_settings_refuse_the_submission(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     def broken(_submission: Any) -> Any:
-        raise AiConfigurationError("OPENROUTER_API_KEY is not set.")
+        raise AiConfigurationError("MAI_BASE_URL is not set.")
 
     monkeypatch.setattr(submit, "build_snapshot", broken)
 
     assert intake({"nonce": "n4", "values": {}}) == {
         "nonce": "n4",
         "ok": False,
-        "errorMessage": "OPENROUTER_API_KEY is not set.",
+        "errorMessage": "MAI_BASE_URL is not set.",
     }
 
 
