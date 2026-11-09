@@ -127,6 +127,39 @@
   padding: 14px 20px;
 }
 
+/* Create dialog: capped to the viewport, with the header and footer pinned
+   and the fields between them scrolling. */
+
+:root .pj-dialog-new {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 2 * var(--modal-y-offset, 5dvh));
+  overflow: hidden;
+}
+
+:root .pj-dialog-new .pj-dialog-header {
+  flex-shrink: 0;
+}
+
+:root .pj-dialog-new .pj-dialog-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.pj-dialog-new .pj-dialog-lede,
+.pj-dialog-new .pj-dialog-foot {
+  flex-shrink: 0;
+}
+
+.pj-dialog-new .pj-dialog-section {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
 /* Create dialog fields */
 
 .pj-field-label {
